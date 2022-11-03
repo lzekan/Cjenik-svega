@@ -10,43 +10,68 @@
 			
 			
 			\noindent \textbf{Dionici:}
-			
+			 
 			\begin{packed_enum}
 				
-				\item Dionik 1
-				\item Dionik 2				
-				\item ...
+				\item Neregistrirani korisnik
+				\item Registrirani korisnik				
+				\item Administrator
+                \item Trgovina\\
 				
 			\end{packed_enum}
+   
 			
 			\noindent \textbf{Aktori i njihovi funkcionalni zahtjevi:}
 			
 			
 			\begin{packed_enum}
-				\item  \underbar{Aktor 1 (inicijator) može:}
+				\item  \underbar{Neregistrirani korisnik (inicijator) može:}
 				
-				\begin{packed_enum}
+				\begin{enumerate}
 					
-					\item funkcionalnost 1
-					\item funkcionalnost 2
-					\begin{packed_enum}
-						
-						\item  podfunkcionalnost 1 
-						\item  podfunkcionalnost 2
-				
-					\end{packed_enum}
-					\item  funkcionalnost 3
-					
-				\end{packed_enum}
+					\item pregledavati sadržaj aplikacije
+					\item se registrirati u sustav, stvoriti novi korisnički račun za koji su mu potrebni korisničko ime, prezime, nadimak i e-mail
 			
-				\item  \underbar{Aktor 2 (sudionik) može:}
+					
+				\end{enumerate}
+			
+				\item  \underbar{Registrirani korisnik (sudionik) može:}
 				
-				\begin{packed_enum}
+				\begin{enumerate}
 					
-					\item funkcionalnost 1
-					\item funkcionalnost 2
+					\item birati što od navedenog će biti javno, a što privatno
+					\item pregledavati sadržaj aplikacije
+        	        \item unositi cijene i dodavati oznake proizvodima
+                        \item predložiti oznaku za proivod
+                        
 					
-				\end{packed_enum}
+				\end{enumerate}
+
+                \item  \underbar{Administrator (sudionik) može:}
+				
+				\begin{enumerate}
+					
+					\item birati što od navedenog će biti javno, a što privatno
+					\item pregledavati sadržaj aplikacije
+        	        \item unositi cijene i dodavati oznake proizvodima
+                        \item zabraniti pristup stranici registriranim korisnicima ili trgovinama
+                        \item napisati komentar o svakoj pojedinoj trgovini koji je istaknut na stranici trgovine
+                        
+					
+				\end{enumerate}
+
+                \item  \underbar{Trgovina (sudionik) može:}
+				
+				\begin{enumerate}
+					
+					\item se registrirati u sustav, te prilikom registracije mora unijeti popis svih svojih proizvoda i njihove standardne cijene
+					\item svaki dan na svoje računalo postaviti datoteku u kojoj se nalaze cijene onih proizvoda koje odstupaju od standardnih
+        	        
+                        
+					
+				\end{enumerate}
+
+    
 			\end{packed_enum}
 			
 			\eject 
@@ -91,11 +116,362 @@
 								
 							\end{packed_enum}
 							\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-							\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
+							\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$\\
 							
 						\end{packed_item}
 					\end{packed_item}
-				
+
+                        \noindent \underbar{\textbf{UC1 - Pregled sadržaja}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Pregledati proizvode i ponude
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} -
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Prilikom učitavanja aplikacije prikazaju se ponuda\\
+						\end{enumerate}
+						
+					\end{itemize}
+
+
+                        \noindent \underbar{\textbf{UC2 - Registracija}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Stvoriti korisnički račun za pristup sustavu
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} -
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik odabire opciju za registraciju
+                                \item Korisnik unosi potrebne korisničke podatke
+                                \item Korisnik prima obavijest o uspješnoj registraciji
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[2.a] Odabir već zauzetog korisničkog imena i/ili e-maila, unos korisničkog podatka u nedozvoljenom formatu ili pružanje neispravnog e-maila
+							\item[] \begin{enumerate}
+								
+								\item Sustav obaviještava korisnika o neuspjelom upisu i vraća ga na stranicu za registraciju
+								\item Korisnik mijenja potrebne podatke te zavrsava unos ili odustaje od registracije\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC3 - Prijava u sustav}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Dobiti pristup korisničkom sučelju
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Registracija
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Unos korisničkog imena i lozinke
+                                \item Potvrda o ispravnosti unesenih podataka
+                                \item Pristup korisničkim funkcijama
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[2.a] Neispravno korisničko ime/lozinka
+							\item[] \begin{enumerate}
+								
+								\item Sustav obaviještava korisnika o neuspjelom upisu i vraća ga na stranicu za prijavu\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC4 - Pregled osobnih podataka}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Pregledati osobne podatke
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik odabire opciju "Osobni podatci"
+                                \item Aplikacija prikazuje osobne podatke korisnika\\
+						\end{enumerate}
+			
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC5 - Promjena osobnih podataka}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Promijeniti osobne podatke
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik odabire opciju za promjenu podataka
+                                \item Korisnik mijenja svoje osobne podatke
+                                \item Korisnik sprema promjene
+                                \item Baza podataka se ažurira
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[2.a] Korisnik mijenja svoje podatke, ali ne odabire opciju "Spremi promjenu"
+							\item[] \begin{enumerate}
+								
+								\item Sustav obaviještava korisnika o neuspjeloj promijeni podataka prije izlaska iz prozora\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+
+                        \noindent \underbar{\textbf{UC6 - Brisanje korisničkog računa}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Izbrisati svoj korisnički račun
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik pregledava osobne podatke
+                                \item Otvara se stranica sa osobnim podatcima korisnika
+                                \item Korisnik briše račun
+                                \item Baza podataka se ažurira tj. korisnički račun s eizbriše iz baze podataka
+                                \item Otvara se stranica za registraciju\\
+						\end{enumerate}
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC7 - Unos cijena proizvoda}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Unijeti cijene proizvoda koje odstupaju od onih na aplikaciji
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik odabire trgovinu u kojoj je zapazio drugačiju cijenu
+                                \item Korisnik unosi novu cijenu
+                                \item Korisnik prilaže sliku na kojoj je vidljiva cijena u navedenoj trgovini
+                                \item Zahtjev se šalje administratoru na provjeru\\
+						\end{enumerate}
+						
+					\end{itemize}
+
+
+                        \noindent \underbar{\textbf{UC8 - Provjera promijene cijene}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Administrator
+						\item  \textbf{Cilj:} Potvrditi promijenu cijene 
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen i dodijeljena su mu prava administratora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Administrator odabire opciju za pregled zahtjeva
+                                \item Administrator odabire zahtjev
+                                \item Administrator provjerava zahtjev i odobrava ga
+                                \item Šalje obavijest o promijeni cijene korisniku i trgovini
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[3.a] Korisnik unosi cijenu koja je jednaka cijeni na aplikaciji
+							\item[] \begin{enumerate}
+								\item Administrator odbija zahtjev
+								\item Sustav šalje obavijest korisniku o neuspjeloj promijeni cijene\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC9 - Promjena prava pristupa}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Administrator
+						\item  \textbf{Cilj:} Promijeniti razinu pristupa korisnika ili trgovine
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen i dodijeljena su mu prava administratora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Administrator odabire opciju za promjenu prava pristupa
+                                \item Administrator pronalazi željenog korisnika ili trgovinu
+                                \item Administrator mijenja razinu pristupa željenom korisniku\\
+						\end{enumerate}
+
+					\end{itemize}
+
+
+                        \noindent \underbar{\textbf{UC10 - Dodavanje komentara trgovinama}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Administrator
+						\item  \textbf{Cilj:} Dodati komentar određenoj trgovini
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen i dodijeljena su mu prava administratora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Administrator odabire opciju za dodavanje komentara trgovini
+                                \item Administrator pronalazi željenu trgovinu
+                                \item Administrator dodaje komentar\\
+						\end{enumerate}
+
+					\end{itemize}
+
+
+                        \noindent \underbar{\textbf{UC11 - Dodavanje oznaka proizvodima}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Dodati oznaku određenom proizvodu
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik odabire proizvod
+                                \item Korisnik bira oznaku za odabrani proizvod\\
+						\end{enumerate}
+
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC12 - Registracija trgovine}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Trgovina
+						\item  \textbf{Cilj:} Stvoriti račun za za trgovinu kako bi pristupila sustavu
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} -
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Trgovina odabire opciju za registraciju trgovine
+                                \item Trgovina unosi potrebne podatke za registraciju trgovine
+                                \item Trgovina unosi popis svih proizvoda i njihove standardne cijene
+                                \item Trgovina prima obavijest o uspješnoj registraciji trgovine
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[2.a] Odabir već zauzetog imena trgovine i/ili e-maila, unos podatka u nedozvoljenom formatu
+							\item[] \begin{enumerate}
+								
+								\item Sustav obaviještava trgovinu o neuspjelom upisu i vraća ga na stranicu za registraciju trgovine
+								\item Trgovina mijenja potrebne podatke te zavrsava unos ili odustaje od registracije\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC13 - Prijava trgovine u sustav}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Trgovina
+						\item  \textbf{Cilj:}  Trgovini omogućiti pristup sučelju
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Registracija trgovine
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Unos imena trgovine i lozinke
+                                \item Potvrda o ispravnosti unesenih podataka
+                                \item Pristup funkcijama trgovina
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[2.a] Neispravno ime trgovine/lozinka
+							\item[] \begin{enumerate}
+								
+								\item Sustav obaviještava trgovinu o neuspjelom upisu i vraća ju na stranicu za prijavu trgovine\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+                        \noindent \underbar{\textbf{UC14 - Postavljanje datoteke sa novim cijenama}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Trgovina
+						\item  \textbf{Cilj:} Postaviti nove cijene proizvoda
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Registracija trgovine
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Trgovina odabire opciju za unos datoteke 
+                                \item Trgovina postavlja određenu datoteku s novim cijenama i šalje aplikaciji
+						\end{enumerate}
+
+                            \item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{enumerate}
+	
+							\item[2.a] Trgovina nije priložila datoteku
+							\item[] \begin{enumerate}
+								
+								\item Sustav obaviještava trgovinu o neuspjeloj predaji datoteke i vraća ju na stranicu za unos\\
+								
+							\end{enumerate}
+			
+							
+						\end{enumerate}
+						
+					\end{itemize}
+
+                    
+
+                        
+
+
+     
 					
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
@@ -116,5 +492,4 @@
 			 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
 			 
 			 
-			 
-	
+		

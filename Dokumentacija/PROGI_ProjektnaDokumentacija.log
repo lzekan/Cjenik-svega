@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.27)  29 OCT 2022 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=latex 2022.10.31)  3 NOV 2022 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**PROGI_ProjektnaDokumentacija.tex
-(./PROGI_ProjektnaDokumentacija.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-01-21>
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+**./PROGI_ProjektnaDokumentacija.tex
+(PROGI_ProjektnaDokumentacija.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-09-28>
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
@@ -24,23 +24,38 @@ File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2022/01/26 3.70 The Babel package
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2022/10/04 3.81 The Babel package
 \babel@savecnt=\count194
 \U@D=\dimen139
-\l@unhyphenated=\language33
+\l@unhyphenated=\language79
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
+)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count195
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-croatian/croatian.ldf
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/babel-croatian\croat
+ian.ldf
 Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/hr\ba
+bel-croatian.tex
+Package babel Info: Importing font and identification data for croatian
+(babel)             from babel-hr.ini. Reported on input line 11.
+)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.st
+y
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -49,42 +64,51 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2021/10/15 v2.17l AMS math features
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
 \ex@=\dimen140
-))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
+y
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen141
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2021/08/26 v2.02 operator names
+) (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count196
 LaTeX Info: Redefining \frac on input line 234.
 \uproot@=\count197
 \leftroot@=\count198
 LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
 \classnum@=\count199
 \DOTSCASE@=\count266
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen142
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
 \c@MaxMatrixCols=\count268
 \dotsspace@=\muskip16
 \c@parentequation=\count269
@@ -104,10 +128,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2938.
-LaTeX Info: Redefining \] on input line 2939.
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\txfonts.sty
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -193,18 +217,20 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 164.
 LaTeX Info: Redefining \not on input line 1043.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/mathdots/mathdots.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/mathdots\mathdots.
+sty
 Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in ma
 th.
 \MDo@unit=\dimen149
-\MDo@dotsbox=\box52
+\MDo@dotsbox=\box53
 \MDoprekern=\muskip17
 \MDopostkern=\muskip18
 \MDodotkern=\muskip19
 )
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.st
+y
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box53
+\ttl@box=\box54
 \beforetitleunit=\skip52
 \aftertitleunit=\skip53
 \ttl@plus=\dimen150
@@ -213,41 +239,45 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \titlewidth=\dimen152
 \titlewidthlast=\dimen153
 \titlewidthfirst=\dimen154
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+) (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen155
-\ar@mcellbox=\box54
+\ar@mcellbox=\box55
 \extrarowheight=\dimen156
 \NC@list=\toks23
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box55
+\ar@cellbox=\box56
 )
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.st
+y
 Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
+y
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count274
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tabularray/tabularray.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-01-21 L3 programming layer (loader) 
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/tabularray\tabularra
+y.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2022-09-28 L3 programming layer (loader) 
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count275
-\l__pdf_internal_box=\box56
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
+dvips.def
+File: l3backend-dvips.def 2022-09-28 L3 backend support: dvips
+\l__pdf_internal_box=\box57
+\g__pdf_backend_object_int=\count275
+\l__pdf_backend_content_box=\box58
+\l__pdf_backend_model_box=\box59
+\g__pdf_backend_annotation_int=\count276
+\g__pdf_backend_link_int=\count277
+\g__pdf_backend_link_sf_int=\count278
 ))
-Package: tabularray 2021-12-01 v2021Q Typeset tabulars and arrays with LaTeX3
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2022-01-12 L3 Experimental document command parser
-)
-\l__tblr_a_int=\count276
-\l__tblr_c_int=\count277
-\l__tblr_r_int=\count278
+Package: tabularray 2022-07-01 v2022C Typeset tabulars and arrays with LaTeX3
+\l__tblr_a_int=\count279
+\l__tblr_c_int=\count280
+\l__tblr_r_int=\count281
 \l__tblr_d_dim=\dimen157
 \l__tblr_h_dim=\dimen158
 \l__tblr_o_dim=\dimen159
@@ -258,667 +288,716 @@ Package: xparse 2022-01-12 L3 Experimental document command parser
 \l__tblr_t_dim=\dimen164
 \l__tblr_v_dim=\dimen165
 \l__tblr_w_dim=\dimen166
-\l__tblr_a_box=\box57
-\l__tblr_b_box=\box58
-\l__tblr_c_box=\box59
-\l__tblr_d_box=\box60
-\g__tblr_table_count_int=\count279
-\c@rownum=\count280
-\c@colnum=\count281
-\c@rowcount=\count282
-\c@colcount=\count283
+\l__tblr_a_box=\box60
+\l__tblr_b_box=\box61
+\l__tblr_c_box=\box62
+\l__tblr_d_box=\box63
+\g__tblr_table_count_int=\count282
+\c@rownum=\count283
+\c@colnum=\count284
+\c@rowcount=\count285
+\c@colcount=\count286
 \abovesep=\dimen167
 \belowsep=\dimen168
 \leftsep=\dimen169
 \rightsep=\dimen170
-\g_tblr_level_int=\count284
-\g__tblr_data_row_key_count_int=\count285
-\g__tblr_data_column_key_count_int=\count286
-\g__tblr_data_cell_key_count_int=\count287
-\g__tblr_array_int=\count288
-\l__tblr_key_count_int=\count289
-\l__tblr_key_quotient_int=\count290
-\l__tblr_key_quotient_two_int=\count291
-\l__tblr_key_remainder_int=\count292
-\g__tblr_data_str_value_count_int=\count293
+\g_tblr_level_int=\count287
+\g__tblr_data_row_key_count_int=\count288
+\g__tblr_data_column_key_count_int=\count289
+\g__tblr_data_cell_key_count_int=\count290
+\g__tblr_array_int=\count291
+\l__tblr_key_count_int=\count292
+\l__tblr_key_quotient_int=\count293
+\l__tblr_key_quotient_two_int=\count294
+\l__tblr_key_remainder_int=\count295
+\g__tblr_data_str_value_count_int=\count296
 \rulewidth=\dimen171
-\l__multicolumn_cell_number_int=\count294
-\l__tblr_strut_ht_box=\box61
-\l__tblr_strut_dp_box=\box62
-\g__tblr_cell_wd_dim=\dimen172
-\g__tblr_cell_ht_dim=\dimen173
-\g__tblr_cell_head_dim=\dimen174
-\g__tblr_cell_foot_dim=\dimen175
-\l__column_target_dim=\dimen176
-\l__tblr_caption_box=\box63
-\l__tblr_caption_left_box=\box64
-\l__tblr_row_head_box=\box65
-\l__tblr_row_foot_box=\box66
-\l__tblr_row_head_foot_dim=\dimen177
-\tablewidth=\dimen178
-\l__tblr_table_firsthead_box=\box67
-\l__tblr_table_middlehead_box=\box68
-\l__tblr_table_lasthead_box=\box69
-\l__tblr_table_firstfoot_box=\box70
-\l__tblr_table_middlefoot_box=\box71
-\l__tblr_table_lastfoot_box=\box72
-\l__tblr_remain_height_dim=\dimen179
-\l__tblr_long_from_int=\count295
-\l__tblr_long_to_int=\count296
-\l__tblr_curr_i_int=\count297
-\l__tblr_prev_i_int=\count298
-\l__tblr_table_page_int=\count299
-\l__tblr_table_head_box=\box73
-\l__tblr_table_foot_box=\box74
-\l__tblr_table_head_foot_dim=\dimen180
-\l__tblr_table_head_body_foot_dim=\dimen181
-\l__tblr_table_box=\box75
-\l__tblr_table_hlines_box=\box76
-\l__tblr_hline_box=\box77
-\l__tblr_row_box=\box78
-\l__tblr_col_o_wd_dim=\dimen182
-\l__tblr_col_b_wd_dim=\dimen183
-\l__tblr_hline_leftskip_dim=\dimen184
-\l__tblr_hline_rightskip_dim=\dimen185
-\l__tblr_row_ht_dim=\dimen186
-\l__tblr_row_dp_dim=\dimen187
-\l__tblr_row_abovesep_dim=\dimen188
-\l__tblr_row_belowsep_dim=\dimen189
-\l__tblr_row_vlines_box=\box79
-\l__tblr_vline_box=\box80
-\l__tblr_cell_box=\box81
-\l__row_upper_dim=\dimen190
-\l__row_lower_dim=\dimen191
-\l__row_vpace_dim=\dimen192
-\l__tblr_vline_aboveskip_dim=\dimen193
-\l__tblr_vline_belowskip_dim=\dimen194
-\l__tblr_cell_wd_dim=\dimen195
-\l__tblr_cell_ht_dim=\dimen196
-\l__tblr_diag_box=\box82
+\l__tblr_strut_dp_dim=\dimen172
+\l__tblr_strut_ht_dim=\dimen173
+\g__tblr_cell_wd_dim=\dimen174
+\g__tblr_cell_ht_dim=\dimen175
+\g__tblr_cell_head_dim=\dimen176
+\g__tblr_cell_foot_dim=\dimen177
+\l__column_target_dim=\dimen178
+\l__tblr_caption_box=\box64
+\l__tblr_caption_left_box=\box65
+\l__tblr_row_head_box=\box66
+\l__tblr_row_foot_box=\box67
+\l__tblr_row_head_foot_dim=\dimen179
+\tablewidth=\dimen180
+\l__tblr_table_firsthead_box=\box68
+\l__tblr_table_middlehead_box=\box69
+\l__tblr_table_lasthead_box=\box70
+\l__tblr_table_firstfoot_box=\box71
+\l__tblr_table_middlefoot_box=\box72
+\l__tblr_table_lastfoot_box=\box73
+\l__tblr_remain_height_dim=\dimen181
+\l__tblr_long_from_int=\count297
+\l__tblr_long_to_int=\count298
+\l__tblr_curr_i_int=\count299
+\l__tblr_prev_i_int=\count300
+\l__tblr_table_page_int=\count301
+\l__tblr_table_head_box=\box74
+\l__tblr_table_foot_box=\box75
+\l__tblr_table_head_foot_dim=\dimen182
+\l__tblr_table_head_body_foot_dim=\dimen183
+\l__tblr_table_box=\box76
+\l__tblr_table_hlines_box=\box77
+\l__tblr_hline_box=\box78
+\l__tblr_row_box=\box79
+\l__tblr_col_o_wd_dim=\dimen184
+\l__tblr_col_b_wd_dim=\dimen185
+\l__tblr_hline_leftskip_dim=\dimen186
+\l__tblr_hline_rightskip_dim=\dimen187
+\l__tblr_row_ht_dim=\dimen188
+\l__tblr_row_dp_dim=\dimen189
+\l__tblr_row_abovesep_dim=\dimen190
+\l__tblr_row_belowsep_dim=\dimen191
+\l__tblr_row_vlines_box=\box80
+\l__tblr_vline_box=\box81
+\l__tblr_cell_box=\box82
+\l__row_upper_dim=\dimen192
+\l__row_lower_dim=\dimen193
+\l__row_vpace_dim=\dimen194
+\l__tblr_vline_aboveskip_dim=\dimen195
+\l__tblr_vline_belowskip_dim=\dimen196
+\l__tblr_cell_wd_dim=\dimen197
+\l__tblr_cell_ht_dim=\dimen198
+\l__tblr_diag_box=\box83
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
+fg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 149.
+Package color Info: Driver file: dvips.def on input line 149.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-))
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\dvips.d
+ef
+File: dvips.def 2022/09/22 v3.1e Graphics/color driver for dvips
+\stockwidth=\dimen199
+\stockheight=\dimen256
+)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.de
+f
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
+tx))
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.st
+y
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks24
 \minrowclearance=\skip56
 )
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.
+sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
 
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.te
+x
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.t
+ex
 \XKV@toks=\toks25
 \XKV@tempa@toks=\toks26
 
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count300
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex
+))
+\XKV@depth=\count302
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.st
+y
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.s
+ty
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
+y
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
+y
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
+s.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
+Package graphics Info: Driver file: dvips.def on input line 107.
 )
-\Gin@req@height=\dimen197
-\Gin@req@width=\dimen198
+\Gin@req@height=\dimen257
+\Gin@req@width=\dimen258
 )
-(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box83
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbo
+x.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box84
 )
-\tc@llx=\dimen199
-\tc@lly=\dimen256
-\tc@urx=\dimen257
-\tc@ury=\dimen258
-Package trimclip Info: Using driver 'tc-pdftex.def'.
+\tc@llx=\dimen259
+\tc@lly=\dimen260
+\tc@urx=\dimen261
+\tc@ury=\dimen262
+Package trimclip Info: Using driver 'tc-dvips.def'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-dvips.d
+ef
+File: tc-dvips.def 2019/01/04 v2.2 Clipping driver for dvips
 ))
-\adjbox@Width=\dimen259
-\adjbox@Height=\dimen260
-\adjbox@Depth=\dimen261
-\adjbox@Totalheight=\dimen262
-\adjbox@pwidth=\dimen263
-\adjbox@pheight=\dimen264
-\adjbox@pdepth=\dimen265
-\adjbox@ptotalheight=\dimen266
+\adjbox@Width=\dimen263
+\adjbox@Height=\dimen264
+\adjbox@Depth=\dimen265
+\adjbox@Totalheight=\dimen266
+\adjbox@pwidth=\dimen267
+\adjbox@pheight=\dimen268
+\adjbox@pdepth=\dimen269
+\adjbox@ptotalheight=\dimen270
 
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count301
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.
+sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count303
 )
-(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.st
+y
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box84
-\sift@deathcycles=\count302
-\@vwid@loff=\dimen267
-\@vwid@roff=\dimen268
+\@vwid@box=\box85
+\sift@deathcycles=\count304
+\@vwid@loff=\dimen271
+\@vwid@roff=\dimen272
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
+y
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+ (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count303
-\Gm@cntv=\count304
-\c@Gm@tempcnt=\count305
-\Gm@bindingoffset=\dimen269
-\Gm@wd@mp=\dimen270
-\Gm@odd@mp=\dimen271
-\Gm@even@mp=\dimen272
-\Gm@layoutwidth=\dimen273
-\Gm@layoutheight=\dimen274
-\Gm@layouthoffset=\dimen275
-\Gm@layoutvoffset=\dimen276
+\Gm@cnth=\count305
+\Gm@cntv=\count306
+\c@Gm@tempcnt=\count307
+\Gm@bindingoffset=\dimen273
+\Gm@wd@mp=\dimen274
+\Gm@odd@mp=\dimen275
+\Gm@even@mp=\dimen276
+\Gm@layoutwidth=\dimen277
+\Gm@layoutheight=\dimen278
+\Gm@layouthoffset=\dimen279
+\Gm@layoutvoffset=\dimen280
 \Gm@dimlist=\toks27
-)
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/kpfonts.sty
-Package: kpfonts  2010/08/20 v3.31
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-LaTeX Font Info:    Changing ? sub-encoding to TS1/0 on input line 78.
-)
-\c@mv@rm=\count306
-\c@mv@boldrm=\count307
-\c@mv@sf=\count308
-\c@mv@boldsf=\count309
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 354.
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
+g))
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\kpfonts.sty
+Package: kpfonts  2022/09/19 v3.34
+\c@mv@rm=\count308
+\c@mv@boldrm=\count309
+\c@mv@sf=\count310
+\c@mv@boldsf=\count311
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
+(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/txr/bx/n --> OT1/jkp/m/n on input line 354.
+(Font)                  OT1/txr/bx/n --> OT1/jkp/m/n on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `rm'
-(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
+(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `boldrm'
-(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
+(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `sf'
-(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
+(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `boldsf'
-(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
+(Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 374.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 355.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 375.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `rm'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/m/n on input line 357.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/m/n on input line 377.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `boldrm'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 358.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 378.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `sf'
-(Font)                  OT1/jkp/m/n --> OT1/jkpss/m/n on input line 359.
+(Font)                  OT1/jkp/m/n --> OT1/jkpss/m/n on input line 379.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `boldsf'
-(Font)                  OT1/jkp/m/n --> OT1/jkpss/b/n on input line 360.
-LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 364.
+(Font)                  OT1/jkp/m/n --> OT1/jkpss/b/n on input line 380.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 384.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 365.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 385.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `rm'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/m/n on input line 366.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/m/n on input line 386.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `boldrm'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 367.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 387.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `sf'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/m/n on input line 368.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/m/n on input line 388.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `boldsf'
-(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 369.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 378.
+(Font)                  OT1/jkp/m/n --> OT1/jkp/b/n on input line 389.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/txr/bx/n --> OT1/jkp/b/n on input line 378.
+(Font)                  OT1/txr/bx/n --> OT1/jkp/b/n on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/txr/bx/n --> OT1/jkp/b/n on input line 378.
+(Font)                  OT1/txr/bx/n --> OT1/jkp/b/n on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `rm'
-(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 378.
+(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `boldrm'
-(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 378.
+(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `sf'
-(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 378.
+(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `boldsf'
-(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 378.
+(Font)                  OT1/cmr/bx/n --> OT1/jkp/b/n on input line 398.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/jkp/b/n --> OT1/jkp/b/n on input line 379.
+(Font)                  OT1/jkp/b/n --> OT1/jkp/b/n on input line 399.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `rm'
-(Font)                  OT1/jkp/b/n --> OT1/jkp/b/n on input line 381.
+(Font)                  OT1/jkp/b/n --> OT1/jkp/b/n on input line 401.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `boldrm'
-(Font)                  OT1/jkp/b/n --> OT1/jkp/b/n on input line 382.
+(Font)                  OT1/jkp/b/n --> OT1/jkp/b/n on input line 402.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `sf'
-(Font)                  OT1/jkp/b/n --> OT1/jkpss/b/n on input line 383.
+(Font)                  OT1/jkp/b/n --> OT1/jkpss/b/n on input line 403.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `boldsf'
-(Font)                  OT1/jkp/b/n --> OT1/jkpss/b/n on input line 384.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 390.
+(Font)                  OT1/jkp/b/n --> OT1/jkpss/b/n on input line 404.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/txr/m/it --> OT1/jkp/m/it on input line 390.
+(Font)                  OT1/txr/m/it --> OT1/jkp/m/it on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/txr/bx/it --> OT1/jkp/m/it on input line 390.
+(Font)                  OT1/txr/bx/it --> OT1/jkp/m/it on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `rm'
-(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 390.
+(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `boldrm'
-(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 390.
+(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `sf'
-(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 390.
+(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `boldsf'
-(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 390.
+(Font)                  OT1/cmr/m/it --> OT1/jkp/m/it on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/jkp/m/it --> OT1/jkp/b/it on input line 391.
+(Font)                  OT1/jkp/m/it --> OT1/jkp/b/it on input line 411.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `rm'
-(Font)                  OT1/jkp/m/it --> OT1/jkp/m/it on input line 393.
+(Font)                  OT1/jkp/m/it --> OT1/jkp/m/it on input line 413.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `boldrm'
-(Font)                  OT1/jkp/m/it --> OT1/jkp/b/it on input line 394.
+(Font)                  OT1/jkp/m/it --> OT1/jkp/b/it on input line 414.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `sf'
-(Font)                  OT1/jkp/m/it --> OT1/jkpss/m/it on input line 395.
+(Font)                  OT1/jkp/m/it --> OT1/jkpss/m/it on input line 415.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `boldsf'
-(Font)                  OT1/jkp/m/it --> OT1/jkpss/b/it on input line 396.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 401.
+(Font)                  OT1/jkp/m/it --> OT1/jkpss/b/it on input line 416.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/txss/m/n --> OT1/jkpss/m/n on input line 401.
+(Font)                  OT1/txss/m/n --> OT1/jkpss/m/n on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/txss/b/n --> OT1/jkpss/m/n on input line 401.
+(Font)                  OT1/txss/b/n --> OT1/jkpss/m/n on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `rm'
-(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 401.
+(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `boldrm'
-(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 401.
+(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `sf'
-(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 401.
+(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `boldsf'
-(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 401.
+(Font)                  OT1/cmss/m/n --> OT1/jkpss/m/n on input line 421.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 402.
+(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 422.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `rm'
-(Font)                  OT1/jkpss/m/n --> OT1/jkpss/m/n on input line 403.
+(Font)                  OT1/jkpss/m/n --> OT1/jkpss/m/n on input line 423.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `boldrm'
-(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 404.
+(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 424.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `sf'
-(Font)                  OT1/jkpss/m/n --> OT1/jkpss/m/n on input line 405.
+(Font)                  OT1/jkpss/m/n --> OT1/jkpss/m/n on input line 425.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `boldsf'
-(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 406.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 410.
+(Font)                  OT1/jkpss/m/n --> OT1/jkpss/b/n on input line 426.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/txtt/m/n --> OT1/jkptt/m/n on input line 410.
+(Font)                  OT1/txtt/m/n --> OT1/jkptt/m/n on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/txtt/b/n --> OT1/jkptt/m/n on input line 410.
+(Font)                  OT1/txtt/b/n --> OT1/jkptt/m/n on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `rm'
-(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 410.
+(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldrm'
-(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 410.
+(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `sf'
-(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 410.
+(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldsf'
-(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 410.
+(Font)                  OT1/cmtt/m/n --> OT1/jkptt/m/n on input line 430.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 411.
+(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 431.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `rm'
-(Font)                  OT1/jkptt/m/n --> OT1/jkptt/m/n on input line 412.
+(Font)                  OT1/jkptt/m/n --> OT1/jkptt/m/n on input line 432.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldrm'
-(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 413.
+(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 433.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `sf'
-(Font)                  OT1/jkptt/m/n --> OT1/jkptt/m/n on input line 414.
+(Font)                  OT1/jkptt/m/n --> OT1/jkptt/m/n on input line 434.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldsf'
-(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 415.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 423.
+(Font)                  OT1/jkptt/m/n --> OT1/jkptt/b/n on input line 435.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 423.
+(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/txmi/bx/it --> OML/jkp/m/it on input line 423.
+(Font)                  OML/txmi/bx/it --> OML/jkp/m/it on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `rm'
-(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 423.
+(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `boldrm'
-(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 423.
+(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `sf'
-(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 423.
+(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `boldsf'
-(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 423.
+(Font)                  OML/txmi/m/it --> OML/jkp/m/it on input line 443.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/jkp/m/it --> OML/jkp/bx/it on input line 424.
+(Font)                  OML/jkp/m/it --> OML/jkp/bx/it on input line 444.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `rm'
-(Font)                  OML/jkp/m/it --> OML/jkp/m/it on input line 426.
+(Font)                  OML/jkp/m/it --> OML/jkp/m/it on input line 446.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `boldrm'
-(Font)                  OML/jkp/m/it --> OML/jkp/bx/it on input line 427.
+(Font)                  OML/jkp/m/it --> OML/jkp/bx/it on input line 447.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `sf'
-(Font)                  OML/jkp/m/it --> OML/jkpss/m/it on input line 428.
+(Font)                  OML/jkp/m/it --> OML/jkpss/m/it on input line 448.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `boldsf'
-(Font)                  OML/jkp/m/it --> OML/jkpss/bx/it on input line 429.
-LaTeX Font Info:    Redeclaring symbol font `lettersA' on input line 438.
+(Font)                  OML/jkp/m/it --> OML/jkpss/bx/it on input line 449.
+LaTeX Font Info:    Redeclaring symbol font `lettersA' on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `normal'
-(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 438.
+(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/txmia/bx/it --> U/jkpmia/m/it on input line 438.
+(Font)                  U/txmia/bx/it --> U/jkpmia/m/it on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `rm'
-(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 438.
+(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `boldrm'
-(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 438.
+(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `sf'
-(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 438.
+(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `boldsf'
-(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 438.
+(Font)                  U/txmia/m/it --> U/jkpmia/m/it on input line 458.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/jkpmia/m/it --> U/jkpmia/bx/it on input line 439.
+(Font)                  U/jkpmia/m/it --> U/jkpmia/bx/it on input line 459.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `rm'
-(Font)                  U/jkpmia/m/it --> U/jkpmia/m/it on input line 441.
+(Font)                  U/jkpmia/m/it --> U/jkpmia/m/it on input line 461.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `boldrm'
-(Font)                  U/jkpmia/m/it --> U/jkpmia/bx/it on input line 442.
+(Font)                  U/jkpmia/m/it --> U/jkpmia/bx/it on input line 462.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `sf'
-(Font)                  U/jkpmia/m/it --> U/jkpssmia/m/it on input line 443.
+(Font)                  U/jkpmia/m/it --> U/jkpssmia/m/it on input line 463.
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `boldsf'
-(Font)                  U/jkpmia/m/it --> U/jkpssmia/bx/it on input line 444.
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 456.
+(Font)                  U/jkpmia/m/it --> U/jkpssmia/bx/it on input line 464.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 456.
+(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/txsy/bx/n --> OMS/jkp/m/n on input line 456.
+(Font)                  OMS/txsy/bx/n --> OMS/jkp/m/n on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `rm'
-(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 456.
+(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `boldrm'
-(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 456.
+(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `sf'
-(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 456.
+(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `boldsf'
-(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 456.
+(Font)                  OMS/txsy/m/n --> OMS/jkp/m/n on input line 476.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 457.
+(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 477.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `rm'
-(Font)                  OMS/jkp/m/n --> OMS/jkp/m/n on input line 459.
+(Font)                  OMS/jkp/m/n --> OMS/jkp/m/n on input line 479.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `boldrm'
-(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 460.
+(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 480.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `sf'
-(Font)                  OMS/jkp/m/n --> OMS/jkp/m/n on input line 461.
+(Font)                  OMS/jkp/m/n --> OMS/jkp/m/n on input line 481.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `boldsf'
-(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 462.
-LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 475.
+(Font)                  OMS/jkp/m/n --> OMS/jkp/bx/n on input line 482.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
-(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 475.
+(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/txsya/bx/n --> U/jkpsya/m/n on input line 475.
+(Font)                  U/txsya/bx/n --> U/jkpsya/m/n on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `rm'
-(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 475.
+(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `boldrm'
-(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 475.
+(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `sf'
-(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 475.
+(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `boldsf'
-(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 475.
+(Font)                  U/txsya/m/n --> U/jkpsya/m/n on input line 495.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 476.
+(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 496.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `rm'
-(Font)                  U/jkpsya/m/n --> U/jkpsya/m/n on input line 477.
+(Font)                  U/jkpsya/m/n --> U/jkpsya/m/n on input line 497.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `boldrm'
-(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 478.
+(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 498.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `sf'
-(Font)                  U/jkpsya/m/n --> U/jkpsya/m/n on input line 479.
+(Font)                  U/jkpsya/m/n --> U/jkpsya/m/n on input line 499.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `boldsf'
-(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 480.
-LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 528.
+(Font)                  U/jkpsya/m/n --> U/jkpsya/bx/n on input line 500.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
-(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 528.
+(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/txsyb/bx/n --> U/jkpsyb/m/n on input line 528.
+(Font)                  U/txsyb/bx/n --> U/jkpsyb/m/n on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `rm'
-(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 528.
+(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `boldrm'
-(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 528.
+(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `sf'
-(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 528.
+(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `boldsf'
-(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 528.
+(Font)                  U/txsyb/m/n --> U/jkpsyb/m/n on input line 548.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/jkpsyb/m/n --> U/jkpsyb/bx/n on input line 529.
+(Font)                  U/jkpsyb/m/n --> U/jkpsyb/bx/n on input line 549.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `rm'
-(Font)                  U/jkpsyb/m/n --> U/jkpsyb/m/n on input line 530.
+(Font)                  U/jkpsyb/m/n --> U/jkpsyb/m/n on input line 550.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `boldrm'
-(Font)                  U/jkpsyb/m/n --> U/jkpsyb/bx/n on input line 531.
+(Font)                  U/jkpsyb/m/n --> U/jkpsyb/bx/n on input line 551.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `sf'
-(Font)                  U/jkpsyb/m/n --> U/jkpsssyb/m/n on input line 532.
+(Font)                  U/jkpsyb/m/n --> U/jkpsssyb/m/n on input line 552.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `boldsf'
-(Font)                  U/jkpsyb/m/n --> U/jkpsssyb/bx/n on input line 533.
-LaTeX Font Info:    Redeclaring symbol font `symbolsC' on input line 548.
+(Font)                  U/jkpsyb/m/n --> U/jkpsssyb/bx/n on input line 553.
+LaTeX Font Info:    Redeclaring symbol font `symbolsC' on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `normal'
-(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 548.
+(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/txsyc/bx/n --> U/jkpsyc/m/n on input line 548.
+(Font)                  U/txsyc/bx/n --> U/jkpsyc/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `rm'
-(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 548.
+(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `boldrm'
-(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 548.
+(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `sf'
-(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 548.
+(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `boldsf'
-(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 548.
+(Font)                  U/txsyc/m/n --> U/jkpsyc/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 549.
+(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 569.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `rm'
-(Font)                  U/jkpsyc/m/n --> U/jkpsyc/m/n on input line 551.
+(Font)                  U/jkpsyc/m/n --> U/jkpsyc/m/n on input line 571.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `boldrm'
-(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 552.
+(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 572.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `sf'
-(Font)                  U/jkpsyc/m/n --> U/jkpsyc/m/n on input line 553.
+(Font)                  U/jkpsyc/m/n --> U/jkpsyc/m/n on input line 573.
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `boldsf'
-(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 554.
+(Font)                  U/jkpsyc/m/n --> U/jkpsyc/bx/n on input line 574.
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
-(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 583.
+(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 603.
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `rm'
-(Font)                  U/jkpsyd/m/n --> U/jkpsyd/m/n on input line 585.
+(Font)                  U/jkpsyd/m/n --> U/jkpsyd/m/n on input line 605.
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `boldrm'
-(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 586.
+(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 606.
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `sf'
-(Font)                  U/jkpsyd/m/n --> U/jkpsyd/m/n on input line 587.
+(Font)                  U/jkpsyd/m/n --> U/jkpsyd/m/n on input line 607.
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `boldsf'
-(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 588.
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 598.
+(Font)                  U/jkpsyd/m/n --> U/jkpsyd/bx/n on input line 608.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 598.
+(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/txex/bx/n --> OMX/jkp/m/n on input line 598.
+(Font)                  OMX/txex/bx/n --> OMX/jkp/m/n on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `rm'
-(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 598.
+(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `boldrm'
-(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 598.
+(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `sf'
-(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 598.
+(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `boldsf'
-(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 598.
+(Font)                  OMX/txex/m/n --> OMX/jkp/m/n on input line 618.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/jkp/m/n --> OMX/jkp/bx/n on input line 599.
+(Font)                  OMX/jkp/m/n --> OMX/jkp/bx/n on input line 619.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `rm'
-(Font)                  OMX/jkp/m/n --> OMX/jkp/m/n on input line 601.
+(Font)                  OMX/jkp/m/n --> OMX/jkp/m/n on input line 621.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `boldrm'
-(Font)                  OMX/jkp/m/n --> OMX/jkp/bx/n on input line 602.
+(Font)                  OMX/jkp/m/n --> OMX/jkp/bx/n on input line 622.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `sf'
-(Font)                  OMX/jkp/m/n --> OMX/jkpss/m/n on input line 603.
+(Font)                  OMX/jkp/m/n --> OMX/jkpss/m/n on input line 623.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `boldsf'
-(Font)                  OMX/jkp/m/n --> OMX/jkpss/bx/n on input line 604.
-LaTeX Font Info:    Redeclaring symbol font `largesymbolsA' on input line 614.
+(Font)                  OMX/jkp/m/n --> OMX/jkpss/bx/n on input line 624.
+LaTeX Font Info:    Redeclaring symbol font `largesymbolsA' on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `normal'
 
-(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 614.
+(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
-(Font)                  U/txexa/bx/n --> U/jkpexa/m/n on input line 614.
+(Font)                  U/txexa/bx/n --> U/jkpexa/m/n on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `rm'
-(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 614.
+(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldrm'
 
-(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 614.
+(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `sf'
-(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 614.
+(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldsf'
 
-(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 614.
+(Font)                  U/txexa/m/n --> U/jkpexa/m/n on input line 634.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
-(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 615.
+(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 635.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `rm'
-(Font)                  U/jkpexa/m/n --> U/jkpexa/m/n on input line 617.
+(Font)                  U/jkpexa/m/n --> U/jkpexa/m/n on input line 637.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldrm'
 
-(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 618.
+(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 638.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `sf'
-(Font)                  U/jkpexa/m/n --> U/jkpexa/m/n on input line 619.
+(Font)                  U/jkpexa/m/n --> U/jkpexa/m/n on input line 639.
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldsf'
 
-(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 620.
-LaTeX Font Info:    Redeclaring math symbol \n@tch@r on input line 1578.
-LaTeX Info: Redefining \not on input line 1580.
+(Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 640.
+LaTeX Font Info:    Redeclaring math symbol \n@tch@r on input line 1598.
+LaTeX Info: Redefining \not on input line 1600.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
+y
+Package: hyperref 2022-09-22 v7.00t Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
+y
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
+mds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
+r.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.
+sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
+inekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
+e.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxma
+cro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
-)
-\@linkdim=\dimen277
-\Hy@linkcounter=\count310
-\Hy@pagecounter=\count311
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
+y
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
+titlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
+sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count312
+)
+\@linkdim=\dimen281
+\Hy@linkcounter=\count313
+\Hy@pagecounter=\count314
+
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-09-22 v7.00t Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
-File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
-nguages
-)
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
+y
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.
+sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count312
+\Hy@SavedSpaceFactor=\count315
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-09-22 v7.00t Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count313
+Package hyperref Info: Bookmarks ON on input line 4410.
+\c@Hy@tempcnt=\count316
 
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen278
+LaTeX Info: Redefining \url on input line 4748.
+\XeTeXLinkMargin=\dimen282
 
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
+alc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count314
-\Field@Width=\dimen279
-\Fld@charsize=\dimen280
-Package hyperref Info: Hyper figures OFF on input line 6076.
-Package hyperref Info: Link nesting OFF on input line 6081.
-Package hyperref Info: Hyper index ON on input line 6084.
-Package hyperref Info: backreferencing OFF on input line 6091.
-Package hyperref Info: Link coloring OFF on input line 6096.
-Package hyperref Info: Link coloring with OCG OFF on input line 6101.
-Package hyperref Info: PDF/A mode OFF on input line 6106.
-LaTeX Info: Redefining \ref on input line 6146.
-LaTeX Info: Redefining \pageref on input line 6150.
+\Fld@menulength=\count317
+\Field@Width=\dimen283
+\Fld@charsize=\dimen284
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
+y
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count315
-\c@Item=\count316
-\c@Hfootnote=\count317
+\Hy@abspage=\count318
+\c@Item=\count319
+\c@Hfootnote=\count320
 )
-Package hyperref Info: Driver (autodetected): hpdftex.
+Package hyperref Info: Driver (default): hdvips.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hdvips.def
+File: hdvips.def 2022-09-22 v7.00t Hyperref driver for dvips
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pdfmark.def
+File: pdfmark.def 2022-09-22 v7.00t Hyperref definitions for pdfmark specials
+\pdf@docset=\toks28
+\pdf@box=\box86
+\pdf@toks=\toks29
+\pdf@defaulttoks=\toks30
+\HyField@AnnotCount=\count321
+\Fld@listcount=\count322
+\c@bookmark@seq@number=\count323
+
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
+filecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.s
+ty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count318
-\c@bookmark@seq@number=\count319
-
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
+uecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
+85.
 )
 \Hy@SectionHShift=\skip57
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+))
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
+y
+Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and foote
 rs
 \f@nch@headwidth=\skip58
 \f@nch@O@elh=\skip59
@@ -929,36 +1008,35 @@ rs
 \f@nch@O@erf=\skip64
 \f@nch@O@olf=\skip65
 \f@nch@O@orf=\skip66
-)
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+) (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count320
-\float@exts=\toks28
-\float@box=\box85
-\@float@everytoks=\toks29
-\@floatcapt=\box86
+\c@float@type=\count324
+\float@exts=\toks31
+\float@box=\box87
+\@float@everytoks=\toks32
+\@floatcapt=\box88
 )
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.st
+y
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-\@float@every@table=\toks30
+\@float@every@table=\toks33
 Package hyperref Info: Option `colorlinks' set `true' on input line 39.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 8
 4.
-
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
+ (C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
-)
-(./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
-(./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
-(./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
-(./Dodatak.aux))
+) (PROGI_ProjektnaDokumentacija.aux (Dnevnik_promjena_dokumentacije.aux)
+(Opis_projektnog_zadatka.aux) (Specifikacija_programske_potpore.aux)
+(Arhitektura.aux) (Implementacija.aux) (Zakljucak.aux) (Literatura.aux)
+(Dodatak.aux))
 \openout1 = `PROGI_ProjektnaDokumentacija.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 84.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 8
 4.
- (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
+
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 84.
@@ -966,7 +1044,7 @@ LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 84.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 8
 4.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omsjkp.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 84.
@@ -980,7 +1058,7 @@ LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 84.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 8
 4.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omxjkp.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 84.
@@ -988,7 +1066,7 @@ LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 84.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
 84.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 84.
@@ -1000,32 +1078,10 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 84.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
-\scratchdimen=\dimen281
-\scratchbox=\box87
-\nofMPsegments=\count322
-\nofMParguments=\count323
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count324
-\MPscratchDim=\dimen282
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
-\everyMPtoPDFconversion=\toks32
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1057,58 +1113,43 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 84.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-)
-\c@section@level=\count327
-)
-LaTeX Info: Redefining \ref on input line 84.
-LaTeX Info: Redefining \pageref on input line 84.
-LaTeX Info: Redefining \nameref on input line 84.
-
-(./PROGI_ProjektnaDokumentacija.out) (./PROGI_ProjektnaDokumentacija.out)
+(PROGI_ProjektnaDokumentacija.out) (PROGI_ProjektnaDokumentacija.out)
 \@outlinefile=\write3
 \openout3 = `PROGI_ProjektnaDokumentacija.out'.
 
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
 106.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
 106.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
 06.
 
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
 106.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
 106.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
-) [1
+)
+[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./PROGI_ProjektnaDokument
-acija.toc
+] (PROGI_ProjektnaDokumentacija.toc
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1117,12 +1158,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.29 ...{Indeks slika i dijagrama}{26}{chapter*.5}
-                                                  % [1
+[1
 
 ])
 \tf@toc=\write4
@@ -1140,7 +1176,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2]
 \openout2 = `Dnevnik_promjena_dokumentacije.aux'.
 
- (./Dnevnik_promjena_dokumentacije.tex
+ (Dnevnik_promjena_dokumentacije.tex
 Poglavlje 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1156,23 +1192,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 > Step: calculate cell and line sizes.
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 33--33
-[][]\OT1/jkp/m/n/12 29.10.2022.[]  
+[]\OT1/jkp/m/n/12 29.10.2022. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 33--33
-[][]\OT1/jkp/m/n/12 29.10.2022.[]  
+Underfull \hbox (badness 1997) in paragraph at lines 33--33
+[]\OT1/jkp/m/n/12 Lovro Vr-
  []
 
 > Step: build the whole table.
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 33--33
-[][]\OT1/jkp/m/n/12 29.10.2022.[]  
+[]\OT1/jkp/m/n/12 29.10.2022. 
  []
 
 
-Overfull \hbox (6.59267pt too wide) in paragraph at lines 33--33
-[][]\OT1/jkp/m/n/12 29.10.2022.[]  
+Underfull \hbox (badness 1997) in paragraph at lines 33--33
+[]\OT1/jkp/m/n/12 Lovro Vr-
  []
 
 )
@@ -1190,7 +1226,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 \openout2 = `Opis_projektnog_zadatka.aux'.
 
- (./Opis_projektnog_zadatka.tex
+ (Opis_projektnog_zadatka.tex
 Poglavlje 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1284,7 +1320,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [6])
 \openout2 = `Specifikacija_programske_potpore.aux'.
 
- (./Specifikacija_programske_potpore.tex
+ (Specifikacija_programske_potpore.tex
 Poglavlje 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
@@ -1302,6 +1338,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1315,15 +1356,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
-
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 6
-7.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
-File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1333,7 +1365,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 9
+2.
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ts1jkp.fd
+File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
@@ -1346,7 +1387,146 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
 
  []
 
@@ -1359,10 +1539,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10]
+[18]
 \openout2 = `Arhitektura.aux'.
 
- (./Arhitektura.tex
+ (Arhitektura.tex
 Poglavlje 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1392,25 +1572,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 > Step: init table inner spec.
 > Step: parse table inner spec.
 > Step: execute table commands.
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.44 				\end
+             {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
 > Step: calculate cell and line sizes.
 
 Overfull \hbox (1.8249pt too wide) in paragraph at lines 44--44
-[][]\OT1/jkp/m/n/12 korisnickoIme[]  
- []
-
-
-Overfull \hbox (1.8249pt too wide) in paragraph at lines 44--44
-[][]\OT1/jkp/m/n/12 korisnickoIme[]  
- []
-
-
-Overfull \hbox (1.8249pt too wide) in paragraph at lines 44--44
-[][]\OT1/jkp/m/n/12 korisnickoIme[]  
- []
-
-
-Overfull \hbox (1.8249pt too wide) in paragraph at lines 44--44
-[][]\OT1/jkp/m/n/12 korisnickoIme[]  
+[]\OT1/jkp/m/n/12 korisnickoIme  
  []
 
 > Step: build the whole table.
@@ -1422,19 +1602,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11
+[19
 
 
 
 
 ]
 Overfull \hbox (1.8249pt too wide) in paragraph at lines 44--44
-[][]\OT1/jkp/m/n/12 korisnickoIme[]  
- []
-
-
-Overfull \hbox (1.8249pt too wide) in paragraph at lines 44--44
-[][]\OT1/jkp/m/n/12 korisnickoIme[]  
+[]\OT1/jkp/m/n/12 korisnickoIme  
  []
 
 
@@ -1445,7 +1620,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
@@ -1473,7 +1648,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
@@ -1486,7 +1661,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
@@ -1499,7 +1674,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
@@ -1513,10 +1688,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16]
+[24]
 \openout2 = `Implementacija.aux'.
 
- (./Implementacija.tex
+ (Implementacija.tex
 Poglavlje 5.
 
 Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
@@ -1531,7 +1706,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17
+[25
 
 
 
@@ -1543,7 +1718,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
  28.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
+(C:\Users\Tomislav\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
@@ -1558,7 +1733,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18]
+[26]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1567,7 +1742,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
@@ -1580,10 +1755,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20])
+[28])
 \openout2 = `Zakljucak.aux'.
 
- (./Zakljucak.tex
+ (Zakljucak.tex
 Poglavlje 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1598,7 +1773,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21
+[29
 
 
 
@@ -1606,16 +1781,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ])
 \openout2 = `Literatura.aux'.
 
- (./Literatura.tex
+ (Literatura.tex
 Overfull \hbox (8.89293pt too wide) in paragraph at lines 12--13
-[]\OT1/jkp/m/n/12 Programsko in[]zenjerstvo, FER ZE-MRIS, [][]$\OT1/jkptt/m/n/1
-2 http : / / www . fer . hr / predmet / proinz$[][] 
+[]\OT1/jkp/m/n/12 Programsko in[]zenjerstvo, FER ZE-MRIS, [][][][][][] 
  []
 
 
-Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
-\OT1/jkp/m/n/12 ter En-gi-ne-ering, Rut-gers Uni-ver-sity, [][]$\OT1/jkptt/m/n/
-12 http : / / www . ece . rutgers . edu / []marsic /
+Overfull \hbox (57.93988pt too wide) in paragraph at lines 18--19
+\OT1/jkp/m/n/12 ter En-gi-ne-ering, Rut-gers Uni-ver-sity, [][][][][][] 
  []
 
 )
@@ -1627,12 +1800,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22
+[30
 
 
 
 
-] (./PROGI_ProjektnaDokumentacija.lof)
+] (PROGI_ProjektnaDokumentacija.lof)
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija.lof'.
 
@@ -1645,14 +1818,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23
+[31
 
 
 
 ]
 \openout2 = `Dodatak.aux'.
 
- (./Dodatak.tex
+ (Dodatak.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
@@ -1665,7 +1838,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24
+[32
 
 
 ]
@@ -1679,6 +1852,126 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 > Step: init table inner spec.
 > Step: parse table inner spec.
 > Step: execute table commands.
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+
+! Package tabularray Error: \multicolumn is obsolete; use \SetCell instead.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.85 			\end
+            {longtblr}
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
@@ -1689,7 +1982,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
+[33]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1698,7 +1991,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
@@ -1712,59 +2005,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27] 
+[35] 
 AED: lastpage setting LastPage
-(./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
-(./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
-(./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
-(./Dodatak.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
-nged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
-(rerunfilecheck)             Before: 73DC96050B1C6E228BBC05CE1994BB16;4565
-(rerunfilecheck)             After:  B400BABF613DD36682E3DFEA3F6CD11D;4419.
+(PROGI_ProjektnaDokumentacija.aux (Dnevnik_promjena_dokumentacije.aux)
+(Opis_projektnog_zadatka.aux) (Specifikacija_programske_potpore.aux)
+(Arhitektura.aux) (Implementacija.aux) (Zakljucak.aux) (Literatura.aux)
+(Dodatak.aux))
+Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: B400BABF613DD36682E3DFEA3F6CD11D;4419.
  ) 
 Here is how much of TeX's memory you used:
- 17555 strings out of 479606
- 313031 string characters out of 5877786
- 732230 words of memory out of 5000000
- 35110 multiletter control sequences out of 15000+600000
- 525548 words of font info for 145 fonts, out of 8000000 for 9000
- 372 hyphenation exceptions out of 8191
- 84i,14n,114p,1273b,1043s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.2.2} has been referenced but does not exis
-t, replaced by a fixed one
+ 17192 strings out of 475386
+ 314518 string characters out of 2775516
+ 795511 words of memory out of 3000000
+ 38265 multiletter control sequences out of 15000+600000
+ 513191 words of font info for 112 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,14n,116p,1275b,1045s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-pdfTeX warning (dest): name{figure.2.1} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{page.30} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{section.2.1} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/kpfonts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfont
-s/jkpmn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpttmn
-8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (28 pages, 116245 bytes).
-PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 341 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Output written on PROGI_ProjektnaDokumentacija.dvi (36 pages, 148640 bytes).
