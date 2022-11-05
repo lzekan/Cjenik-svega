@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -38,6 +37,7 @@ module.exports = authHandler;
             <div class="menu">
                 <a href="/" class="link menu-item <%if (linkActive === 'home') {%>  link-active  <%}%>">Home</a>
                 <a href="/logout" class="link menu-item <%if (linkActive === 'logout') {%>  link-active  <%}%>">Logout</a>
+                <a href="/cijene" class="link menu-item <%if (linkActive === 'cijene') {%>  link-active  <%}%>">Cijene</a>
             </div>
         </nav>
     </header>
@@ -47,45 +47,68 @@ module.exports = authHandler;
         <section class="section secondary-color-bg">
             <div class="container">
                 <h1 class="decorated-title font-secondary main-color">
-                    <span class="main-color-emphasized">javni Profil</span>
+                    <span class="main-color-emphasized">Profil</span>
                 </h1>
                 <div class="dataset">
 
                     <div class="dataset-entry">
                         <div class="dataset-property" style:"">
-                            Ime trgovine
+                            User name
                         </div>
                         <div class="dataset-value">
-                            <%= trgovina.trgovina_name %>
+                            <%= user.user_name %>
                         </div>
-                        
+                        <form>
+                            <input type="radio" id="username" name="username" value="username">
+                            <label for="username">Objavi Javno:</label><br>
+                        </form>
+                    </div>
+
+                    <div class="dataset-entry">
+                        <div class="dataset-property">
+                            First name
+                        </div>
+                        <div class="dataset-value">
+                            <%= user.first_name %>
+                        </div>
+                        <form>
+                            <input type="radio" id="name" name="name" value="name">
+                            <label for="name">Objavi Javno:</label><br>
+                        </form>
+                    </div>
+
+                    <div class="dataset-entry">
+                        <div class="dataset-property">
+                            Last name
+                        </div>
+                        <div class="dataset-value">
+                            <%= user.last_name %>
+                        </div>
+                        <form>
+                            <input type="radio" id="lastname" name="lastname" value="lastname">
+                            <label for="lastname">Objavi Javno:</label><br>
+                        </form>
                     </div>
                     <div class="dataset-entry">
-                        <div class="dataset-property" style:"">
-                            broj krivo unesenih cijena:
+                        <div class="dataset-property">
+                            E-mail
                         </div>
                         <div class="dataset-value">
-                            <%= trgovina.krive_cijene %>
+                            <%= user.email %>
                         </div>
-                        
+                        <form>
+                            <input type="radio" id="email" name="email" value="email">
+                            <label for="email">Objavi Javno:</label><br>
+                        </form>
                     </div>
-                    <div class="dataset-entry">
-                        <div class="dataset-property" style:"">
-                            komentar admina:
-                        </div>
-                        <div class="dataset-value">
-                            <%= trgovina.komentar %>
-                        </div>
-                        
-                    </div>
-                    
+
 
                 </div>
 
             </div>
 
-           
-            </body>
+
+            </section>
         </section>
     </main>
 
