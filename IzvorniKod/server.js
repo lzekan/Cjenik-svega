@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
-
+/*
 app.use(session({
     store: new pgSession({
         pool: db.pool,
@@ -28,7 +28,7 @@ app.use(session({
     secret: "topSecret",
     resave: false,
     saveUninitialized: true
-}));
+}));*/
 
 app.use('/', homeRouter);
 app.use('/item', itemRouter);
