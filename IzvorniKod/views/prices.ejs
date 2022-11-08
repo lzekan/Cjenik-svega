@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Cijenik svega</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="./images/flower-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <script src="./scripts/main.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+
+<body class="content">
+
+    <header class="header primary-color-bg">
+        <nav class="navigation container">
+            <div class="menu">
+                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
+            </div>
+        </nav>
+    </header>
+
+<main class="main">
+
+    <div class="topnav">
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+        <% for (let proizvod of proizvodi) { %>
+            <section class="section secondary-color-bg">
+                <div class="centered-container">
+                    <h1 class="decorated-title font-secondary main-color">
+                        <span class="link" href="/proizvod"><%= proizvod_trgovina.ime %></span>
+                        <span class="main-color-emphasized"><%= proizvod_trgovina.trgovina %></span>
+                        <span class="main-color-emphasized"><%= proizvod_trgovina.cijena %></span>
+                        <span class="main-color-emphasized"><%= proizvod_trgovina.tagovi %></span>
+                        </h1>
+                        <% if( user !== undefined ) {%> 
+                        <form>
+                            <p>Predloži tagove:</p>
+                            <input type="checkbox" id="pekarski" name="pekarski" value="pekarski">
+                            <label for="pekarski"> Pekarski proizvod</label><br>
+                            <input type="checkbox" id="voće" name="voće" value="voće">
+                            <label for="voće"> Voće</label><br>
+                            <input type="checkbox" id="povrće" name="povrće" value="povrće">
+                            <label for="povrće">Povrće</label>
+                            <input type="checkbox" id="mlijecni" name="mlijecni" value="mlijecni">
+                            <label for="mlijecni">Mlijećni proizvod</label>
+                            <input type="checkbox" id="meso" name="meso" value="meso">
+                            <label for="meso">Mesni proizvod</label>
+                            <input type="checkbox" id="vege" name="vege" value="vege">
+                            <label for="vege">Veganski proizvod</label>
+                            <input type="checkbox" id="gluten" name="gluten" value="gluten">
+                            <label for="gluten">Bezglutenski proizvod</label>
+                            <input type="checkbox" id="grickalice" name="grickalice" value="grickalice">
+                            <label for="grickalice">Grickalice</label>
+                            <input type="checkbox" id="piće" name="piće" value="piće">
+                            <label for="piće">Piće</label>
+                          </form>
+
+                          
+                            <div class="container">
+                                <h1>Upload nove cijene</h1>
+                                <form id="form">
+                                    <div class="input-group">
+                                        <label for="nova">Prijedlog nove cijene:</label>
+                                        <input name="nova" id="nova" placeholder="Nova cijena" />
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="files">Uploadaj sliku cijene</label>
+                                        <input id="files" type="file" multiple>
+                                    </div>
+                                    <button class="submit-btn" type="submit">Upload</button>
+                                </form>
+                            </div>
+                            <script src="./script.js"></script>
+                        
+                          <% }%>
+                    <div class="separator"></div>
+                </div>
+               
+    
+    </main>
+</main>
+
+slike i cijene
+
+</body>
+
+</html>
