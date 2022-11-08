@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Cijenik svega</title>
@@ -16,7 +15,7 @@
     <header class="header primary-color-bg">
         <nav class="navigation container">
             <div class="menu">
-                <a href="/" class="link menu-item <%if (linkActive === 'home') {%>  link-active  <%}%>">Home</a>
+                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
             </div>
         </nav>
     </header>
@@ -67,19 +66,19 @@
                           
                             <div class="container">
                                 <h1>Upload nove cijene</h1>
-                                <form id='form'>
+                                <form id="form">
                                     <div class="input-group">
-                                        <label for='nova'>Prijedlog nove cijene:</label>
-                                        <input name='nova' id='nova' placeholder="Nova cijena" />
+                                        <label for="nova">Prijedlog nove cijene:</label>
+                                        <input name="nova" id="nova" placeholder="Nova cijena" />
                                     </div>
                                     <div class="input-group">
-                                        <label for='files'>Uploadaj sliku cijene</label>
-                                        <input id='files' type="file" multiple>
+                                        <label for="files">Uploadaj sliku cijene</label>
+                                        <input id="files" type="file" multiple>
                                     </div>
-                                    <button class="submit-btn" type='submit'>Upload</button>
+                                    <button class="submit-btn" type="submit">Upload</button>
                                 </form>
                             </div>
-                            <script src='./script.js'></script>
+                            <script src="./script.js"></script>
                         
                           <% }%>
                     <div class="separator"></div>
