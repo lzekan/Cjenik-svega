@@ -18,7 +18,7 @@
         req.session.err = "Please login to view the requested page."
         req.session.save(() => {
             //redirekcija na osnovnu stranicu
-            res.redirect('/login');
+            res.redirect("/login");
         });
     } else {
         console.log("User data present");
@@ -35,9 +35,9 @@ module.exports = authHandler;
     <header class="header primary-color-bg">
         <nav class="navigation container">
             <div class="menu">
-                <a href="/" class="link menu-item <%if (linkActive === 'home') {%>  link-active  <%}%>">Home</a>
-                <a href="/logout" class="link menu-item <%if (linkActive === 'logout') {%>  link-active  <%}%>">Logout</a>
-                <a href="/cijene" class="link menu-item <%if (linkActive === 'cijene') {%>  link-active  <%}%>">Cijene</a>
+                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
+                <a href="/logout" class="link menu-item <%if (linkActive === "logout") {%>  link-active  <%}%>">Logout</a>
+                <a href="/prices" class="link menu-item <%if (linkActive === "prices") {%>  link-active  <%}%>">Cijene</a>
             </div>
         </nav>
     </header>
