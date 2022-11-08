@@ -14,15 +14,15 @@
     <header>
         <nav>
             <div class="menu">
-                <a href="/" class="link menu-item <%if (linkActive === 'home') {%>  link-active  <%}%>">Home</a>
-                <a href="/signup" class="link menu-item <%if (linkActive === 'signup') {%>  link-active  <%}%>">signup</a>
+                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
+                <a href="/signup" class="link menu-item <%if (linkActive === "signup") {%>  link-active  <%}%>">signup</a>
                     <% if( user !== undefined ) {%> 
-                    <a href="/user" class="link menu-item <%if (linkActive === 'user') {%>  link-active  <%}%>">User</a>
-                    <a href="/logout" class="link menu-item <%if (linkActive === 'logout') {%>  link-active  <%}%>">Logout</a>
+                    <a href="/user" class="link menu-item <%if (linkActive === "user") {%>  link-active  <%}%>">User</a>
+                    <a href="/logout" class="link menu-item <%if (linkActive === "logout") {%>  link-active  <%}%>">Logout</a>
                     <% } else {%>
-                    <a href="/login" class="link menu-item <%if (linkActive === 'login') {%>  link-active  <%}%>">Login</a>
+                    <a href="/login" class="link menu-item <%if (linkActive === "login") {%>  link-active  <%}%>">Login</a>
                     <% } %>
-                <a href="/cijene" class="link menu-item <%if (linkActive === 'cijene') {%>  link-active  <%}%>"> Nastavi Bez Registracije</a>
+                <a href="/prices" class="link menu-item <%if (linkActive === "prices") {%>  link-active  <%}%>"> Nastavi Bez Registracije</a>
             </div>
         </nav>
     </header>
