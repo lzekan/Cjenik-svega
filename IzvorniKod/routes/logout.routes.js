@@ -3,10 +3,17 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
 	
-	res.render('home', {
-		linkActive: 'home',
-		user: undefined
-	});
+	req.session.user = undefined
+
+	req.session.destroy((err) => {
+    
+		if(err) {
+		  console.log(err)
+		}
+		else {
+		  res.redirect('/')
+		}
+	})      
 });
 
 module.exports = router;

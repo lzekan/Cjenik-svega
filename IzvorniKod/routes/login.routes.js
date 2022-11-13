@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const dbAcess = require('../data_access/UserDataAccess.js');
+
+const User = require('../models/UserModel')
+const UserDataAccess = require('../data_access/UserDataAccess')
+const PasswordHasher = require('./helpers/PasswordHasher')
 
 router.get('/', (req, res) => {
 	
@@ -13,26 +16,28 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
 	
-	console.log(req.body);
+	const nickname = req.body.nickname
+	const password = req.body.password
+
+	let user = await UserDataAccess.getByNickname(nickname)
 	
-	let user = await dbAcess.getByNickname(req.body.nickname);
-	if (user)
-	{
-		req.session.user = user;
-		
-		res.render('home', {
-			linkActive: 'home',
-			user: user
-		});
+	if(user == undefined){
+		res.status(400).send('User witn nickname ' + nickname + ' does not exist');
 	}
-	else
-	{
-		res.render('login', {
-			linkActive: 'login',
-			user: undefined
-		});
+
+	let passwordValid = PasswordHasher.compare(password, user.password_hash);
+
+	if(passwordValid){
+
+		let expiryDate = new Date(Number(new Date()) + 604800000);  
+        res.cookie('appuserID', req.body.email, { expires: expiryDate, httpOnly: true });
+
+        req.session.user = user;
+        res.redirect('/');
+
+	} else {
+		res.status(400).send('Password doesn\'t match the nickname');
 	}
-	
 })
 
 module.exports = router;

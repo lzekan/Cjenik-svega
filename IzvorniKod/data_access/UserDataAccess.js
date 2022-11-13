@@ -66,11 +66,16 @@ getById = async (id) =>{
         if(result.rows.length <= 0){
             return undefined
         } else {
-            let newUser = new User()
+            
             let results = result.rows
 
-            newUser = new User(results[0].nickname, results[0].first_name,
-                results[0].last_name, results[0].email, results[0].password_hash, results[0].access_level)
+            let newUser = {}
+            newUser.nickname = results[0].nickname
+            newUser.first_name = results[0].first_name
+            newUser.last_name = results[0].last_name
+            newUser.email = results[0].email
+            newUser.password_hash = results[0].password_hash,
+            newUser.access_level = results[0].access_level
             newUser.id = results[0].id
 
             return newUser
@@ -96,11 +101,16 @@ getByNickname = async (nickname) =>{
         if(result.rows.length <= 0){
             return undefined
         } else {
-            let newUser = new User()
+            
             let results = result.rows
 
-            newUser = new User(results[0].nickname, results[0].first_name,
-                results[0].last_name, results[0].email, results[0].password_hash, results[0].access_level)
+            let newUser = {}
+            newUser.nickname = results[0].nickname
+            newUser.first_name = results[0].first_name
+            newUser.last_name = results[0].last_name
+            newUser.email = results[0].email
+            newUser.password_hash = results[0].password_hash,
+            newUser.access_level = results[0].access_level
             newUser.id = results[0].id
 
             return newUser
@@ -126,11 +136,16 @@ getByEmail = async (email) =>{
         if(result.rows.length <= 0){
             return undefined
         } else {
-            let newUser = new User()
+            
             let results = result.rows
 
-            newUser = new User(results[0].nickname, results[0].first_name,
-                results[0].last_name, results[0].email, results[0].password_hash, results[0].access_level)
+            let newUser = {}
+            newUser.nickname = results[0].nickname
+            newUser.first_name = results[0].first_name
+            newUser.last_name = results[0].last_name
+            newUser.email = results[0].email
+            newUser.password_hash = results[0].password_hash,
+            newUser.access_level = results[0].access_level
             newUser.id = results[0].id
 
             return newUser
