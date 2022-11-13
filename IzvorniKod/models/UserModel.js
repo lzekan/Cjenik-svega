@@ -1,4 +1,4 @@
-const UserDataAccess = require('../data_access/UserDataAccess')
+const UserDataAccess = require('../data_access/UserDataAccess.js')
 
 module.exports = class User {
     constructor(nickname, first_name, last_name, email, password_hash, access_level) {
