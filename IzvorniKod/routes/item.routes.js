@@ -5,7 +5,7 @@ router.get('/:id', (req, res) => {
 	
 	res.render('item', {
 		linkActive: 'home',
-		user: undefined
+		user: req.session.user
 	});
 });
 

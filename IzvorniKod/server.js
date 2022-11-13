@@ -47,7 +47,7 @@ app.use(session({
 app.use('/', homeRouter);
 app.use('/item', itemRouter);
 app.use('/login', loginRouter);
-app.use('/logoutRouter', logoutRouter);
+app.use('/logout', logoutRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/search', searchRouter);
 app.use('/signup', signupRouter);

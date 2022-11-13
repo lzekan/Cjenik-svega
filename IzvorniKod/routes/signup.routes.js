@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 	
 	res.render('signup', {
 		linkActive: 'signup',
-		user: undefined
+		user: req.session.user
 	});
 });
 
@@ -24,6 +24,10 @@ router.post('/',
 	body('chktrg').notEmpty().isIn(['Admin','Korisnik','Trgovina']).withMessage('Select valid user type.'),
 
 	async (req, res) => {
+
+		if(req.session.user !== undefined){
+			res.status(400).send('You have to logout first');
+		}
 	
 		const errors = validationResult(req);
     	if (!errors.isEmpty()) {

@@ -9,12 +9,16 @@ router.get('/', (req, res) => {
 	
 	res.render('login', {
 		linkActive: 'login',
-		user: undefined
+		user: req.session.user
 	});
 });
 
 
 router.post('/', async (req, res) => {
+
+	if(req.session.user !== undefined){
+		res.status(400).send('You have to logout first');
+	}
 	
 	const nickname = req.body.nickname
 	const password = req.body.password

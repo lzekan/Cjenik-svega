@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
 	
 	res.render('search', {
 		linkActive: 'home',
-		user: undefined
+		user: req.session.user
 	});
 });
 
