@@ -26,7 +26,7 @@ router.post('/',
 	async (req, res) => {
 
 		if(req.session.user !== undefined){
-			res.status(400).send('You have to logout first');
+			return res.status(400).send('You have to logout first');
 		}
 	
 		const errors = validationResult(req);

@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
 
 	if(req.session.user !== undefined){
-		res.status(400).send('You have to logout first');
+		return res.status(400).send('You have to logout first');
 	}
 	
 	const nickname = req.body.nickname
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 	let user = await UserDataAccess.getByNickname(nickname)
 	
 	if(user == undefined){
-		res.status(400).send('User witn nickname ' + nickname + ' does not exist');
+		return res.status(400).send('User witn nickname ' + nickname + ' does not exist');
 	}
 
 	let passwordValid = PasswordHasher.compare(password, user.password_hash);
