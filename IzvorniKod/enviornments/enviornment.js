@@ -1,11 +1,11 @@
 const enviorment = {
-    SessionSecret: "doksviraradio",
+    SessionSecret: "topSecret",
     Database: {
-        host: "localhost",
+        host: "dpg-cdq27lha6gdl61h4ku90-a",
         port: 5432,
-        dbName: "cjeniksvega",
-        user: "postgres",
-        password: "enter your password"
+        dbName: "cjeniksvega_948w",
+        user: "webservice",
+        password: "DhtFUSEZxpPZOhaMASNROgSgtq3koPgU"
     }
 }
 
