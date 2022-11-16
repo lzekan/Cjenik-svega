@@ -206,7 +206,7 @@
 						\item \textbf{Glavni sudionik: }Korisnik
 						\item  \textbf{Cilj:} Pregledati osobne podatke
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{enumerate}
@@ -223,7 +223,7 @@
 						\item \textbf{Glavni sudionik: }Korisnik
 						\item  \textbf{Cilj:} Promijeniti osobne podatke
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{enumerate}
@@ -256,7 +256,7 @@
 						\item \textbf{Glavni sudionik: }Korisnik
 						\item  \textbf{Cilj:} Izbrisati svoj korisnički račun
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{enumerate}
@@ -275,7 +275,7 @@
 						\item \textbf{Glavni sudionik: }Korisnik
 						\item  \textbf{Cilj:} Unijeti cijene proizvoda koje odstupaju od onih na aplikaciji
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} Klijent je prijavljen
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{enumerate}
@@ -469,6 +469,23 @@
 						\end{enumerate}
 						
 					\end{itemize}
+					
+					
+					\noindent \underbar{\textbf{UC15 - Određivanje javno/privatno}}
+					\begin{itemize}
+	
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Promijeniti vidljivost svojih podataka (javno/privatno)
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Korisnik je prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{enumerate}
+							\item Korisnik odabire opciju za uređivanje osobnog profila
+                                \item Korisnik odlučuje što će biti javno. a što dostupno privatno\\
+						\end{enumerate}
+
+					\end{itemize}
 
                     
 
@@ -479,7 +496,18 @@
 					
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
-					\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
+					%\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
+					\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/Korisnik.PNG} %veličina u odnosu na širinu linije
+			\caption{Use case dijagram - Korisnik}
+			\label{fig:Korisnik} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/Trgovina.PNG} %veličina u odnosu na širinu linije
+			\caption{Use case dijagram - Trgovina}
+			\label{fig:Trgovina} %label mora biti drugaciji za svaku sliku
+			\end{figure}
 				\eject		
 				
 			\subsection{Sekvencijski dijagrami}
