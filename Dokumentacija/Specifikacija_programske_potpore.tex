@@ -548,9 +548,21 @@
 	
 		\section{Ostali zahtjevi}
 		
-			\textbf{\textit{dio 1. revizije}}\\
+			%\textbf{\textit{dio 1. revizije}}\\
 		 
-			 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
+			%\textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
+			\begin{itemize}
+                \item Omogućen istovremeni rad više korisnika
+                \item Postupak pristupa bazi podataka ne smije trajati duže od nekoliko sekundi
+                \item Sustav treba biti implementiran kao web aplikacija koristeći objektno-orijentirane jezike
+                \item Funkcionalnost i rad sustava ne smiju biti narušeni neispravnim korištenjem korisničkog sučelja. 
+                \item Sustav treba biti jednostavan i intuitivan za korištenje
+                \item Postojeće funkcionalnosti sustava trebaju biti održane pri nadogradnji sustava
+                \item Veza s bazom podataka mora biti kvalitetno zaštićena, brza i otporna na vanjske greške
+                \item Pristup serveru mora biti omogućen iz javne mreže pomoću HTTPS
+                \item Korisničko sučelje i sustav moraju podržavati hrvatsku abecedu (dijakritičke znakove) pri unosu i prikazu tekstualnog sadržaja
+                \item Sustav kao valutu koristi EUR
+            \end{itemize}
 			 
 			 
 		
