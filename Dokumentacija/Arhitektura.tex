@@ -1,17 +1,30 @@
 \chapter{Arhitektura i dizajn sustava}
 		
-		\textbf{\textit{dio 1. revizije}}\\
+		%\textbf{\textit{dio 1. revizije}}\\
 
-		\textit{ Potrebno je opisati stil arhitekture te identificirati: podsustave, preslikavanje na radnu platformu, spremišta podataka, mrežne protokole, globalni upravljački tok i sklopovsko-programske zahtjeve. Po točkama razraditi i popratiti odgovarajućim skicama:}
-	\begin{itemize}
-		\item 	\textit{izbor arhitekture temeljem principa oblikovanja pokazanih na predavanjima (objasniti zašto ste baš odabrali takvu arhitekturu)}
-		\item 	\textit{organizaciju sustava s najviše razine apstrakcije (npr. klijent-poslužitelj, baza podataka, datotečni sustav, grafičko sučelje)}
-		\item 	\textit{organizaciju aplikacije (npr. slojevi frontend i backend, MVC arhitektura) }		
-	\end{itemize}
+		%\textit{ Potrebno je opisati stil arhitekture te identificirati: podsustave, preslikavanje na radnu platformu, spremišta podataka, mrežne protokole, globalni upravljački tok i sklopovsko-programske zahtjeve. Po točkama razraditi i popratiti odgovarajućim skicama:}
+	%\begin{itemize}
+		%\item 	\textit{izbor arhitekture temeljem principa oblikovanja pokazanih na predavanjima (objasniti zašto ste baš odabrali takvu arhitekturu)}
+		%\item 	\textit{organizaciju sustava s najviše razine apstrakcije (npr. klijent-poslužitelj, baza podataka, datotečni sustav, grafičko sučelje)}
+		%\item 	\textit{organizaciju aplikacije (npr. slojevi frontend i backend, MVC arhitektura) }		
+	%\end{itemize}
 
-	
+	Stil arhitekture koji smo odabrali je arhitektura zasnovana na događajima gdje se događaji javno objavljuju te se pozivaju registrirane procedure, dok komponente koje objavljuju događaj nemaju informaciju koje će sve komponente reagirati i kako. Za razliku od objektno usmjerenog stila, komponente se ne pozivaju eksplicitno, već generiraju signale, tj. događaje. Ova arhitektura je odabrana jer je najefikasnija za obradu korisničkih zahtjeva, laka je za održavanje i reciklabilna za potrebe budućih projekata ili nadogradnje ovog. Što se tiče spremišta podataka, svi podaci će biti spremani te dohvaćani iz univerzalne baze podataka. Mrežni protokoli koji će se pozivati tokom komunikacije klijenta s poslužiteljem su: TCP, IP, HTTP. 
+Sustav je organiziran na sljedeći način: 
+\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/arhitekturaSkica.JPEG} %veličina u odnosu na širinu linije
+			\caption{grafički prikaz arhitekture}
+			\label{fig:arhitektura} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+Korisnik putem odabranog web preglednika šalje HTTP zahtjev za web aplikacijom i njenim komponentama zadanom web poslužitelju. Aplikacija komunicira s bazom podataka u kojoj su sadržani svi podatci i iz nje izvlači sve potrebne podatke za klijentov zahtjev. Poslužitelj, kada aplikacija dohvati sve potrebne podatke, odgovara na klijentov zahtjev sa statusom 200 OK (ako je sve u redu) i šalje mu HTML dokument koji se prikazuje u zadanom web pregledniku.
+Programski jezik koji smo koristili za izradu web aplikacije je Java za backend te Javascript za frontend dio.
+Arhitektura sustava se temelji na MVC konceptu, stilističkoj varijaciji arhitekture zasnovanoj na događajima. Odabrali smo taj koncept jer odvaja korisničko sučelje od ostatka sustava, što čini razvoj i nadogradnju komponenata jednostavnijima. Sastoji se od modela, pogleda i upravitelja.
 		
-
+\begin{itemize}
+\item Model – dojavljuje sebi pridruženim pogledima i upravitelju kada je došlo do promjene u njegovom stanju. Ove dojave omogućuju pogledu da prikaže obnovljeno stanje modela, a upravitelju promjenu dostupnog skupa naredbi
+\item View (Pogled) - od modela dobija informacije koje su mu potrebne za prikaz korisniku
+\item Controller (Upravitelj)  – šalje naloge modelu koji ažurira svoje stanje i naredbe pogledima kojima mijenja prikaz modela
+\end{itemize}
 		
 
 				
