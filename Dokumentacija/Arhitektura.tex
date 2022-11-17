@@ -66,11 +66,34 @@ Arhitektura sustava se temelji na MVC konceptu, stilističkoj varijaciji arhitek
 			
 		\section{Dijagram razreda}
 		
-			\textit{Potrebno je priložiti dijagram razreda s pripadajućim opisom. Zbog preglednosti je moguće dijagram razlomiti na više njih, ali moraju biti grupirani prema sličnim razinama apstrakcije i srodnim funkcionalnostima.}\\
+			%\textit{Potrebno je priložiti dijagram razreda s pripadajućim opisom. Zbog preglednosti je moguće dijagram razlomiti na više njih, ali moraju biti grupirani prema sličnim razinama apstrakcije i srodnim funkcionalnostima.}\\
+			\textbf{UserModel} služi za spremanje podataka o korisniku te za autentifikaciju i autorizaciju korisnika. 
+			\textbf{UserModel} generalizira \textbf{Admin} i \textbf{StoreModel}.
+			 
+			\textbf{PrivacyModel} pohranjuje podatke o tome koji će podaci o korisniku biti javni, a koji privatni.
+			  
+			\textbf{Admin} sadrži metode koje može izvršiti isključivo korisnik s admin pravom pristupa(odobravanje promjena cijena, zabrana pristupa drugim korisnicima...) 
 			
-			\textbf{\textit{dio 1. revizije}}\\
+			\textbf{StoreModel} modelira trgovinu. 
 			
-			\textit{Prilikom prve predaje projekta, potrebno je priložiti potpuno razrađen dijagram razreda vezan uz \textbf{generičku funkcionalnost} sustava. Ostale funkcionalnosti trebaju biti idejno razrađene u dijagramu sa sljedećim komponentama: nazivi razreda, nazivi metoda i vrste pristupa metodama (npr. javni, zaštićeni), nazivi atributa razreda, veze i odnosi između razreda.}\\
+			\textbf{ProductModel} modelira proizvod. Proizvod je jednoznačno određen barkodom kako bi više trgovina moglo imati isti proizvod u ponudi. 
+			
+			\textbf{PriceChangeLog} služi za opisivanje promjena cijena proizvoda u nekoj trgovini u nekom vremenskom razdoblju. 
+			
+			\textbf{PriceChangeRequestModel} modelira zahtjev za promjenom cijene koje šalje korisnik za proizvod u nekoj trgovini u kojoj se stvarna cijena razlikuje od cijene navedene u aplikaciji.  
+			
+			\textbf{NotificationModel} modelira obavijesti koje admin može slati korisniku ili trgovini.
+Klase iz data access paketa sadržavaju isključivo statičke metode koje služe za komunikaciju s bazom podataka.
+
+\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/dijagramRazreda.png} %veličina u odnosu na širinu linije
+			\caption{dijagram razreda}
+			\label{fig:dijagramRazreda} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			%\textbf{\textit{dio 1. revizije}}\\
+			
+			%\textit{Prilikom prve predaje projekta, potrebno je priložiti potpuno razrađen dijagram razreda vezan uz \textbf{generičku funkcionalnost} sustava. Ostale funkcionalnosti trebaju biti idejno razrađene u dijagramu sa sljedećim komponentama: nazivi razreda, nazivi metoda i vrste pristupa metodama (npr. javni, zaštićeni), nazivi atributa razreda, veze i odnosi između razreda.}\\
 			
 			%\textbf{\textit{dio 2. revizije}}\\			
 			
