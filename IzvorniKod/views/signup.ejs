@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registracija</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+
+<body class="content">
+
+    <header class="header primary-color-bg">
+        <nav class="navigation container">
+            <div class="menu">
+                <a href="/" class="link menu-item <%if (linkActive === 'home') {%>  link-active  <%}%>">Home</a>
+            </div>
+        </nav>
+    </header>
+
+<main class="main">
+
+    <section class="section secondary-color-bg">
+        <div class="container">
+            <div class="centered-container">
+                <h1 class="decorated-title main-color">
+                    <span class="main-color-emphasized">Novi korisnik</span>
+                </h1>
+
+                <div class="separator"></div>
+                <form action="/signup" method="post" class="form gutter">
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Registracija</legend>
+
+                        <div class="form-group">
+                            <label class="form-label" for="username">Username:</label>
+                            <input class="form-component form-input" type="text" name="nickname" id="username" maxlength="20"
+                                   minlength="4" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">E-mail:</label>
+                            <input class="form-component form-input" type="email" name="email" id="email" maxlength="30"
+                                   minlength="12" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="firstname">First name:</label>
+                            <input class="form-component form-input" type="text" name="first_name" id="firstname"
+                                   maxlength="20"
+                                   minlength="2">
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="form-label" for="lastname">Last name:</label>
+                            <input class="form-component form-input" type="text" name="last_name" id="lastname"
+                                   maxlength="20"
+                                   minlength="2">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password:</label>
+                            <input class="form-component form-input" type="password" maxlength="20" minlength="8"
+                                   id="password"
+                                   name="password" placeholder="Upišite osam znakova" required>
+                        </div>
+
+                    <div></div>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("input[name='chktrg']").click(function () {
+            if ($("#chkYes").is(":checked")) {
+                $("#popis").removeAttr("disabled");
+                $("#popis").removeAttr("style");
+                $("#natpis").removeAttr("style");
+                $("#popis").focus();
+            } else {
+                $("#popis").attr("disabled", "disabled");
+                $("#popis").attr("style", "display:none");
+            }
+        });
+    });
+</script>
+<span>Vrsta korisnika</span>
+<div></div>
+<label for="chkYes">
+    <input type="radio" id="chkYes" name="chktrg" value="Trgovina" />
+    Trgovina
+</label>
+<label for="chkNo">
+    <input type="radio" id="korisnik" name="chktrg" value="Korisnik"/>
+    Korisnik
+</label>
+<label for="chkNo">
+    <input type="radio" id="admin" name="chktrg" value="Admin" />
+    Admin
+</label>
+<hr />
+<p id="natpis" style="display:none">Popis proizvoda i cijene:</p>
+<input type="text" id="popis" disabled="disabled" value="Popis" style="display:none"/>
+<div></div>
+<div></div>
+<input class="btn" type="submit">
+<input class="btn" type="reset">
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+
+</html>
