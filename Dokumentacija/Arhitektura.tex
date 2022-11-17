@@ -33,6 +33,22 @@ Arhitektura sustava se temelji na MVC konceptu, stilističkoj varijaciji arhitek
 			%\textbf{\textit{dio 1. revizije}}\\
 			
 		%\textit{Potrebno je opisati koju vrstu i implementaciju baze podataka ste odabrali, glavne komponente od kojih se sastoji i slično.}
+		Za potrebe našeg sustava koristit ćemo relacijsku bazu podataka koja svojom strukturom nam olakšava da zorno modeliramo stvarni svijet. Baza podataka se sastoji od tablica definiranih imenom i  atributima. Zadaća baze podataka je brza i jednostavna pohrana, izmjena i dohvat podataka za daljnju obradu. Baza podataka sastoji se od ovih entiteta: 
+		\begin{itemize}
+		\item Korisnik
+\item Proizvod
+\item Oznake
+\item Komentar
+\item Pretinac
+\item Privatnost
+\item Obavijest
+\item ProizvodTrgovina
+\item PromjenaCijenaKorisnik
+\item PromjenaCijenaTrgovina
+\item Trgovina
+\item session
+		\end{itemize}
+
 		
 			\subsection{Opis tablica}
 			
@@ -56,10 +72,242 @@ Arhitektura sustava se temelji na MVC konceptu, stilističkoj varijaciji arhitek
 				%	\SetCell{LightBlue} primjer	& VARCHAR &   	\\ \hline 
 				%\end{longtblr}
 				
-				
+Entitet \textbf{Korisnik} sadržava sve važne informacije o registriranim korisnicima aplikacije.
+Sadrži atribute: ID, Ime, Prezime, Email, Nadimak, Lozinka, RazinaPristupa i ZabranjenPristup.
+Ovaj entitet u vezi je One-to-Many s Oznake preko KorisnikID, u vezi je Many-to-Many s Komentar preko KorisnikID, u vezi je Many-to-Many s Pretinac preko KorisnikID, u vezi je One-to-One s Privatnost preko KorisnikID i u vezi je Many-to-Many s PromjenaCijenaKorisnik preko KorisnikID.
+				\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Korisnik}}	 \\ \hline[3pt]
+\SetCell{LightGreen}ID & INT	&  	Unikatni identifikator svakog prijavljenog korisnika  	\\ \hline
+Ime	& VARCHAR &  Ime korisnika 	\\ \hline 
+Prezime	& VARCHAR &  Prezime korisnika 	\\ \hline 
+Email & VARCHAR &  Email korisnika \\ \hline 
+Nadimak & VARCHAR	&  Unikatni nadimak korisnika	\\ \hline 
+Lozinka & VARCHAR	&  Korisnikova lozinka za pristup računu	\\ \hline 
+RazinaPristupa & SMALLINT	&  Ako je 0 onda je registrirani korisnik, ako je 1 onda je trgovina i ako je 2 onda je administrator	\\ \hline 
+ZabranjenPristup & BOOLEAN & Ako je true onda je administrator zabranio pristup ovom profilu \\ \hline
+\end{longtblr}
+
+
+Entitet \textbf{Trgovina} sadržava informacije vezane za određenu trgovinu.
+Sadrži atribute: ID i Naziv.
+Ovaj entitet u vezi je Many-to-Many s entitetom PromjenaCijenaTrgovina preko atributa TrgovinaID, u vezi je Many-to-Many PromjenaCijenaKorisnik preko atributa TrgovinaID, u vezi je Many-to-Many ProizvodTrgovina preko atributa TrgovinaID i u vezi je Many-to-One s entitetom Komentar preko atributa TrgovinaID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Trgovina}}	 \\ \hline[3pt]
+\SetCell{LightGreen}ID & INT	&  	Unikatni identifikator svake trgovine  	\\ \hline
+Naziv	& VARCHAR &  Naziv trgovine 	\\ \hline 
+\end{longtblr}
+
+Entitet \textbf{Proizvod} sadržava osnovne informacije o proizvodima.
+Sadrži atribute: Barkod i Naziv.
+Ovaj entitet u vezi je Many-to-Many s entitetom Oznake preko atributa Barkod, u vezi je One-to-Many s ProizvodTrgovina preko atributa Barkod, u vezi je One-to-Many s PromjenaCijenaKorisnik preko atributa Barkod i u vezi je  One-to-Many s PromjenaCijenaTrgovina preko atributa Barkod.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Proizvod}}	 \\ \hline[3pt]
+\SetCell{LightGreen}Barkod & VARCHAR	&  	Unikatni identifikator proizvoda  	\\ \hline
+Naziv & VARCHAR	&  Naziv proizvoda		\\ \hline 
+\end{longtblr}
+
+Entitet \textbf{Komentar} sadržava zapise o komentarima napisanim od administratora za određenu trgovinu.
+Sadrži atribute: KorisnikID, TrgovinaID i OpisKomentara.
+Ovaj entitet u vezi je One-to-Many s entitetom Trgovina preko atributa TrgovinaID i u vezi 
+Many-to-Many s Korisnik preko KorisnikID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Komentar}}	 \\ \hline[3pt]
+\SetCell{LightBlue} KorisnikID	& INT &   Identifikator korisnika koji je napisao komentar	\\ \hline 
+\SetCell{LightBlue} TrgovinaID	& INT &   Identifikator trgovine kod koje je komentirani proizvod	\\ \hline 
+OpisKomentara	& VARCHAR &  Upisani komentar		\\ \hline 
+\end{longtblr}
+
+
+Entitet \textbf{Obavijest} sadržava informacije vezane za određenu obavijest.
+Sadrži atribute: ID, DatumVrijeme, Opis i Procitano.
+Ovaj entitet u vezi je Many-to-One s entitetom Pretinac preko atributa ObavijestID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Obavijest}}	 \\ \hline[3pt]
+\SetCell{LightGreen}ID & INT	&  	Unikatni identifikator obavijesti  	\\ \hline
+DatumVrijeme & TIMESTAMP & Vrijeme kada je dostavljena obavijest \\ \hline
+Opis	& VARCHAR &  Opis obavijesti 	\\ \hline 
+Procitano & BOOLEAN & Ako je True onda je korisnik pročitao obavijest \\ \hline
+\end{longtblr}
+
+
+Entitet \textbf{Oznake} sadržava zapise o proizvodima s oznakama stavljenim od korisnika.
+Sadrži atribute: Barkod, KorisnikID i Oznaka.
+Ovaj entitet u vezi je Many-to-Many s entitetom Proizvod preko atributa Barkod i u vezi 
+Many-to-One s Korisnik preko KorisnikID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Oznake}}	 \\ \hline[3pt]
+\SetCell{LightBlue} Barkod	& VARCHAR &   Identifikator proizvoda pod kojim je oznaka	\\ \hline 
+\SetCell{LightBlue} KorisnikID	& INT &   Identifikator korisnika koji je napisao oznaku	\\ \hline 
+Oznake	& VARCHAR &  Naziv oznake		\\ \hline 
+\end{longtblr}
+
+
+Entitet \textbf{Pretinac} sadržava zapise o obavijestima kod korisnika.
+Sadrži atribute: KorisnikID i ObavijestID.
+Ovaj entitet u vezi je One-to-Many s entitetom Obavijest preko atributa ObavijestID i u vezi 
+Many-to-Many s Korisnik preko KorisnikID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Pretinac}}	 \\ \hline[3pt]
+\SetCell{LightBlue} KorisnikID	& INT &   Identifikator korisnika koji je dobio obavijest	\\ \hline 
+\SetCell{LightBlue} ObavijestID	& INT &   Identifikator obavijesti \\ \hline 
+\end{longtblr}
+
+
+Entitet \textbf{Privatnost} sadržava zapise o kojim informacijama se prikazuju na profilu korisnika.
+Sadrži atribute: KorisnikID, Ime,  Prezime, Email i Nadimak.
+Ovaj entitet je u vezi One-to-One s Korisnik preko KorisnikID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{Privatnost}}	 \\ \hline[3pt]
+\SetCell{LightBlue}KorisnikID & INT	&  	Identifikator korisnika 	\\ \hline
+Ime	& BOOLEAN &  Ako je true onda se ime prikazuje na profilu, ako je false onda se ne prikazuje	\\ \hline 
+Prezime	& BOOLEAN &  Ako je true onda se prezime prikazuje na profilu, ako je false onda se ne prikazuje \\ \hline 
+Email	& BOOLEAN &  Ako je true onda se email prikazuje na profilu, ako je false onda se ne prikazuje \\ \hline 
+Nadimak	& BOOLEAN &  Ako je true onda se nadimak prikazuje na profilu, ako je false onda se ne prikazuje \\ \hline 
+\end{longtblr}
+
+
+
+Entitet \textbf{ProizvodTrgovina} sadržava zapise o proizvodima u trgovinama.
+Sadrži atribute: Barkod, TrgovinaID i Cijena.
+Ovaj entitet u vezi je Many-to-Many s entitetom Trgovina preko atributa TrgovinaID i u vezi 
+Many-to-One s Proizvod preko Barkod.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{ProizvodTrgovina}}	 \\ \hline[3pt]
+\SetCell{LightBlue} Barkod	& VARCHAR &   Identifikator proizvoda	\\ \hline 
+\SetCell{LightBlue} TrgovinaID	& INT &   Identifikator trgovine u kojoj je proizvod	\\ \hline 
+Cijena	& MONEY &  Cijena proizvoda u određenoj trgovini		\\ \hline 
+\end{longtblr}
+
+
+
+Entitet \textbf{PromjenaCijeneKorisnik} sadržava zapise o promjenama cijena koje je upisao korisnik.
+Sadrži atribute: KorisnikID, Barkod, TrgovinaID, DatumVrijeme, NovaCijena, Slika i Status.
+Ovaj entitet u vezi je Many-to-Many s entitetom Korisnik preko atributa KorisnikID, u vezi 
+Many-to-One s Proizvod preko Barkod i u vezi  Many-to-Many s Trgovina preko atributa TrgovinaID.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{PromjenaCijeneKorisnik}}	 \\ \hline[3pt]
+\SetCell{LightBlue} Barkod	& VARCHAR &   Identifikator proizvoda	\\ \hline 
+\SetCell{LightBlue} KorisnikID	& INT &   Identifikator korisnika koji je upisao promjenu cijene	\\ \hline 
+\SetCell{LightBlue} TrgovinaID	& INT &   Identifikator trgovine gdje je pogrešna cijena	\\ \hline 
+\SetCell{LightGreen} DatumVrijeme & TIMESTAMP & Vrijeme unosa nove cijene \\ \hline
+NovaCijena	& MONEY &  Nova cijena proizvoda u određenoj trgovini		\\ \hline 
+Slika & VARBIT & Slika kao dokaz nove cijene  \\ \hline
+Status & VARCHAR & Kakav je status promjene cijene \\ \hline
+\end{longtblr}
+
+
+Entitet \textbf{PromjenaCijeneTrgovina} sadržava zapise o promjenama cijena koje je upisala trgovina.
+Sadrži atribute: Barkod, TrgovinaID, DatumVrijeme, NovaCijena, Slika i Status.
+Ovaj entitet u vezi je Many-to-Many s entitetom Trgovina preko atributa TrgovinaID i u vezi 
+Many-to-One s Proizvod preko Barkod.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{PromjenaCijeneTrgovina}}	 \\ \hline[3pt]
+\SetCell{LightBlue} Barkod	& VARCHAR &   Identifikator proizvoda	\\ \hline 
+\SetCell{LightBlue} TrgovinaID	& INT &   Identifikator trgovine gdje je promjena cijene	\\ \hline 
+\SetCell{LightGreen} DatumVrijeme & TIMESTAMP & Vrijeme unosa nove cijene \\ \hline
+NovaCijena	& MONEY &  Nova cijena proizvoda u određenoj trgovini		\\ \hline 
+\end{longtblr}
+
+Entitet \textbf{session} sadržava zapise o sjednicama.
+Sadrži atribute: sid, sess i expire.
+\begin{longtblr}[
+label=none,
+entry=none
+]{
+width = \textwidth,
+colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
+rowhead = 1,
+} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
+\hline \multicolumn{3}{|c|}{\textbf{session}}	 \\ \hline[3pt]
+\SetCell{LightGreen} sid	& VARCHAR &   Identifikator sjednice	\\ \hline 
+sess & JSON & Json zapis sjednice \\ \hline
+expire	& TIMESTAMP &  Datum i vrijeme isteka sjednice		\\ \hline 
+\end{longtblr}
 			
 			\subsection{Dijagram baze podataka}
-				\textit{ U ovom potpoglavlju potrebno je umetnuti dijagram baze podataka. Primarni i strani ključevi moraju biti označeni, a tablice povezane. Bazu podataka je potrebno normalizirati. Podsjetite se kolegija "Baze podataka".}
+				%\textit{ U ovom potpoglavlju potrebno je umetnuti dijagram baze podataka. Primarni i strani ključevi moraju biti označeni, a tablice povezane. Bazu podataka je potrebno normalizirati. Podsjetite se kolegija "Baze podataka".}
+				\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/ERDijagramBaza.JPEG} %veličina u odnosu na širinu linije
+			\caption{E-R Dijagram baze podataka}
+			\label{fig:ERDijagramBaza} %label mora biti drugaciji za svaku sliku
+			\end{figure}
 			
 			\eject
 			
