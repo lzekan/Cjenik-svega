@@ -28,9 +28,7 @@ router.post('/', async (req, res) => {
 	if(user == undefined){
 		return res.status(400).send('User witn nickname ' + nickname + ' does not exist');
 	}
-
 	let passwordValid = PasswordHasher.compare(password, user.password_hash);
-
 	if(passwordValid){
 
 		let expiryDate = new Date(Number(new Date()) + 604800000);  

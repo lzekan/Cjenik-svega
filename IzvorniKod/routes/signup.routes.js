@@ -33,8 +33,13 @@ router.post('/',
     	if (!errors.isEmpty()) {
       		return res.status(400).json({ errors: errors.array() });
     	}
-
-		let user = new User(req.body.nickname, req.body.first_name, req.body.last_name, req.body.email, '', req.body.chktrg);
+		var pristup = 0;
+		if(req.body.chktrg == 'Admin'){
+			pristup  = 2;
+		}else if(req.body.chktrg == 'Trgovina'){
+			pristup = 1;
+		}
+		let user = new User(req.body.first_name, req.body.last_name, req.body.email,req.body.nickname,  '', pristup);
 
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);

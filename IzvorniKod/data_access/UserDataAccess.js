@@ -3,8 +3,8 @@ const User = require('../models/UserModel')
 
 addNewUser = async (user) => {
     const sql = `
-        INSERT INTO users (nickname, first_name , last_name , email , password_hash, access_level) VALUES
-        ($1::text, $2::text , $3::text , $4::text , $5::text, $6::text) RETURNING id;
+        INSERT INTO "Korisnik" ("Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa") VALUES
+        ($1::text, $2::text , $3::text , $4::text , $5::text, $6::smallint) RETURNING "ID";
     `;
 
         const sql_parameters = [user.nickname, user.first_name, user.last_name, user.email, user.password_hash, user.access_level];
@@ -19,9 +19,9 @@ addNewUser = async (user) => {
 
 existsWithId = async (id) =>{
     const sql = `
-    SELECT nickname, first_name , last_name , email , password_hash, access_level
-    FROM users
-    WHERE id = $1::int
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    FROM "Korisnik"
+    WHERE "ID" = $1::int
     `
     const sql_parameters = [id]
 
@@ -37,9 +37,9 @@ existsWithId = async (id) =>{
 //returns true if there is not user in database that is already registered with that nickname or email
 wouldBeUnique = async (user) => {
     const sql = `
-    SELECT nickname, first_name , last_name , email , password_hash, access_level
-    FROM users
-    WHERE (nickname = $1::text OR email = $2::text)
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    FROM "Korisnik"
+    WHERE ("Nadimak" = $1::text OR "Email" = $2::text)
     `
     const sql_parameters = [user.nickname, user.email]
 
@@ -54,9 +54,9 @@ wouldBeUnique = async (user) => {
 
 getById = async (id) =>{
     const sql = `
-    SELECT id, nickname, first_name , last_name , email , password_hash, access_level
-    FROM users
-    WHERE id = $1::int
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    FROM "Korisnik"
+    WHERE "ID" = $1::int
     `
     const sql_parameters = [id]
 
@@ -89,9 +89,9 @@ getById = async (id) =>{
 
 getByNickname = async (nickname) =>{
     const sql = `
-    SELECT id, nickname, first_name , last_name , email , password_hash, access_level
-    FROM users
-    WHERE nickname = $1::text
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    FROM "Korisnik"
+    WHERE "Nadimak" = $1::text
     `
     const sql_parameters = [nickname]
 
@@ -105,13 +105,13 @@ getByNickname = async (nickname) =>{
             let results = result.rows
 
             let newUser = {}
-            newUser.nickname = results[0].nickname
-            newUser.first_name = results[0].first_name
-            newUser.last_name = results[0].last_name
-            newUser.email = results[0].email
-            newUser.password_hash = results[0].password_hash,
-            newUser.access_level = results[0].access_level
-            newUser.id = results[0].id
+            newUser.nickname = results[0].Nadimak
+            newUser.first_name = results[0].Ime
+            newUser.last_name = results[0].Prezime
+            newUser.email = results[0].Email
+            newUser.password_hash = results[0].Lozinka,
+            newUser.access_level = results[0].RazinaPristupa
+            newUser.id = results[0].ID
 
             return newUser
         }
@@ -124,9 +124,9 @@ getByNickname = async (nickname) =>{
 
 getByEmail = async (email) =>{
     const sql = `
-    SELECT id, nickname, first_name , last_name , email , password_hash, access_level
-    FROM users
-    WHERE email = $1::text
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    FROM "Korisnik"
+    WHERE "Email" = $1::text
     `
     const sql_parameters = [email]
 
