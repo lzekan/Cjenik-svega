@@ -3,7 +3,9 @@ biti ce prekasno!
 /profil?id=nesto
 	-vraca profil trgovine ili proizvoda (ovisi o id)
 	-ako id nije zadan vraca profil korisnika koji je prijavljen
-		-ako je korisnik trgovina onda se omogucava upload cijena
+		-ako je korisnik trgovina onda se omogucava upload cijena i link na /addItem
+			addItem.ejs:
+				-forma za dodavanje artikla u asortiman trgovine
 		-ako je user samo prikaz
 	-ako je prijavljeni korisnik admin i:
 		-stranica je stranica trgovine onda se omogucava komentar
@@ -47,6 +49,7 @@ Zekan:
 	user.ejs
 	store.ejs
 	prices.ejs
+	addItem.ejs
 	-napravit da rade s ovin podatcima koji su tu napisani, ako neki fale zapisi pa cemo ih dodat
 
 Pero:
