@@ -7,7 +7,7 @@ addNewUser = async (user) => {
         ($1::text, $2::text , $3::text , $4::text , $5::text, $6::smallint) RETURNING "ID";
     `;
 
-        const sql_parameters = [user.nickname, user.first_name, user.last_name, user.email, user.password_hash, user.access_level];
+        const sql_parameters = [user.first_name, user.last_name, user.email,user.nickname,  user.password_hash, user.access_level];
     try {
         const result = await db.query(sql, sql_parameters);
         return result.rows[0].id;
@@ -42,7 +42,6 @@ wouldBeUnique = async (user) => {
     WHERE ("Nadimak" = $1::text OR "Email" = $2::text)
     `
     const sql_parameters = [user.nickname, user.email]
-
     try {
         let result = await db.query(sql, sql_parameters);
         return result.rows.length == 0;
@@ -50,7 +49,7 @@ wouldBeUnique = async (user) => {
         console.log(err);
         throw err
     }
-}
+} 
 
 getById = async (id) =>{
     const sql = `
@@ -156,6 +155,7 @@ getByEmail = async (email) =>{
         throw err
     }
 }
+
 
 module.exports = {
     addNewUser,
