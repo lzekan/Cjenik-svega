@@ -9,4 +9,9 @@ router.get('/', (req, res) => {
 	});
 });
 
+router.post('/', (req, res) => {
+	let url = '/search/' + req.body.item;
+	res.redirect(url);
+})
+
 module.exports = router;

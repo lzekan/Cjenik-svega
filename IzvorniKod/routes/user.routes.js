@@ -3,8 +3,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
 	
-	res.render('store', {
-		linkActive: 'store'
+	res.render('user', {
+		linkActive: 'user',
+		user: req.session.user
 	});
 });
 
