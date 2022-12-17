@@ -30,6 +30,8 @@ router.post('/',
 		if(req.session.user !== undefined){
 			return res.status(400).send('You have to logout first');
 		}
+
+		console.log("REQUEST = "+ JSON.stringify(req.body));
 	
 		const errors = validationResult(req);
     	if (!errors.isEmpty()) {
@@ -41,6 +43,11 @@ router.post('/',
 		}else if(req.body.chktrg == 'Trgovina'){
 			pristup = 1;
 		}
+
+		if(pristup == 1 && (req.body.naziv_trgovine == undefined || req.body.naziv_trgovine == "") ){
+			return res.status(400).send('Unesite naziv trgovine');
+		}
+
 		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup,{}, false);
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);
@@ -57,7 +64,7 @@ router.post('/',
 			if(pristup == 1 && userId != undefined){
 				if(await TrgovinaDataAccess.isUniqueID(userId)){
 					console.log(userId)
-					let trgovina = new Trgovina(userId,"Konzum");
+					let trgovina = new Trgovina(userId, req.body.naziv_trgovine);
 					try{
 					await TrgovinaDataAccess.addNewTrgovina(trgovina);
 					console.log("Korisnik dodan kao trgovina.")

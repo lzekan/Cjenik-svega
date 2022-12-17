@@ -50,8 +50,8 @@ getTrgovina = async(user_id) =>{
 
       trgovina.id = user_id
       trgovina.naziv = result.rows[0].Naziv
-      trgovina.wrong_prices = getWrongPricesForStore(trgovina.id);
-      trgovina.comment = getCommentForStore(trgovina.id);
+      trgovina.wrong_prices = await getWrongPricesForStore(trgovina.id);
+      trgovina.comment = await getCommentForStore(trgovina.id);
 
       console.log(JSON.stringify(trgovina))
 
@@ -65,11 +65,44 @@ getTrgovina = async(user_id) =>{
 }
 
 getWrongPricesForStore = async (store_id) => {
-   return 0;
+   const sql = `
+   SELECT COUNT(*) AS "KriveCijene" FROM "PromjenaCijeneKorisnik"
+   WHERE ("TrgovinaID" = $1::int AND "Status" = 'SUCCESS')
+   `;
+
+   const sql_parameters = [store_id];
+
+   try {
+      const result = await db.query(sql, sql_parameters);
+
+      return result.rows[0].KriveCijene
+      
+   } catch (err) {
+      console.log(err);
+      throw err
+   }
 }
 
 getCommentForStore = async (store_id) => {
-   return "";
+   const sql = `
+   SELECT "OpisKomentara" FROM "Komentar"
+   WHERE "TrgovinaID" = $1::int
+   `;
+
+   const sql_parameters = [store_id];
+
+   try {
+      const result = await db.query(sql, sql_parameters);
+      if(result.rows.length <= 0){
+         return ""
+      } else {
+         return result.rows[0].OpisKomentara
+      }      
+      
+   } catch (err) {
+      console.log(err);
+      throw err
+   }
 }
 
 
