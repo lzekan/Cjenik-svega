@@ -52,7 +52,7 @@ router.post('/',
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);
 			try {
-				let adddedUserId = UserDataAccess.addNewUser(user);
+				let adddedUserId = await UserDataAccess.addNewUser(user);
 				user.id = adddedUserId
 				console.log("Dodan korisnik: " + JSON.stringify(user))
 			} catch (error) {
