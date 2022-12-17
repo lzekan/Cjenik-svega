@@ -35,8 +35,46 @@ addNewTrgovina = async(trgovina) =>{
    }
 }
 
+getTrgovina = async(user_id) =>{
+   const sql = `
+   select "Naziv" from "Trgovina" WHERE "ID" = $1::int;
+`;
+
+   const sql_parameters = [user_id];
+   try {
+      const result = await db.query(sql, sql_parameters);
+      if(result.rows.length <= 0){
+         return undefined
+     } else {
+      let trgovina = {};
+
+      trgovina.id = user_id
+      trgovina.naziv = result.rows[0].Naziv
+      trgovina.wrong_prices = getWrongPricesForStore(trgovina.id);
+      trgovina.comment = getCommentForStore(trgovina.id);
+
+      console.log(JSON.stringify(trgovina))
+
+      return trgovina;
+     }
+      
+   } catch (err) {
+      console.log(err);
+      throw err
+   }
+}
+
+getWrongPricesForStore = async (store_id) => {
+   return 0;
+}
+
+getCommentForStore = async (store_id) => {
+   return "";
+}
+
 
 module.exports = {
    isUniqueID,
-   addNewTrgovina
+   addNewTrgovina,
+   getTrgovina
 }

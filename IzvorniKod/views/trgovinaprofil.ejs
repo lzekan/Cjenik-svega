@@ -36,9 +36,82 @@
                             Ime trgovine
                         </div>
                         <div class="dataset-value">
-                            <%= trgovina.trgovina_name %>
+                            <%= trgovina.naziv %>
+                        </div> 
+                    </div>
+
+                    <div class="dataset-entry">
+                        <div class="dataset-property" style:"">
+                            Krivo unesene cijene
                         </div>
-                        
+                        <div class="dataset-value">
+                            <%= trgovina.wrong_prices %>
+                        </div> 
+                    </div>
+
+                    <div class="dataset-entry">
+                        <div class="dataset-property" style:"">
+                            Komentar admina
+                        </div>
+                        <div class="dataset-value">
+                            <%= trgovina.comment %>
+                        </div> 
+                    </div>
+                    <hr>
+                    <div class="dataset">
+
+                        <div class="dataset-entry">
+                            <div class="dataset-property">
+                                User name
+                            </div>
+                            <div class="dataset-value">
+                                <%= user.nickname %>
+                            </div>
+                            <form>
+                                <input type="radio" id="username" name="username" value="username">
+                                <label for="username">Objavi javno:</label><br>
+                            </form>
+                        </div>
+    
+                        <div class="dataset-entry">
+                            <div class="dataset-property">
+                                First name
+                            </div>
+                            <div class="dataset-value">
+                                <%= user.first_name %>
+                            </div>
+                            <form>
+                                <input type="radio" id="name" name="name" value="name">
+                                <label for="name">Objavi javno:</label><br>
+                            </form>
+                        </div>
+    
+                        <div class="dataset-entry">
+                            <div class="dataset-property">
+                                Last name
+                            </div>
+                            <div class="dataset-value">
+                                <%= user.last_name %>
+                            </div>
+                            <form>
+                                <input type="radio" id="lastname" name="lastname" value="lastname">
+                                <label for="lastname">Objavi javno:</label><br>
+                            </form>
+                        </div>
+                        <div class="dataset-entry">
+                            <div class="dataset-property">
+                                E-mail
+                            </div>
+                            <div class="dataset-value">
+                                <%= user.email %>
+                            </div>
+                            <form>
+                                <input type="radio" id="email" name="email" value="email">
+                                <label for="email">Objavi javno:</label><br>
+                            </form>
+                        </div>
+    
+    
                     </div>
 
                     
@@ -47,7 +120,7 @@
 
             </div>
 
-            <body>
+            <div>
                 <div class="container">
                     <h1>Upload file-a</h1>
                     <form id="form-file-trgovina">
@@ -59,7 +132,7 @@
                     </form>
                 </div>
                 <script src="./script.js"></script>
-            </body>
+            </div>
         </section>
     </main>
 

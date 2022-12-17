@@ -41,11 +41,13 @@ router.post('/',
 		}else if(req.body.chktrg == 'Trgovina'){
 			pristup = 1;
 		}
-		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup);
+		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup,{}, false);
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);
 			try {
-				UserDataAccess.addNewUser(user);
+				let adddedUserId = UserDataAccess.addNewUser(user);
+				user.id = adddedUserId
+				console.log("Dodan korisnik: " + JSON.stringify(user))
 			} catch (error) {
 				console.log(error)
 				throw error
@@ -57,7 +59,8 @@ router.post('/',
 					console.log(userId)
 					let trgovina = new Trgovina(userId,"Konzum");
 					try{
-					TrgovinaDataAccess.addNewTrgovina(trgovina);
+					await TrgovinaDataAccess.addNewTrgovina(trgovina);
+					console.log("Korisnik dodan kao trgovina.")
 					}catch(err){
 						console.log(err); 
 						throw err
