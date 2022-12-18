@@ -12,17 +12,18 @@ router.get('/:term', async (req, res) => {
 
 	let products = await db.query(sql, sql_parameters);
 
+	sql = 'SELECT "Naziv" AS naziv, "ID" AS id FROM "Trgovina" WHERE "Naziv" = $1::text';
+	sql_parameters = [req.params.term];
+	let trgovine = await db.query(sql, sql_parameters);
+
+
+
 	res.render('prices', {
 		linkActive: 'home',
 		user: req.session.user,
-		proizvodi: products.rows
+		proizvodi: products.rows,
+		trgovine: trgovine.rows
 	})
-
-
-	// res.render('prices', {
-	// 	linkActive: 'prices',
-	// 	user: req.session.user
-	// });
 
 });
 

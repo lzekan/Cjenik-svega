@@ -55,7 +55,7 @@ router.post('/',
 			if(pristup == 1 && userId != undefined){
 				if(await TrgovinaDataAccess.isUniqueID(userId)){
 					console.log(userId)
-					let trgovina = new Trgovina(userId,"Konzum");
+					let trgovina = new Trgovina(userId, req.body.nickname);
 					try{
 					TrgovinaDataAccess.addNewTrgovina(trgovina);
 					}catch(err){

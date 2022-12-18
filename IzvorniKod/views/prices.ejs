@@ -4,43 +4,32 @@
     <title>Cijenik svega</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="./images/flower-icon.png"/>
-    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
-    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <script src="./scripts/main.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 </head>
 
 <body class="content">
 
-    <% if(proizvodi.length == 0) {%>
-        <div>Jebiga šefe nemamo to</div>
-        <a href="/">Povratak na home</a>
-    <% } %>
-
-
-
 <main class="main">
 
-    <% for (let proizvod of proizvodi) { %>
-
-        <header class="header primary-color-bg">
-            <nav class="navigation container">
-                <div class="menu">
-                    <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
-                </div>
-            </nav>
-        </header>
-
-            <div class="topnav">
-                <div class="search-container">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit">Submit</button>
-                </form>
-                </div>
+    <header class="header primary-color-bg">
+        <nav class="navigation container">
+            <div class="menu">
+                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
             </div>
+        </nav>
+    </header>
 
+    <% if(proizvodi.length == 0 && trgovine.length == 0) {%>
+        <div>Uneseno ime ne odgovara nijednom prozvodu niti trgovini :(</div>
+        <a href="/">Povratak na home</a>
+    <% } else { %>
+        <h1>Lista pronađenih proizvoda: </h1>
 
+        <% for (let proizvod of proizvodi) { %>
+    
             <section class="section secondary-color-bg">
                 <div class="centered-container">
                     <h1 class="decorated-title font-secondary main-color">
@@ -49,7 +38,7 @@
                         <span class="main-color-emphasized"><%= proizvod.cijena %></span>
                         </h1>
                         <% if( user !== undefined ) {%> 
-                        <form>
+                        <!-- <form>
                             <p>Predloži tagove:</p>
                             <input type="checkbox" id="pekarski" name="pekarski" value="pekarski">
                             <label for="pekarski"> Pekarski proizvod</label><br>
@@ -69,32 +58,54 @@
                             <label for="grickalice">Grickalice</label>
                             <input type="checkbox" id="piće" name="piće" value="piće">
                             <label for="piće">Piće</label>
-                          </form>
-
-                          
-                            <div class="container">
-                                <h1>Upload nove cijene</h1>
-                                <form id="form">
-                                    <div class="input-group">
-                                        <label for="nova">Prijedlog nove cijene:</label>
-                                        <input name="nova" id="nova" placeholder="Nova cijena" />
-                                    </div>
-                                    <div class="input-group">
-                                        <label for="files">Uploadaj sliku cijene</label>
-                                        <input id="files" type="file" multiple>
-                                    </div>
-                                    <button class="submit-btn" type="submit">Upload</button>
-                                </form>
-                            </div>
-                            <script src="./script.js"></script>
+                        </form> -->
+    
+                            
+                        <!-- <div class="container">
+                            <h1>Upload nove cijene</h1>
+                            <form id="form">
+                                <div class="input-group">
+                                    <label for="nova">Prijedlog nove cijene:</label>
+                                    <input name="nova" id="nova" placeholder="Nova cijena" />
+                                </div>
+                                <div class="input-group">
+                                    <label for="files">Uploadaj sliku cijene</label>
+                                    <input id="files" type="file" multiple>
+                                </div>
+                                <button class="submit-btn" type="submit">Upload</button>
+                            </form>
+                        </div>
+                        <script src="./script.js"></script>
                         
-                        <% }%>
-                    <div class="separator"></div>
+                        <% }%> -->
                 </div>
+        <% }%>
+        <h1>Lista pronađenih trgovina: </h1>
 
-                slike i cijene
-               
-    <% }%>
+        <% for (let trgovina of trgovine) { %>
+    
+            <!-- <div class="topnav">
+                <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit">Submit</button>
+                </form>
+                </div>
+            </div> -->
+    
+    
+            <section class="section secondary-color-bg">
+                <div class="centered-container">
+                    <h1 class="decorated-title font-secondary main-color">
+                        <a href = "../profile/<%- trgovina.id %>"><%= trgovina.naziv %></a>
+                        </h1>
+                        
+                </div>
+    
+        <% }%>
+    <% } %>
+
+
 </main>
 
 
