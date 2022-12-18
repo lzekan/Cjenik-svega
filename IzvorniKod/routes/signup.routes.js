@@ -3,7 +3,9 @@ const router = express.Router();
 
 const { body, validationResult } = require('express-validator');
 const User = require('../models/UserModel')
+const Trgovina = require('../models/TrgovinaModel')
 const UserDataAccess = require('../data_access/UserDataAccess')
+const TrgovinaDataAccess = require('../data_access/TrgovinaDataAccess')
 const PasswordHasher = require('./helpers/PasswordHasher')
 
 router.get('/', (req, res) => {
@@ -39,18 +41,29 @@ router.post('/',
 		}else if(req.body.chktrg == 'Trgovina'){
 			pristup = 1;
 		}
-		let user = new User(req.body.first_name, req.body.last_name, req.body.email,req.body.nickname,  '', pristup);
-
+		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup);
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);
-
 			try {
 				UserDataAccess.addNewUser(user);
 			} catch (error) {
 				console.log(error)
 				throw error
 			}
-
+			let korisnik = await UserDataAccess.getByNickname(user.nickname);
+			let userId = korisnik.id;
+			if(pristup == 1 && userId != undefined){
+				if(await TrgovinaDataAccess.isUniqueID(userId)){
+					console.log(userId)
+					let trgovina = new Trgovina(userId,"Konzum");
+					try{
+					TrgovinaDataAccess.addNewTrgovina(trgovina);
+					}catch(err){
+						console.log(err); 
+						throw err
+					}
+				}
+			}
 			req.session.user = user;
 			res.redirect('/')
 

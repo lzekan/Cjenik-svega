@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/', async (req, res) => {
-
-	if(req.session.user !== undefined){
+		if(req.session.user !== undefined){
 		return res.status(400).send('You have to logout first');
 	}
 	
