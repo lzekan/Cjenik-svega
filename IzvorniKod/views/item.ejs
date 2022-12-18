@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title><%= proizvod.ime_proizvoda %></title>
+    <title><%= name %></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
@@ -26,23 +26,27 @@
    
        
     </main>
-
-    <% for (let trgovina of trgovine) { %>
+	<h1><%=name%></h1>
+	<% for (let tag of tags) { %>
+	    -><%=tag%>		
+	<%}%>
+	
+    <% for (let trgovina of stores) { %>
         <section class="section secondary-color-bg">
             <div class="centered-container">
                 <h1 class="decorated-title font-secondary main-color">
-                    <span class="main-color-emphasized"><%= trgovina.trgovina_name %></span>
+                    <a href="/profile/<%=trgovina.TrgovinaID%>"><span class="main-color-emphasized"><%= trgovina.name %></span></a>
                     </h1>
                 <div class="separator"></div>
             </div>
-            <% if (trgovinaItemMap[trgovina.id].length === 0) { %>
+            <% if (trgovina.prices.length === 0) { %>
                 <div class="centered-container">
                     <h2 class="decorated-title font-secondary main-color">Proizvod ne postoji u niti jednoj trgovini</h2>
                 </div>
             <% } else { %>
                 <div class="centered-container">
-                    <% for (let cijena of trgovinaItemMap[trgovina.id]) { %>
-                            <div class="photo-box-title font-secondary main-color-emphasized"><%= proizvod.cijena %></div>
+                    <% for (let cijena of trgovina.prices) { %>
+                            <div class="photo-box-title font-secondary main-color-emphasized"><%= cijena %>kn</div>
                         
                     <% } %>
                 </div>

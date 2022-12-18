@@ -3,7 +3,9 @@ const router = express.Router();
 
 const { body, validationResult } = require('express-validator');
 const User = require('../models/UserModel')
+const Trgovina = require('../models/TrgovinaModel')
 const UserDataAccess = require('../data_access/UserDataAccess')
+const TrgovinaDataAccess = require('../data_access/TrgovinaDataAccess')
 const PasswordHasher = require('./helpers/PasswordHasher')
 
 router.get('/', (req, res) => {
@@ -28,24 +30,59 @@ router.post('/',
 		if(req.session.user !== undefined){
 			return res.status(400).send('You have to logout first');
 		}
+
+		console.log("REQUEST = "+ JSON.stringify(req.body));
 	
 		const errors = validationResult(req);
     	if (!errors.isEmpty()) {
       		return res.status(400).json({ errors: errors.array() });
     	}
+		var pristup = 0;
+		if(req.body.chktrg == 'Admin'){
+			pristup  = 2;
+		}else if(req.body.chktrg == 'Trgovina'){
+			pristup = 1;
+		}
 
-		let user = new User(req.body.nickname, req.body.first_name, req.body.last_name, req.body.email, '', req.body.chktrg);
+		if(pristup == 1 && (req.body.naziv_trgovine == undefined || req.body.naziv_trgovine == "") ){
+			return res.status(400).send('Unesite naziv trgovine');
+		}
 
+		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup,{}, false);
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);
-
 			try {
-				UserDataAccess.addNewUser(user);
+				let adddedUserId = await UserDataAccess.addNewUser(user);
+				user.id = adddedUserId
+				console.log("Dodan korisnik: " + JSON.stringify(user))
 			} catch (error) {
 				console.log(error)
 				throw error
 			}
-
+			let korisnik = await UserDataAccess.getByNickname(user.nickname);
+			let userId = korisnik.id;
+			if(pristup == 1 && userId != undefined){
+				if(await TrgovinaDataAccess.isUniqueID(userId)){
+					console.log(userId)
+					let trgovina = new Trgovina(userId, req.body.naziv_trgovine);
+					try{
+						await TrgovinaDataAccess.addNewTrgovina(trgovina);
+						console.log("Korisnik dodan kao trgovina.")
+					}catch(err){	
+						console.log(err); 
+						throw err
+					}
+					try{
+						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod1, req.body.ime1, req.body.cijena1);
+						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod2, req.body.ime2, req.body.cijena2);
+						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod3, req.body.ime3, req.body.cijena3);
+						console.log("Ubaceni proizvodi u ducan")
+					}catch(err){
+						console.log(err); 
+						throw err
+					}
+				}
+			}
 			req.session.user = user;
 			res.redirect('/')
 
