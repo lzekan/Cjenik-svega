@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	let url = '/search/' + req.body.item;
+	let url = '/search/' + req.body.item.toLowerCase();
 	res.redirect(url);
 })
 
