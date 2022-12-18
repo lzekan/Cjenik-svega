@@ -107,17 +107,21 @@ getCommentForStore = async (store_id) => {
 
 putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
    
-   let sql = 'INSERT INTO "Proizvod" VALUES ($1::text, $2::text)';         //bug ako uneses proizvod sa istin barkodon
+   let sql = 'INSERT INTO "Proizvod" VALUES ($1::text, $2::text)';       
    let sql_parameters = [barkod, proizvod];
 
-   try {
-      let result = await db.query(sql, sql_parameters);
-      console.log(result);  
-   } catch (err) {
-         console.log(err);
-         throw err
-   }
+   let sqlControl = 'SELECT * FROM "Proizvod" WHERE "Barkod" = $1::text';
+   let sqlControl_params = [barkod];
 
+   let resultControl = await db.query(sqlControl, sqlControl_params);
+   if(resultControl.rows.length == 0){
+      try {
+         let result = await db.query(sql, sql_parameters);
+         console.log(result);  
+      } catch (err) {
+         console.log(err);
+      }
+   }
 
    sql = 'INSERT INTO "ProizvodTrgovina" VALUES ($1::text, $2::integer, $3::float)';
    sql_parameters = [barkod, trgovinaID, cijena];
@@ -127,7 +131,7 @@ putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
       console.log(result);      
    } catch (err) {
       console.log(err);
-      throw err
+
    }
 
 }
