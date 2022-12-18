@@ -30,13 +30,13 @@
                     <span class="main-color-emphasized">Profil</span>
                 </h1>
                 <div class="dataset">
-
+                    <% if(displayTrgovina !== undefined) {%>
                     <div class="dataset-entry">
                         <div class="dataset-property" style:"">
                             Ime trgovine
                         </div>
                         <div class="dataset-value">
-                            <%= trgovina.naziv %>
+                            <%= displayTrgovina.naziv %>
                         </div> 
                     </div>
 
@@ -45,7 +45,7 @@
                             Krivo unesene cijene
                         </div>
                         <div class="dataset-value">
-                            <%= trgovina.wrong_prices %>
+                            <%= displayTrgovina.wrong_prices %>
                         </div> 
                     </div>
 
@@ -54,10 +54,19 @@
                             Komentar admina
                         </div>
                         <div class="dataset-value">
-                            <%= trgovina.comment %>
+                            <%= displayTrgovina.comment %>
                         </div> 
                     </div>
+                    <div>
+                        <form action="/addComment" method="post">
+                            <label for="comment">Dodaj komentar:</label>
+                            <input type="text" id="comment" name="comment"><br><br>
+                            <input type="hidden" name="storeid" value = "<%= displayUser.id %>"><br><br>
+                            <input type="submit" value="Dodaj">
+                          </form>
+                    </div>
                     <hr>
+                    <% } %>
                     <div class="dataset">
 
                         <div class="dataset-entry">
@@ -65,12 +74,8 @@
                                 User name
                             </div>
                             <div class="dataset-value">
-                                <%= user.nickname %>
+                                <%= displayUser.nickname %>
                             </div>
-                            <form>
-                                <input type="radio" id="username" name="username" value="username">
-                                <label for="username">Objavi javno:</label><br>
-                            </form>
                         </div>
     
                         <div class="dataset-entry">
@@ -78,12 +83,8 @@
                                 First name
                             </div>
                             <div class="dataset-value">
-                                <%= user.first_name %>
+                                <%= displayUser.first_name %>
                             </div>
-                            <form>
-                                <input type="radio" id="name" name="name" value="name">
-                                <label for="name">Objavi javno:</label><br>
-                            </form>
                         </div>
     
                         <div class="dataset-entry">
@@ -91,23 +92,20 @@
                                 Last name
                             </div>
                             <div class="dataset-value">
-                                <%= user.last_name %>
+                                <%= displayUser.last_name %>
                             </div>
-                            <form>
-                                <input type="radio" id="lastname" name="lastname" value="lastname">
-                                <label for="lastname">Objavi javno:</label><br>
-                            </form>
                         </div>
                         <div class="dataset-entry">
                             <div class="dataset-property">
                                 E-mail
                             </div>
                             <div class="dataset-value">
-                                <%= user.email %>
+                                <%= displayUser.email %>
                             </div>
-                            <form>
-                                <input type="radio" id="email" name="email" value="email">
-                                <label for="email">Objavi javno:</label><br>
+                        </div>
+                        <div>
+                            <form action="/forbidAccess" method="POST">
+                                <input type="submit" value="Zabrani pristup">
                             </form>
                         </div>
     
@@ -118,20 +116,6 @@
 
                 </div>
 
-            </div>
-
-            <div>
-                <div class="container">
-                    <h1>Upload file-a</h1>
-                    <form id="form-file-trgovina">
-                        <div class="input-group">
-                            <label for="files">Označi file</label>
-                            <input id="files" type="file" multiple>
-                        </div>
-                        <button class="submit-btn" type="submit">Upload</button>
-                    </form>
-                </div>
-                <script src="./script.js"></script>
             </div>
         </section>
     </main>
