@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Cijenik svega</title>
+    <title>Cjenik svega</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
@@ -15,20 +15,19 @@
         <nav>
             <div class="menu">
                 <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
-                <a href="/signup" class="link menu-item <%if (linkActive === "signup") {%>  link-active  <%}%>">signup</a>
                     <% if( user !== undefined ) {%> 
                     <a href="/profile" class="link menu-item <%if (linkActive === "user") {%>  link-active  <%}%>">Profile</a>
                     <a href="/logout" class="link menu-item <%if (linkActive === "logout") {%>  link-active  <%}%>">Logout</a>
                     <% } else {%>
                     <a href="/login" class="link menu-item <%if (linkActive === "login") {%>  link-active  <%}%>">Login</a>
-					<a href="/prices" class="link menu-item <%if (linkActive === "prices") {%>  link-active  <%}%>"> Nastavi Bez Registracije</a>
+                    <a href="/signup" class="link menu-item <%if (linkActive === "signup") {%>  link-active  <%}%>">Signup</a>
 					<% } %>
             </div>
         </nav>
     </header>
 
 <main class="main">
-    <form action = "" method="post" style="width:200px">
+    <form action = "" method="post" style="width:250px; text-align: center; margin: 100px auto">
         <div>Upisi proizvod koji trazis</div>
         <input type="text" placeholder="Search..." name="item">
         <input type="submit" value="Search">
