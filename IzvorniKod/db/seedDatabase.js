@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS public."PromjenaCijeneTrgovina"
 
 CREATE TABLE IF NOT EXISTS public."Trgovina"
 (
-    "ID" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    "ID" integer NOT NULL ,
     "Naziv" text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "Trgovina_pkey" PRIMARY KEY ("ID")
 );

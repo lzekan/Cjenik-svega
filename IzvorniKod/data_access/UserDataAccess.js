@@ -1,5 +1,6 @@
 const db = require('../db')
 const User = require('../models/UserModel')
+const Privacy = require('../models/PrivacyModel')
 
 addNewUser = async (user) => {
     const sql = `
@@ -53,7 +54,7 @@ wouldBeUnique = async (user) => {
 
 getById = async (id) =>{
     const sql = `
-    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa", "ZabranjenPristup"
     FROM "Korisnik"
     WHERE "ID" = $1::int
     `
@@ -69,13 +70,15 @@ getById = async (id) =>{
             let results = result.rows
 
             let newUser = {}
-            newUser.nickname = results[0].nickname
-            newUser.first_name = results[0].first_name
-            newUser.last_name = results[0].last_name
-            newUser.email = results[0].email
-            newUser.password_hash = results[0].password_hash,
-            newUser.access_level = results[0].access_level
-            newUser.id = results[0].id
+            newUser.nickname = results[0].Nadimak
+            newUser.first_name = results[0].Ime
+            newUser.last_name = results[0].Prezime
+            newUser.email = results[0].Email
+            newUser.password_hash = results[0].Lozinka,
+            newUser.access_level = results[0].RazinaPristupa
+            newUser.id = results[0].ID
+            newUser.access_forbidden = results[0].ZabranjenPristup
+            newUser.privacy = await getPrivacyForUser(newUser.id)
 
             return newUser
         }
@@ -88,7 +91,7 @@ getById = async (id) =>{
 
 getByNickname = async (nickname) =>{
     const sql = `
-    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa"
+    SELECT "ID", "Ime", "Prezime" , "Email" , "Nadimak" , "Lozinka", "RazinaPristupa", "ZabranjenPristup"
     FROM "Korisnik"
     WHERE "Nadimak" = $1::text
     `
@@ -111,6 +114,8 @@ getByNickname = async (nickname) =>{
             newUser.password_hash = results[0].Lozinka,
             newUser.access_level = results[0].RazinaPristupa
             newUser.id = results[0].ID
+            newUser.access_forbidden = results[0].ZabranjenPristup
+            newUser.privacy = await getPrivacyForUser(newUser.id)
 
             return newUser
         }
@@ -139,15 +144,50 @@ getByEmail = async (email) =>{
             let results = result.rows
 
             let newUser = {}
-            newUser.nickname = results[0].nickname
-            newUser.first_name = results[0].first_name
-            newUser.last_name = results[0].last_name
-            newUser.email = results[0].email
-            newUser.password_hash = results[0].password_hash,
-            newUser.access_level = results[0].access_level
-            newUser.id = results[0].id
+            newUser.nickname = results[0].Nadimak
+            newUser.first_name = results[0].Ime
+            newUser.last_name = results[0].Prezime
+            newUser.email = results[0].Email
+            newUser.password_hash = results[0].Lozinka,
+            newUser.access_level = results[0].RazinaPristupa
+            newUser.id = results[0].ID
+            newUser.access_forbidden = results[0].ZabranjenPristup
+            newUser.privacy = await getPrivacyForUser(newUser.id)
 
             return newUser
+        }
+
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
+
+getPrivacyForUser = async (user_id) => {
+    const sql = `
+    SELECT "KorisnikID", "Ime", "Prezime", "Email", "Nadimak"
+    FROM "Privatnost"
+	WHERE "KorisnikID" = $1::int
+    `    
+    const sql_parameters = [user_id]
+
+    let newPrivacy = new Privacy(true, true, true, true)
+
+    try {
+        let result = await db.query(sql, sql_parameters);
+        
+        if(result.rows.length <= 0){
+            return undefined
+        } else {
+            
+            let results = result.rows
+
+            newPrivacy.is_nickname_public = results[0].Nadimak
+            newPrivacy.is_first_name_public = results[0].Ime
+            newPrivacy.is_last_name_public = results[0].Prezime
+            newPrivacy.is_email_public = results[0].Email
+
+            return newPrivacy
         }
 
     } catch (err) {

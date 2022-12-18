@@ -30,6 +30,8 @@ router.post('/',
 		if(req.session.user !== undefined){
 			return res.status(400).send('You have to logout first');
 		}
+
+		console.log("REQUEST = "+ JSON.stringify(req.body));
 	
 		const errors = validationResult(req);
     	if (!errors.isEmpty()) {
@@ -41,11 +43,18 @@ router.post('/',
 		}else if(req.body.chktrg == 'Trgovina'){
 			pristup = 1;
 		}
-		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup);
+
+		if(pristup == 1 && (req.body.naziv_trgovine == undefined || req.body.naziv_trgovine == "") ){
+			return res.status(400).send('Unesite naziv trgovine');
+		}
+
+		let user = new User(req.body.nickname,req.body.first_name, req.body.last_name, req.body.email, '', pristup,{}, false);
 		if(await UserDataAccess.wouldBeUnique(user)){
 			user.password_hash = PasswordHasher.hash(req.body.password);
 			try {
-				UserDataAccess.addNewUser(user);
+				let adddedUserId = await UserDataAccess.addNewUser(user);
+				user.id = adddedUserId
+				console.log("Dodan korisnik: " + JSON.stringify(user))
 			} catch (error) {
 				console.log(error)
 				throw error
@@ -55,9 +64,10 @@ router.post('/',
 			if(pristup == 1 && userId != undefined){
 				if(await TrgovinaDataAccess.isUniqueID(userId)){
 					console.log(userId)
-					let trgovina = new Trgovina(userId, req.body.nickname);
+					let trgovina = new Trgovina(userId, req.body.naziv_trgovinex);
 					try{
-					TrgovinaDataAccess.addNewTrgovina(trgovina);
+					await TrgovinaDataAccess.addNewTrgovina(trgovina);
+					console.log("Korisnik dodan kao trgovina.")
 					}catch(err){
 						console.log(err); 
 						throw err
