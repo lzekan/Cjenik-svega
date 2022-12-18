@@ -64,7 +64,7 @@ router.post('/',
 			if(pristup == 1 && userId != undefined){
 				if(await TrgovinaDataAccess.isUniqueID(userId)){
 					console.log(userId)
-					let trgovina = new Trgovina(userId, req.body.naziv_trgovinex);
+					let trgovina = new Trgovina(userId, req.body.nickname);
 					try{
 					await TrgovinaDataAccess.addNewTrgovina(trgovina);
 					console.log("Korisnik dodan kao trgovina.")
