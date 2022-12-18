@@ -33,6 +33,11 @@ router.get('/',async (req, res) => {
 
 router.get('/:id', async (req, res) => {
 	
+	if (req.params.id.charAt(0) == 'b')
+	{
+		return res.redirect('/item/' + req.params.id);
+	}
+	
     if(req.session.user == undefined){
         //ako nije registriran redirectaj na login
         res.redirect('/login')

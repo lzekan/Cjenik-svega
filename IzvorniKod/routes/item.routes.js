@@ -5,7 +5,8 @@ const router = express.Router();
 router.get('/:barcode', async (req, res) => {
 	
 	let barcode = req.params.barcode
-	let item = await Item.getItem(barcode);
+	let item = new Item();
+	item = await item.getItem(barcode);
 	
 	if (item == undefined)
 	{
@@ -13,11 +14,13 @@ router.get('/:barcode', async (req, res) => {
 		return;
 	}
 	
+	console.log(item);
+	
 	res.render('item', {
 		linkActive: 'home',
 		user: req.session.user,
 		name: item.name,
-		stores: item.stores
+		stores: item.stores,
 		tags: item.tags
 	});
 });
