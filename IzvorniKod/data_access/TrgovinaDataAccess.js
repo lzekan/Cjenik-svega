@@ -105,9 +105,36 @@ getCommentForStore = async (store_id) => {
    }
 }
 
+putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
+   
+   let sql = 'INSERT INTO "Proizvod" VALUES ($1::text, $2::text)';         //bug ako uneses proizvod sa istin barkodon
+   let sql_parameters = [barkod, proizvod];
+
+   try {
+      let result = await db.query(sql, sql_parameters);
+      console.log(result);  
+   } catch (err) {
+         console.log(err);
+         throw err
+   }
+
+
+   sql = 'INSERT INTO "ProizvodTrgovina" VALUES ($1::text, $2::integer, $3::float)';
+   sql_parameters = [barkod, trgovinaID, cijena];
+
+   try {
+      result = await db.query(sql, sql_parameters);
+      console.log(result);      
+   } catch (err) {
+      console.log(err);
+      throw err
+   }
+
+}
 
 module.exports = {
    isUniqueID,
    addNewTrgovina,
-   getTrgovina
+   getTrgovina,
+   putItemsInStore
 }

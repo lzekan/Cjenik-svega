@@ -73,43 +73,83 @@
                     <div></div>
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $("input[name='chktrg']").click(function () {
-            if ($("#chkYes").is(":checked")) {
-                $("#popis").removeAttr("disabled");
-                $("#popis").removeAttr("style");
-                $("#natpis").removeAttr("style");
-                $("#popis").focus();
-            } else {
-                $("#popis").attr("disabled", "disabled");
-                $("#popis").attr("style", "display:none");
-            }
-        });
-    });
-</script>
-<span>Vrsta korisnika</span>
-<div></div>
-<label for="chkYes">
-    <input type="radio" id="chkYes" name="chktrg" value="Trgovina" />
-    Trgovina
-</label>
-<label for="chkNo">
-    <input type="radio" id="korisnik" name="chktrg" value="Korisnik"/>
-    Korisnik
-</label>
-<label for="chkNo">
-    <input type="radio" id="admin" name="chktrg" value="Admin" />
-    Admin
-</label>
-<hr />
-<p id="natpis" style="display:none">Naziv trgovine:</p>
-<input type="text" id="popis" name="naziv_trgovine" disabled="disabled" style="display:none"/>
-<div></div>
-<div></div>
-<input class="btn" type="submit">
-<input class="btn" type="reset">
+                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        $(function () {
+                            $("input[name='chktrg']").click(function () {
+                                if ($("#chkYes").is(":checked")) {
+                                    $("#popis").removeAttr("disabled");
+                                    $("#popis").removeAttr("style");
+                                    $("#natpis").removeAttr("style");
+                                    $("#popis").focus();
+                                    $("#unos").removeAttr("style");
+                                    $("#unos1").removeAttr("style");
+                                    $("#unos2").removeAttr("style");
+                                    $("#unos3").removeAttr("style");
+                                    $("#unos").attr("style", "display: flex; justify-content: space-around;");
+                                    $("#unos1").attr("style", "display: flex; justify-content: space-around;");
+                                    $("#unos2").attr("style", "display: flex; justify-content: space-around;");
+                                    $("#unos3").attr("style", "display: flex; justify-content: space-around;");
+                                } else {
+                                    $("#natpis").attr("style", "display:none");
+                                    $("#popis").attr("disabled", "disabled");
+                                    $("#popis").attr("style", "display:none");
+                                    $("#unos").attr("style", "display:none");
+                                    $("#unos1").attr("style", "display:none");
+                                    $("#unos2").attr("style", "display:none");
+                                    $("#unos3").attr("style", "display:none");
+                                }
+                            });
+                        });
+                    </script>
+
+                    <span>Vrsta korisnika</span>
+                    <div></div>
+                    <label for="chkYes">
+                        <input type="radio" id="chkYes" name="chktrg" value="Trgovina" />
+                        Trgovina
+                    </label>
+                    <label for="chkNo">
+                        <input type="radio" id="korisnik" name="chktrg" value="Korisnik"/>
+                        Korisnik
+                    </label>
+                    <label for="chkNo">
+                        <input type="radio" id="admin" name="chktrg" value="Admin" />
+                        Admin
+                    </label>
+                    <hr />
+                    <p id="natpis" style="display:none">Naziv trgovine:</p>
+                    <input class="form-component form-input" type="text" id="popis" name="naziv_trgovine" disabled="disabled" style="display:none"/>
+                    <hr>   
+
+                    <div style="display: none;" id="unos">
+                        <span>Barkod proizvoda</span>
+                        <span>Ime proizvoda</span>
+                        <span>Cijena</span>
+                    </div>
+
+                    <div style="display: none;" id="unos1">
+                        <input type="text" name="kod1">
+                        <input type="text" name ="ime1">
+                        <input type="text" name = "cijena1">
+                    </div>
+
+                    <div style="display: none" id="unos2">
+                        <input type="text" name="kod2">
+                        <input type="text" name ="ime2">
+                        <input type="text" name = "cijena2">
+                    </div>
+
+                    <div style="display: none;" id="unos3">
+                        <input type="text" name="kod3">
+                        <input type="text" name ="ime3">
+                        <input type="text" name = "cijena3">
+                    </div>
+   
+                    <div></div>
+                    <div></div>
+                    <input class="btn" type="submit">
+                    <input class="btn" type="reset">
 
                     </fieldset>
                 </form>

@@ -64,10 +64,19 @@ router.post('/',
 			if(pristup == 1 && userId != undefined){
 				if(await TrgovinaDataAccess.isUniqueID(userId)){
 					console.log(userId)
-					let trgovina = new Trgovina(userId, req.body.nickname);
+					let trgovina = new Trgovina(userId, req.body.naziv_trgovine);
 					try{
-					await TrgovinaDataAccess.addNewTrgovina(trgovina);
-					console.log("Korisnik dodan kao trgovina.")
+						await TrgovinaDataAccess.addNewTrgovina(trgovina);
+						console.log("Korisnik dodan kao trgovina.")
+					}catch(err){	
+						console.log(err); 
+						throw err
+					}
+					try{
+						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod1, req.body.ime1, req.body.cijena1);
+						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod2, req.body.ime2, req.body.cijena2);
+						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod3, req.body.ime3, req.body.cijena3);
+						console.log("Ubaceni proizvodi u ducan")
 					}catch(err){
 						console.log(err); 
 						throw err
