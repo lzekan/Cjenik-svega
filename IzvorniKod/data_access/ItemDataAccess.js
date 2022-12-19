@@ -28,7 +28,7 @@ async function getStores(barcode)
 {
 	const sql = `
     SELECT "Naziv" name, "TrgovinaID", "Cijena"
-    FROM "ProizvodTrgovina" JOIN "Trgovina" ON "ProizvodTrgovina"."TrgovinaID" = "Trgovina"."TrgovinaID"
+    FROM "ProizvodTrgovina" JOIN "Trgovina" ON "ProizvodTrgovina"."TrgovinaID" = "Trgovina"."ID"
 	WHERE "Barkod" = $1::text
     `;
     const sql_parameters = [barcode];
@@ -38,7 +38,7 @@ async function getStores(barcode)
         result = await db.query(sql, sql_parameters);
         
         if(result.rows.length <= 0){
-            return undefined
+            return [];
         } else {
             result = result.rows;
         }
