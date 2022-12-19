@@ -33,9 +33,7 @@
             <section class="section secondary-color-bg">
                 <div class="centered-container">
                     <h1 class="decorated-title font-secondary main-color">
-                        <a href = "../profile/<%- proizvod.barkod %>"><%= proizvod.naziv %></a>
-                        <span class="main-color-emphasized"><%= proizvod.trgovina %></span>
-                        <span class="main-color-emphasized"><%= proizvod.cijena %></span>
+                        <a href = "../item/<%- proizvod.barkod %>"><%= proizvod.naziv %></a>
                         </h1>
                         <% if( user !== undefined ) {%> 
                         <!-- <form>
@@ -80,7 +78,9 @@
                         <% }%> -->
                 </div>
         <% }%>
-        <h1>Lista pronađenih trgovina: </h1>
+    <% } %>
+	
+	<h1>Lista pronađenih trgovina: </h1>
 
         <% for (let trgovina of trgovine) { %>
     
@@ -103,8 +103,6 @@
                 </div>
     
         <% }%>
-    <% } %>
-
 
 </main>
 

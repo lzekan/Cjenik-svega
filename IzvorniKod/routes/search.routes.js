@@ -4,16 +4,15 @@ const router = express.Router();
 
 router.get('/:term', async (req, res) => {
 	
-	let sql = 'SELECT DISTINCT "Proizvod"."Naziv" AS naziv, "Proizvod"."Barkod" AS barkod, "Trgovina"."Naziv" AS trgovina, "Cijena" cijena FROM "ProizvodTrgovina" ' + 
-		'NATURAL JOIN "Proizvod" LEFT JOIN "Oznake" USING("Barkod") LEFT JOIN "Trgovina" ' +
-		'ON "ProizvodTrgovina"."TrgovinaID" = "Trgovina"."ID" ' +
+	let sql = 'SELECT DISTINCT "Proizvod"."Naziv" AS naziv, "Proizvod"."Barkod" AS barkod' +
+		'FROM "Proizvod" LEFT JOIN "Oznake" USING("Barkod")' +
 		'WHERE LOWER("Proizvod"."Naziv") LIKE LOWER($1::text) OR LOWER("Oznaka") LIKE LOWER($1::text)';
 
 	let sql_parameters = [req.params.term + '%'];
 
 	let products = await db.query(sql, sql_parameters);
 
-	sql = 'SELECT "Naziv" AS naziv, "ID" AS id FROM "Trgovina" WHERE LOWER("Naziv") = LOWER($1::text)';
+	sql = 'SELECT "Naziv" AS naziv, "ID" AS id FROM "Trgovina" WHERE LOWER("Naziv") LIKE LOWER($1::text)';
 	let trgovine = await db.query(sql, sql_parameters);
 
 
