@@ -77,7 +77,7 @@ router.post('/',
 							req.body.kod1 = 'b' + req.body.kod1;
 						if (req.body.kod2.charAt(0) != 'b')
 							req.body.kod2 = 'b' + req.body.kod2;
-						if (req.body.kod3 charAt(0) != 'b')
+						if (req.body.kod3.charAt(0) != 'b')
 							req.body.kod3 = 'b' + req.body.kod3;
 						
 						if (req.body.kod1.length > 1)
