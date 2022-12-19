@@ -28,7 +28,7 @@ async function getStores(barcode)
 {
 	const sql = `
     SELECT "Naziv" name, "TrgovinaID", "Cijena"
-    FROM "ProizvodTrgovina" NATURAL JOIN "Trgovina"
+    FROM "ProizvodTrgovina" JOIN "Trgovina" ON "ProizvodTrgovina"."TrgovinaID" = "Trgovina"."TrgovinaID"
 	WHERE "Barkod" = $1::text
     `;
     const sql_parameters = [barcode];
