@@ -96,7 +96,7 @@ async function getTags(barcode)
 	try {
         let result = await db.query(sql, sql_parameters);
         
-        if(result.rows.length <= 0){
+        if(result.rows.length < 0){
             return undefined
         } else {
 			let tags = [];
