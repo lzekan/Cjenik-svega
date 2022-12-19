@@ -73,9 +73,19 @@ router.post('/',
 						throw err
 					}
 					try{
-						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod1, req.body.ime1, req.body.cijena1);
-						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod2, req.body.ime2, req.body.cijena2);
-						await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod3, req.body.ime3, req.body.cijena3);
+						if (req.body.kod1.charAt(0) != 'b')
+							req.body.kod1 = 'b' + req.body.kod1;
+						if (req.body.kod2.charAt(0) != 'b')
+							req.body.kod2 = 'b' + req.body.kod2;
+						if (req.body.kod3.charAt(0) != 'b')
+							req.body.kod3 = 'b' + req.body.kod3;
+						
+						if (req.body.kod1.length > 1)
+							await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod1, req.body.ime1, req.body.cijena1);
+						if (req.body.kod2.length > 1)
+							await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod2, req.body.ime2, req.body.cijena2);
+						if (req.body.kod3.length > 1)
+							await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod3, req.body.ime3, req.body.cijena3);
 						console.log("Ubaceni proizvodi u ducan")
 					}catch(err){
 						console.log(err); 

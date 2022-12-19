@@ -8,8 +8,6 @@ const { pool } = require('../db');
 
 
 const sql_create_tables_in_db = ` BEGIN;
-DROP TABLE "Korisnik";
-DROP TABLE public.session;
 CREATE TABLE IF NOT EXISTS public."Komentar"
 (
     "KorisnikID" integer NOT NULL,
