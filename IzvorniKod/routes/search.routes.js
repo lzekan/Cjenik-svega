@@ -4,8 +4,8 @@ const router = express.Router();
 
 router.get('/:term', async (req, res) => {
 	
-	let sql = 'SELECT DISTINCT "Proizvod"."Naziv" AS naziv, "Proizvod"."Barkod" AS barkod' +
-		'FROM "Proizvod" LEFT JOIN "Oznake" USING("Barkod")' +
+	let sql = 'SELECT DISTINCT "Proizvod"."Naziv" AS naziv, "Proizvod"."Barkod" AS barkod ' +
+		'FROM "Proizvod" LEFT JOIN "Oznake" USING("Barkod") ' +
 		'WHERE LOWER("Proizvod"."Naziv") LIKE LOWER($1::text) OR LOWER("Oznaka") LIKE LOWER($1::text)';
 
 	let sql_parameters = [req.params.term + '%'];
