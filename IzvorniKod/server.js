@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const fileUpload = require('express-fileupload');
 const path = require('path');
 
 //middleware for sessions and connecting to database
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //middleware for decoding parameters
 app.use(express.urlencoded({ extended: true }));
-
+app.use(fileUpload());
 //session middleware
 app.use(session({
     store: new pgSession({
@@ -43,7 +43,7 @@ app.use(session({
     }),
     secret: enviornment.SessionSecret,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
 }));
 
 //defining routes

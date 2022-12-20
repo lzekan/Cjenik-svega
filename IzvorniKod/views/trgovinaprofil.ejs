@@ -147,10 +147,10 @@
             <div>
                 <div class="container">
                     <h1>Upload file-a</h1>
-                    <form id="form-file-trgovina">
+                    <form id="form-file-trgovina" action="/profile/upload" method="post" enctype="multipart/form-data"> 
                         <div class="input-group">
                             <label for="files">Označi file</label>
-                            <input id="files" type="file" multiple>
+                            <input id="files" type="file" name="fileName">
                         </div>
                         <button class="submit-btn" type="submit">Upload</button>
                     </form>
