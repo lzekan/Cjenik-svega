@@ -253,5 +253,8 @@ module.exports = {
    isUniqueID,
    addNewTrgovina,
    getTrgovina,
-   putItemsInStore
+   putItemsInStore,
+   changePriceInShop,
+   checkIfItemExistsInShop,
+   checkIfItemExists
 }
