@@ -5,7 +5,8 @@ const enviorment = {
         port: 5432,
         dbName: "cjeniksvega",
         user: "postgres",
-        password: "root"
+        password: "",
+        ssl: true
     }
 
 }

@@ -41,7 +41,10 @@ router.get('/:id', async (req, res) => {
     if(req.session.user == undefined){
         //ako nije registriran redirectaj na login
         res.redirect('/login')
+        return
     }
+
+    console.log(JSON.stringify(req.session.user))
 
     if(req.session.user.access_level !== 2 ){
         //ako nije admin nema pristup tudem profilu
@@ -51,7 +54,7 @@ router.get('/:id', async (req, res) => {
     let user = undefined;
     try {
         user = await UserDataAccess.getById(req.params.id);
-        console.log(JSON.stringify(req.session.user))
+        
         if(user.id == req.session.user.id){
             res.redirect('/profile')
             return;
@@ -74,7 +77,6 @@ router.get('/:id', async (req, res) => {
             displayTrgovina: trgovina
         });
 
-        //return res.status(200).send('Profil korisnika s id = ' + req.params.id + ' postoji');
     } else {
         return res.status(404).send('Not found');
     }
