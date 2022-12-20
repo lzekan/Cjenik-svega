@@ -27,19 +27,43 @@ router.get('/',async (req, res) => {
         res.render('trgovinaprofil', {
             linkActive: 'user',
             user: req.session.user,
-            trgovina: trgovina 
+            trgovina: trgovina,
+            error: ''
         });
     }
 	
 });
 
-router.post('/upload', async(req,res) => {
-    if(!req.files) console.log("undefined")
-    var data = req.files.fileName
-    var str = data.data.toString('utf8')
+router.post('/', async(req,res) => {
+    let trgovina = await TrgovinaDataAccess.getTrgovina(req.session.user.id)
+    if(req.files == null) {
+        res.render('trgovinaprofil', {
+            linkActive: 'user',
+            user: req.session.user,
+            trgovina: trgovina,
+            error: 'please upload a document before submitting!'
+        });
+        return;
+    } 
+
+    var fileName = req.files.fileName;
+    console.log(fileName.name.substring(fileName.name.length - 4, fileName.name.length));
+
+    if(fileName.name.toString().substring(fileName.name.length - 4, fileName.name.length) != ".txt") {
+        res.render('trgovinaprofil', {
+            linkActive: 'user',
+            user: req.session.user,
+            trgovina: trgovina,
+            error: 'please upload a valid text document!'
+        });
+        return;
+    }
+
+
+    var str = fileName.data.toString('utf8')
     var count = 0;
     const map = new Map();
-    let key,value;
+    let key, value;
     let prethodni = 0;
     for(let i = 0; i < str.length;i++){
         if(str.charAt(i) == "\""){
@@ -64,7 +88,7 @@ router.post('/upload', async(req,res) => {
             }
         }
     }
-    console.log(req.session.user.id)
+
     map.forEach((v,k) => {
         if(TrgovinaDataAccess.checkIfItemExists(k)){
             if(TrgovinaDataAccess.checkIfItemExistsInShop(k)){
