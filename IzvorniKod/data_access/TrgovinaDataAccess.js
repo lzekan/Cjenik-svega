@@ -136,9 +136,57 @@ putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
 
 }
 
+checkIfItemExists = async(proizvod) => {
+   let sql = 'SELECT * FROM "Proizvod" WHERE "Naziv" = $1::text';
+   let sql_parameters = [proizvod];
+   let resultControl = await db.query(sql,sql_parameters);
+   if(resultControl.rows.length == 0){
+      return false;
+   }
+   return true;
+}
+
+
+checkIfItemExistsInShop = async(proizvod,trgovinaId) => {
+   let sql = 'SELECT "Barkod" FROM "Proizvod" WHERE "Naziv" = $1::text';
+   let sql_parameters = [proizvod];
+   let result = await db.query(sql,sql_parameters);
+   let barkod = result.rows[0].Barkod;
+   let sql2 = 'SELECT * FROM "ProizvodTrgovina" WHERE "TrgovinaID" = $1::int AND "Barkod" = $2::text';
+   let sql_parameters2 = [trgovinaId,barkod];
+   let result2 = await db.query(sql2,sql_parameters2);
+   if(result2.rows.length == 0){
+      return false;
+   }
+   return true;
+}
+
+changePriceInShop = async(cijena,proizvod,trgovinaId) =>{
+   let sql = 'SELECT "Barkod" FROM "Proizvod" WHERE "Naziv" = $1::text';
+   let sql_parameters = [proizvod];
+   let result = await db.query(sql,sql_parameters);
+   let barkod = result.rows[0].Barkod;
+   let sql2 = 'SELECT "Cijena" FROM "ProizvodTrgovina" WHERE "TrgovinaID" = $1::int AND "Barkod" = $2::text';
+   let sql_parameters2 = [trgovinaId,barkod];
+   let result2 = await db.query(sql2,sql_parameters2);
+   if(result2.rows.length > 0){
+      if(cijena != result2.rows[0].Cijena){
+         console.log("Mijenja se: iz "+result2.rows[0].Cijena+" u "+cijena);
+         let sqlPromjena = 'UPDATE "ProizvodTrgovina" SET "Cijena" = $1::float WHERE "TrgovinaID" = $2::int AND "Barkod" = $3::text';
+         let sql_params = [cijena, trgovinaId, barkod];
+         await db.query(sqlPromjena,sql_params);
+      }
+   }
+}
+
+
+
 module.exports = {
    isUniqueID,
    addNewTrgovina,
    getTrgovina,
-   putItemsInStore
+   putItemsInStore,
+   checkIfItemExistsInShop,
+   checkIfItemExists,
+   changePriceInShop
 }
