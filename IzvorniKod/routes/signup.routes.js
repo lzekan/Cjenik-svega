@@ -93,7 +93,7 @@ router.post('/',
 					}
 				}
 			}
-			req.session.user = user;
+			req.session.user = korisnik;
 			res.redirect('/')
 
 		} else {
