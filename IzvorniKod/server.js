@@ -23,6 +23,7 @@ const searchRouter = require('./routes/search.routes.js');
 const signupRouter = require('./routes/signup.routes.js');
 const profileRouter = require('./routes/profile.routes')
 const addCommentRouter = require('./routes/addComment.routes')
+const changePrivacyRouter = require('./routes/changePrivacy.routes')
 
 //ejs middleware
 app.set('views', path.join(__dirname, 'views'));
@@ -56,5 +57,6 @@ app.use('/search', searchRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/addComment', addCommentRouter)
+app.use('/changePrivacy', changePrivacyRouter)
 
 app.listen(3000, () => console.log('Server running on port 3000'));
