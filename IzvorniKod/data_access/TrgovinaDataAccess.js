@@ -136,9 +136,79 @@ putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
 
 }
 
+commentExists = async (admin_id, store_id) =>{
+   const sql = 'SELECT * FROM "Komentar" WHERE ("KorisnikID" = $1::int AND "TrgovinaID"= $2::int)'
+   const sql_parameters = [admin_id, store_id];
+   try{
+       let result = await db.query(sql, sql_parameters);
+       
+       if(result.rows.length > 0){
+         return true
+       } else {
+         return false
+       }
+       
+   }catch(err){
+       console.log(err);
+       throw err
+   }
+}
+
+existsTrgovinaWithId = async (store_id) =>{
+   const sql = 'SELECT * FROM "Trgovina" WHERE "ID" = $1::int'
+   const sql_parameters = [store_id];
+   try{
+       let result = await db.query(sql, sql_parameters);
+       
+       if(result.rows.length > 0){
+         return true
+       } else {
+         return false
+       }
+       
+   }catch(err){
+       console.log(err);
+       throw err
+   }
+}
+
+addComment = async (admin_id, store_id, comment) => {
+   if(await commentExists(admin_id, store_id)){
+      //update query
+
+      const sql = `
+      UPDATE "Komentar"
+      SET "OpisKomentara" = $3::text
+      WHERE ("KorisnikID" = $1::int AND "TrgovinaID"= $2::int);
+      `
+      const sql_parameters = [admin_id, store_id, comment]
+
+      try {
+         let result = await db.query(sql, sql_parameters);
+      } catch (err) {
+         console.log(err)
+         throw err
+      }
+   } else {
+      //insert query
+
+      const sql = 'INSERT INTO "Komentar" ("KorisnikID", "TrgovinaID", "OpisKomentara") VALUES ($1::int, $2::int, $3::text)'
+      const sql_parameters = [admin_id, store_id, comment]
+
+      try {
+         let result = await db.query(sql, sql_parameters);
+      } catch (err) {
+         console.log(err)
+         throw err
+      }
+   }
+}
+
 module.exports = {
    isUniqueID,
    addNewTrgovina,
    getTrgovina,
-   putItemsInStore
+   putItemsInStore,
+   existsTrgovinaWithId,
+   addComment
 }
