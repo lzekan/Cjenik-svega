@@ -1,0 +1,20 @@
+<header class="header">
+    <nav class ="navbar">
+        <div>
+            <a href="/" class="link <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
+            <% if( user !== undefined ) {%> 
+                <a href="/profile" class="link <%if (linkActive === "user") {%>  link-active  <%}%>">Profile</a> 
+            <% } %>               
+        </div>
+
+        <div>
+            <% if( user !== undefined ) {%> 
+                <a href="/logout" class="link <%if (linkActive === "logout") {%>  link-active  <%}%>">Logout</a>
+            <% } else {%>
+                <a href="/login" class="link <%if (linkActive === "login") {%>  link-active  <%}%>">Login</a>
+                <a href="/signup" class="link <%if (linkActive === "signup") {%>  link-active  <%}%>">Signup</a>
+            <% } %> 
+        </div>
+
+    </nav>
+</header>
