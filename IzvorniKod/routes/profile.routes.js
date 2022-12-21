@@ -130,6 +130,21 @@ router.get('/:id', async (req, res) => {
         if(user.access_level == 1){
             trgovina = await TrgovinaDataAccess.getTrgovina(user.id)
         }
+
+        /*atributi za koje je korisnik odredio da su privatni
+        nece se poslati*/
+        if(user.privacy !== undefined && !user.privacy.is_nickname_public){
+            user.nickname = undefined
+        }
+        if(user.privacy !== undefined && !user.privacy.is_first_name_public){
+            user.first_name = undefined
+        }
+        if(user.privacy !== undefined && !user.privacy.is_last_name_public){
+            user.last_name = undefined
+        }
+        if(user.privacy !== undefined && !user.privacy.is_email_public){
+            user.email = undefined
+        }
         
         res.render('displayProfileForAdmin', {
             linkActive: 'user',

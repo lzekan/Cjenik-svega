@@ -74,7 +74,11 @@
                                 User name
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.nickname %>
+                                <% if (displayUser.nickname !== undefined) {%>
+                                    <%= displayUser.nickname %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
     
@@ -83,7 +87,11 @@
                                 First name
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.first_name %>
+                                <% if (displayUser.first_name !== undefined) {%>
+                                    <%= displayUser.first_name %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
     
@@ -92,7 +100,11 @@
                                 Last name
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.last_name %>
+                                <% if (displayUser.last_name !== undefined) {%>
+                                    <%= displayUser.last_name %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
                         <div class="dataset-entry">
@@ -100,7 +112,11 @@
                                 E-mail
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.email %>
+                                <% if (displayUser.email !== undefined) {%>
+                                    <%= displayUser.email %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
                         <div>
