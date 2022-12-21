@@ -1,0 +1,60 @@
+.navbar {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    color: #7cdfd6;
+    text-decoration: none;
+    outline: none;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    padding: 25px;
+}
+
+.link:hover {
+    color: #1190cb;
+}
+
+.link-active {
+    text-decoration: underline;
+    color: #1190cb;
+    font-size: 1.5rem;
+}
+
+.home-form{
+    margin: 7.5rem auto;
+    text-align: center;
+    width: 25rem;
+}
+
+.logo{
+    width: 20rem;
+    padding-bottom: 2.5rem;
+}
+
+.home-form-input{
+    width: 17.5rem;
+    padding: 5px;
+    font-size: 1.1rem;
+}
+
+.home-form-input:focus{
+    outline: none;
+}
+
+.home-form-btn{
+    padding: 5px;
+    font-size: 1.1rem;
+    background-color: #7cdfd6;
+    border: 2px solid #1190cb;
+}
+
+.home-form-btn:hover{
+    cursor: pointer;
+}
+
+
