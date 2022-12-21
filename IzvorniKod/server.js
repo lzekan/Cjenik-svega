@@ -64,6 +64,9 @@ app.use(async (req, res, next) => {
 
 //defining routes
 app.use('/', homeRouter);
+app.use('/addComment', addCommentRouter);
+app.use('/changePrivacy', changePrivacyRouter)
+app.use('/forbidAccess', forbidAccessRouter)
 app.use('/item', itemRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
@@ -72,8 +75,6 @@ app.use('/prices', pricesRouter);
 app.use('/search', searchRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
-app.use('/addComment', addCommentRouter)
-app.use('/changePrivacy', changePrivacyRouter)
-app.use('/forbidAccess', forbidAccessRouter)
+
 
 app.listen(3000, () => console.log('Server running on port 3000'));
