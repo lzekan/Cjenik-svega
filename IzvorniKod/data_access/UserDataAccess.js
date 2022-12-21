@@ -259,6 +259,37 @@ updatePrivacy = async (user_id, attribute, isPublic) => {
 
 }
 
+forbidAccess = async (user_id) => {
+    sql = `
+    UPDATE "Korisnik" SET "ZabranjenPristup" = TRUE WHERE "ID" = $1::int`
+
+    const sql_parameters = [user_id]
+    try {
+        let result = await db.query(sql, sql_parameters);
+
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
+
+isAccessForbidden = async (user_id) => {
+    sql = `
+    SELECT "ZabranjenPristup" FROM "Korisnik" WHERE "ID" = $1::int`
+
+    const sql_parameters = [user_id]
+    try {
+        let result = await db.query(sql, sql_parameters);
+        if(result.rows.length == 0){
+            return false
+        }
+
+        return result.rows[0].ZabranjenPristup;
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
 
 module.exports = {
     addNewUser,
@@ -268,5 +299,7 @@ module.exports = {
     getByEmail,
     wouldBeUnique,
     updatePrivacy,
-    getPrivacyForUser
+    getPrivacyForUser,
+    forbidAccess,
+    isAccessForbidden
 }

@@ -121,6 +121,7 @@
                         </div>
                         <div>
                             <form action="/forbidAccess" method="POST">
+                                <input type="hidden" name="userid" value = "<%= displayUser.id %>">
                                 <input type="submit" value="Zabrani pristup">
                             </form>
                         </div>

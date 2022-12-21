@@ -24,6 +24,7 @@ const signupRouter = require('./routes/signup.routes.js');
 const profileRouter = require('./routes/profile.routes')
 const addCommentRouter = require('./routes/addComment.routes')
 const changePrivacyRouter = require('./routes/changePrivacy.routes')
+const forbidAccessRouter = require('./routes/forbidAccess.routes')
 
 //ejs middleware
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +47,21 @@ app.use(session({
     saveUninitialized: true,
 }));
 
+const UserDataAccess = require('./data_access/UserDataAccess')
+//middleware za zabranu pristupa baniranim korisnicima
+app.use(async (req, res, next) => {
+    if(req.session.user == undefined){
+        next()
+    } else {
+        let banned = await UserDataAccess.isAccessForbidden(req.session.user.id)
+        if(banned){
+            res.status(403).send("Admin vam je zabranio pristup ovoj starnici :(")
+        } else {
+            next()
+        }
+    }
+})
+
 //defining routes
 app.use('/', homeRouter);
 app.use('/item', itemRouter);
@@ -58,5 +74,6 @@ app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/addComment', addCommentRouter)
 app.use('/changePrivacy', changePrivacyRouter)
+app.use('/forbidAccess', forbidAccessRouter)
 
 app.listen(3000, () => console.log('Server running on port 3000'));
