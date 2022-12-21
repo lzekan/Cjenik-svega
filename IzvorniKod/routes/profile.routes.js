@@ -67,16 +67,7 @@ router.post('/', async(req,res) => {
     let prethodni = 0;
 	
     for(let i = 0; i < str.length;i++){
-        if(str.charAt(i) == "\""){
-            i++;
-            key = "";
-            while(i < str.length && str.charAt(i) != '\"'){
-                key +=str.charAt(i++);
-            }
-            prethodni = i+2;
-            count=1;
-            i++;
-        }else if(str.charAt(i) == ' '|| str.charAt(i) == '\n'){
+        if(str.charAt(i) == ' '|| str.charAt(i) == '\n'){
             if(count == 0){
                 key = str.substring(prethodni,i);
                 count++;

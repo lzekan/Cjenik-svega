@@ -2,7 +2,7 @@ const enviorment = {
     SessionSecret: "topSecret",
     Database: {
         host: "localhost",
-        port: 5433,
+        port: 5432,
         dbName: "cjeniksvega",
         user: "postgres",
         password: "bazepodataka"

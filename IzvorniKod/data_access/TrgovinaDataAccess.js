@@ -1,5 +1,6 @@
 const db = require('../db')
 const Trgovina = require('../models/TrgovinaModel')
+const moment = require("moment")
 
 isUniqueID = async(id) => {
    const sql = 'SELECT COUNT("ID") FROM "Trgovina" WHERE "ID" = $1::int'
@@ -125,9 +126,16 @@ putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
 
    sql = 'INSERT INTO "ProizvodTrgovina" VALUES ($1::text, $2::integer, $3::float)';
    sql_parameters = [barkod, trgovinaID, cijena];
+   // Dodano u promjenacijenetrgovina tablicu radi pracenja povijesti 
+   var now  = moment().format("YYYY-MM-DD HH:mm:ss");
+   console.log(now);
+   sqlPromjena = 'INSERT INTO "PromjenaCijeneTrgovina" VALUES($1::text,$2::int,$3::timestamp,$4::float)'
+   sql_params = [barkod,trgovinaID,now,cijena];
+
 
    try {
       result = await db.query(sql, sql_parameters);
+      result += await db.query(sqlPromjena,sql_params);
       console.log(result);      
    } catch (err) {
       console.log(err);
@@ -204,10 +212,16 @@ addComment = async (admin_id, store_id, comment) => {
    }
 }
 
-checkIfItemExists = async(proizvod) => {
-   let sql = 'SELECT * FROM "Proizvod" WHERE "Naziv" = $1::text';
-   let sql_parameters = [proizvod];
-   let resultControl = await db.query(sql,sql_parameters);
+checkIfItemExists = async(barkod) => {
+   let sql = 'SELECT * FROM "Proizvod" WHERE "Barkod" = $1::text';
+   let sql_parameters = [barkod];
+   let resultControl;
+   try{
+   resultControl = await db.query(sql,sql_parameters);
+   }catch(err){
+      console.log(err);
+      throw err;
+   }
    if(resultControl.rows.length == 0){
       return false;
    }
@@ -215,34 +229,52 @@ checkIfItemExists = async(proizvod) => {
 }
 
 
-checkIfItemExistsInShop = async(proizvod,trgovinaId) => {
-   let sql = 'SELECT "Barkod" FROM "Proizvod" WHERE "Naziv" = $1::text';
-   let sql_parameters = [proizvod];
-   let result = await db.query(sql,sql_parameters);
-   let barkod = result.rows[0].Barkod;
+checkIfItemExistsInShop = async(barkod,trgovinaId) => {
    let sql2 = 'SELECT * FROM "ProizvodTrgovina" WHERE "TrgovinaID" = $1::int AND "Barkod" = $2::text';
    let sql_parameters2 = [trgovinaId,barkod];
-   let result2 = await db.query(sql2,sql_parameters2);
-   if(result2.rows.length == 0){
+   let result2
+   try{
+   result2= await db.query(sql2,sql_parameters2);
+   }catch(err){
+      console.log(err)
+      throw err;
+   }
+   
+   if(result2 != undefined && result2.rows.length == 0){
       return false;
    }
    return true;
 }
 
-changePriceInShop = async(cijena,proizvod,trgovinaId) =>{
-   let sql = 'SELECT "Barkod" FROM "Proizvod" WHERE "Naziv" = $1::text';
-   let sql_parameters = [proizvod];
-   let result = await db.query(sql,sql_parameters);
-   let barkod = result.rows[0].Barkod;
+changePriceInShop = async(cijena,barkod,trgovinaId) =>{
    let sql2 = 'SELECT "Cijena" FROM "ProizvodTrgovina" WHERE "TrgovinaID" = $1::int AND "Barkod" = $2::text';
    let sql_parameters2 = [trgovinaId,barkod];
-   let result2 = await db.query(sql2,sql_parameters2);
-   if(result2.rows.length > 0){
+   let result2
+   try{
+      result2 = await db.query(sql2,sql_parameters2);
+   }catch(err){
+      console.log(err)
+      throw err;
+   }
+   if(result2 != undefined && result2.rows.length > 0){
       if(cijena != result2.rows[0].Cijena){
          console.log("Mijenja se: iz "+result2.rows[0].Cijena+" u "+cijena);
          let sqlPromjena = 'UPDATE "ProizvodTrgovina" SET "Cijena" = $1::float WHERE "TrgovinaID" = $2::int AND "Barkod" = $3::text';
          let sql_params = [cijena, trgovinaId, barkod];
+         try{
          await db.query(sqlPromjena,sql_params);
+         }catch(err){
+            throw err;
+         }
+         var now  = moment().format("YYYY-MM-DD HH:mm:ss");
+         console.log(now);
+         sqlPromjena = 'INSERT INTO "PromjenaCijeneTrgovina" VALUES($1::text,$2::int,$3::timestamp,$4::float)'
+         sql_params = [barkod,trgovinaId,now,cijena];
+         try{
+            await db.query(sqlPromjena,sql_params);
+            }catch(err){
+               throw err;
+            }
       }
    }
 }
