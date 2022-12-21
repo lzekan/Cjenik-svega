@@ -107,7 +107,7 @@ router.get('/:id', async (req, res) => {
 
     console.log(JSON.stringify(req.session.user))
 
-    if(req.session.user.access_level !== 2 ){
+    if(req.session.user.access_level !== 2 && req.session.user.id != req.params.id){
         //ako nije admin nema pristup tudem profilu
         return res.status(403).send('403 forbidden');
     }

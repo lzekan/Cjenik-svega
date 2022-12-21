@@ -45,8 +45,8 @@
                 </div>
             <% } else { %>
                 <div class="centered-container">
-                    <% for (let cijena of trgovina.prices) { %>
-                            <div class="photo-box-title font-secondary main-color-emphasized"><%= cijena %>kn</div>
+                    <% for (let cijenaVrijeme of trgovina.prices) { %>
+                            <div class="photo-box-title font-secondary main-color-emphasized"><%= cijenaVrijeme.price %>kn - - - - - (<%= cijenaVrijeme.datetime %>)</div>
                         
                     <% } %>
                 </div>
