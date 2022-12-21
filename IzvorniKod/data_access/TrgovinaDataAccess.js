@@ -107,6 +107,11 @@ getCommentForStore = async (store_id) => {
 }
 
 putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
+   if (parseFloat(cijena) == NaN)
+   {
+	   console.log('Cijena nije dobro upisana');
+	   return;
+   }
    
    let sql = 'INSERT INTO "Proizvod" VALUES ($1::text, $2::text)';       
    let sql_parameters = [barkod, proizvod];
