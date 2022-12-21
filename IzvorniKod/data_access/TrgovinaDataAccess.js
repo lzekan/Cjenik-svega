@@ -256,5 +256,7 @@ module.exports = {
    putItemsInStore,
    changePriceInShop,
    checkIfItemExistsInShop,
-   checkIfItemExists
+   checkIfItemExists,
+   addComment,
+   existsTrgovinaWithId
 }
