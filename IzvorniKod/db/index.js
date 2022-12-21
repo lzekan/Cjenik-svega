@@ -9,7 +9,8 @@ const pool = new Pool({
     host: enviornment.Database.host,
     database: enviornment.Database.dbName,
     password: enviornment.Database.password,
-    port: enviornment.Database.port
+    port: enviornment.Database.port,
+	ssl: enviornment.Database.ssl
 });
 
 module.exports = {

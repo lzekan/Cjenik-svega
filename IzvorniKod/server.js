@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const fileUpload = require('express-fileupload');
 const path = require('path');
 
 //middleware for sessions and connecting to database
@@ -22,6 +22,9 @@ const pricesRouter = require('./routes/prices.routes.js');
 const searchRouter = require('./routes/search.routes.js');
 const signupRouter = require('./routes/signup.routes.js');
 const profileRouter = require('./routes/profile.routes')
+const addCommentRouter = require('./routes/addComment.routes')
+const changePrivacyRouter = require('./routes/changePrivacy.routes')
+const forbidAccessRouter = require('./routes/forbidAccess.routes')
 
 //ejs middleware
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //middleware for decoding parameters
 app.use(express.urlencoded({ extended: true }));
-
+app.use(fileUpload());
 //session middleware
 app.use(session({
     store: new pgSession({
@@ -41,11 +44,29 @@ app.use(session({
     }),
     secret: enviornment.SessionSecret,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
 }));
+
+const UserDataAccess = require('./data_access/UserDataAccess')
+//middleware za zabranu pristupa baniranim korisnicima
+app.use(async (req, res, next) => {
+    if(req.session.user == undefined){
+        next()
+    } else {
+        let banned = await UserDataAccess.isAccessForbidden(req.session.user.id)
+        if(banned){
+            res.status(403).send("Admin vam je zabranio pristup ovoj starnici :(")
+        } else {
+            next()
+        }
+    }
+})
 
 //defining routes
 app.use('/', homeRouter);
+app.use('/addComment', addCommentRouter);
+app.use('/changePrivacy', changePrivacyRouter)
+app.use('/forbidAccess', forbidAccessRouter)
 app.use('/item', itemRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
@@ -54,5 +75,6 @@ app.use('/prices', pricesRouter);
 app.use('/search', searchRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
+
 
 app.listen(3000, () => console.log('Server running on port 3000'));

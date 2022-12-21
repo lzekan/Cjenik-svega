@@ -1,5 +1,6 @@
 const db = require('../db')
 const Trgovina = require('../models/TrgovinaModel')
+const moment = require("moment")
 
 isUniqueID = async(id) => {
    const sql = 'SELECT COUNT("ID") FROM "Trgovina" WHERE "ID" = $1::int'
@@ -125,9 +126,16 @@ putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
 
    sql = 'INSERT INTO "ProizvodTrgovina" VALUES ($1::text, $2::integer, $3::float)';
    sql_parameters = [barkod, trgovinaID, cijena];
+   // Dodano u promjenacijenetrgovina tablicu radi pracenja povijesti 
+   var now  = moment().format("YYYY-MM-DD HH:mm:ss");
+   console.log(now);
+   sqlPromjena = 'INSERT INTO "PromjenaCijeneTrgovina" VALUES($1::text,$2::int,$3::timestamp,$4::float)'
+   sql_params = [barkod,trgovinaID,now,cijena];
+
 
    try {
       result = await db.query(sql, sql_parameters);
+      result += await db.query(sqlPromjena,sql_params);
       console.log(result);      
    } catch (err) {
       console.log(err);
@@ -136,9 +144,151 @@ putItemsInStore = async (trgovinaID, barkod, proizvod, cijena) => {
 
 }
 
+commentExists = async (admin_id, store_id) =>{
+   const sql = 'SELECT * FROM "Komentar" WHERE ("KorisnikID" = $1::int AND "TrgovinaID"= $2::int)'
+   const sql_parameters = [admin_id, store_id];
+   try{
+       let result = await db.query(sql, sql_parameters);
+       
+       if(result.rows.length > 0){
+         return true
+       } else {
+         return false
+       }
+       
+   }catch(err){
+       console.log(err);
+       throw err
+   }
+}
+
+existsTrgovinaWithId = async (store_id) =>{
+   const sql = 'SELECT * FROM "Trgovina" WHERE "ID" = $1::int'
+   const sql_parameters = [store_id];
+   try{
+       let result = await db.query(sql, sql_parameters);
+       
+       if(result.rows.length > 0){
+         return true
+       } else {
+         return false
+       }
+       
+   }catch(err){
+       console.log(err);
+       throw err
+   }
+}
+
+addComment = async (admin_id, store_id, comment) => {
+   if(await commentExists(admin_id, store_id)){
+      //update query
+
+      const sql = `
+      UPDATE "Komentar"
+      SET "OpisKomentara" = $3::text
+      WHERE ("KorisnikID" = $1::int AND "TrgovinaID"= $2::int);
+      `
+      const sql_parameters = [admin_id, store_id, comment]
+
+      try {
+         let result = await db.query(sql, sql_parameters);
+      } catch (err) {
+         console.log(err)
+         throw err
+      }
+   } else {
+      //insert query
+
+      const sql = 'INSERT INTO "Komentar" ("KorisnikID", "TrgovinaID", "OpisKomentara") VALUES ($1::int, $2::int, $3::text)'
+      const sql_parameters = [admin_id, store_id, comment]
+
+      try {
+         let result = await db.query(sql, sql_parameters);
+      } catch (err) {
+         console.log(err)
+         throw err
+      }
+   }
+}
+
+checkIfItemExists = async(barkod) => {
+   let sql = 'SELECT * FROM "Proizvod" WHERE "Barkod" = $1::text';
+   let sql_parameters = [barkod];
+   let resultControl;
+   try{
+   resultControl = await db.query(sql,sql_parameters);
+   }catch(err){
+      console.log(err);
+      throw err;
+   }
+   if(resultControl.rows.length == 0){
+      return false;
+   }
+   return true;
+}
+
+
+checkIfItemExistsInShop = async(barkod,trgovinaId) => {
+   let sql2 = 'SELECT * FROM "ProizvodTrgovina" WHERE "TrgovinaID" = $1::int AND "Barkod" = $2::text';
+   let sql_parameters2 = [trgovinaId,barkod];
+   let result2
+   try{
+   result2= await db.query(sql2,sql_parameters2);
+   }catch(err){
+      console.log(err)
+      throw err;
+   }
+   
+   if(result2 != undefined && result2.rows.length == 0){
+      return false;
+   }
+   return true;
+}
+
+changePriceInShop = async(cijena,barkod,trgovinaId) =>{
+   let sql2 = 'SELECT "Cijena" FROM "ProizvodTrgovina" WHERE "TrgovinaID" = $1::int AND "Barkod" = $2::text';
+   let sql_parameters2 = [trgovinaId,barkod];
+   let result2
+   try{
+      result2 = await db.query(sql2,sql_parameters2);
+   }catch(err){
+      console.log(err)
+      throw err;
+   }
+   if(result2 != undefined && result2.rows.length > 0){
+      if(cijena != result2.rows[0].Cijena){
+         console.log("Mijenja se: iz "+result2.rows[0].Cijena+" u "+cijena);
+         let sqlPromjena = 'UPDATE "ProizvodTrgovina" SET "Cijena" = $1::float WHERE "TrgovinaID" = $2::int AND "Barkod" = $3::text';
+         let sql_params = [cijena, trgovinaId, barkod];
+         try{
+         await db.query(sqlPromjena,sql_params);
+         }catch(err){
+            throw err;
+         }
+         var now  = moment().format("YYYY-MM-DD HH:mm:ss");
+         console.log(now);
+         sqlPromjena = 'INSERT INTO "PromjenaCijeneTrgovina" VALUES($1::text,$2::int,$3::timestamp,$4::float)'
+         sql_params = [barkod,trgovinaId,now,cijena];
+         try{
+            await db.query(sqlPromjena,sql_params);
+            }catch(err){
+               throw err;
+            }
+      }
+   }
+}
+
+
+
 module.exports = {
    isUniqueID,
    addNewTrgovina,
    getTrgovina,
-   putItemsInStore
+   putItemsInStore,
+   changePriceInShop,
+   checkIfItemExistsInShop,
+   checkIfItemExists,
+   addComment,
+   existsTrgovinaWithId
 }

@@ -11,7 +11,8 @@ addNewUser = async (user) => {
         const sql_parameters = [user.first_name, user.last_name, user.email,user.nickname,  user.password_hash, user.access_level];
     try {
         const result = await db.query(sql, sql_parameters);
-        return result.rows[0].id;
+        await initPrivacy(result.rows[0].ID)
+        return result.rows[0].ID;
     } catch (err) {
         console.log(err);
         throw err
@@ -196,6 +197,99 @@ getPrivacyForUser = async (user_id) => {
     }
 }
 
+initPrivacy = async (user_id) =>{
+    const sql = `
+    INSERT INTO "Privatnost" ("KorisnikID", "Ime", "Prezime", "Email", "Nadimak")
+    VALUES ($1::int, true, true, true, true)
+    `    
+    const sql_parameters = [user_id]
+
+    try {
+        let result = await db.query(sql, sql_parameters);
+
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
+
+privacyExists = async (user_id) => {
+
+    sql = `
+    SELECT * FROM "Privatnost"
+    WHERE "KorisnikID" = $1::int`
+
+    const sql_parameters = [user_id]
+    try {
+        let result = await db.query(sql, sql_parameters);
+        return result.rows.length > 0;
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
+
+updatePrivacy = async (user_id, attribute, isPublic) => {
+    attributeInSql = ""
+    if(attribute == 'nickname'){
+        attributeInSql = `"Nadimak"`
+    } else if(attribute == 'first_name'){
+        attributeInSql = `"Ime"`
+    } else if(attribute == 'last_name'){
+        attributeInSql = `"Prezime"`
+    } else if(attribute == 'email'){
+        attributeInSql = `"Email"`
+    } else {
+        throw "Krivi atribut"
+    }
+
+    if(!(await privacyExists(user_id))){
+        await initPrivacy(user_id)
+    }
+
+    sql = `UPDATE "Privatnost" SET ` + attributeInSql + ` = $2 where "KorisnikID" = $1::int`
+    const sql_parameters = [user_id, isPublic]
+
+    try {
+        let result = await db.query(sql, sql_parameters);
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+
+}
+
+forbidAccess = async (user_id) => {
+    sql = `
+    UPDATE "Korisnik" SET "ZabranjenPristup" = TRUE WHERE "ID" = $1::int`
+
+    const sql_parameters = [user_id]
+    try {
+        let result = await db.query(sql, sql_parameters);
+
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
+
+isAccessForbidden = async (user_id) => {
+    sql = `
+    SELECT "ZabranjenPristup" FROM "Korisnik" WHERE "ID" = $1::int`
+
+    const sql_parameters = [user_id]
+    try {
+        let result = await db.query(sql, sql_parameters);
+        if(result.rows.length == 0){
+            return false
+        }
+
+        return result.rows[0].ZabranjenPristup;
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
 
 module.exports = {
     addNewUser,
@@ -203,5 +297,9 @@ module.exports = {
     getById,
     getByNickname,
     getByEmail,
-    wouldBeUnique
+    wouldBeUnique,
+    updatePrivacy,
+    getPrivacyForUser,
+    forbidAccess,
+    isAccessForbidden
 }

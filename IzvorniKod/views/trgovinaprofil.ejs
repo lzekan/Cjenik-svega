@@ -32,7 +32,7 @@
                 <div class="dataset">
 
                     <div class="dataset-entry">
-                        <div class="dataset-property" style:"">
+                        <div class="dataset-property">
                             Ime trgovine
                         </div>
                         <div class="dataset-value">
@@ -67,9 +67,15 @@
                             <div class="dataset-value">
                                 <%= user.nickname %>
                             </div>
-                            <form>
-                                <input type="radio" id="username" name="username" value="username">
-                                <label for="username">Objavi javno:</label><br>
+                            <form action="/changePrivacy" method="post">
+                                <label for="nickname">Objavi javno:</label>
+                                <input type="checkbox" id="nickname" name="nickname" 
+                                <%if (user.privacy == undefined || user.privacy.is_nickname_public) {%>  checked  <%} else {%> unchecked <%}%>
+                                >
+                                <input type="hidden" name="attribute" value = "nickname">
+                                <input type="hidden" name="user_id" value = "<%= user.id %>">
+                                <button type="submit">Spremi promjene</button>
+                                <br>
                             </form>
                         </div>
     
@@ -80,9 +86,15 @@
                             <div class="dataset-value">
                                 <%= user.first_name %>
                             </div>
-                            <form>
-                                <input type="radio" id="name" name="name" value="name">
-                                <label for="name">Objavi javno:</label><br>
+                            <form action="/changePrivacy" method="post">
+                                <label for="first_name">Objavi javno:</label>
+                                <input type="checkbox" id="first_name" name="first_name" 
+                                <%if (user.privacy == undefined || user.privacy.is_first_name_public) {%>  checked  <%} else {%> unchecked <%}%>
+                                >
+                                <input type="hidden" name="attribute" value = "first_name">
+                                <input type="hidden" name="user_id" value = "<%= user.id %>">
+                                <button type="submit">Spremi promjene</button>
+                                <br>
                             </form>
                         </div>
     
@@ -93,9 +105,15 @@
                             <div class="dataset-value">
                                 <%= user.last_name %>
                             </div>
-                            <form>
-                                <input type="radio" id="lastname" name="lastname" value="lastname">
-                                <label for="lastname">Objavi javno:</label><br>
+                            <form action="/changePrivacy" method="post">
+                                <label for="last_name">Objavi javno:</label>
+                                <input type="checkbox" id="last_name" name="last_name" 
+                                <%if (user.privacy == undefined || user.privacy.is_last_name_public) {%>  checked  <%} else {%> unchecked <%}%>
+                                >
+                                <input type="hidden" name="attribute" value = "last_name">
+                                <input type="hidden" name="user_id" value = "<%= user.id %>">
+                                <button type="submit">Spremi promjene</button>
+                                <br>
                             </form>
                         </div>
                         <div class="dataset-entry">
@@ -105,9 +123,15 @@
                             <div class="dataset-value">
                                 <%= user.email %>
                             </div>
-                            <form>
-                                <input type="radio" id="email" name="email" value="email">
-                                <label for="email">Objavi javno:</label><br>
+                            <form action="/changePrivacy" method="post">
+                                <label for="email">Objavi javno:</label>
+                                <input type="checkbox" id="email" name="email" 
+                                <%if (user.privacy == undefined || user.privacy.is_email_public) {%>  checked  <%} else {%> unchecked <%}%>
+                                >
+                                <input type="hidden" name="attribute" value = "email">
+                                <input type="hidden" name="user_id" value = "<%= user.id %>">
+                                <button type="submit">Spremi promjene</button>
+                                <br>
                             </form>
                         </div>
     
@@ -123,11 +147,12 @@
             <div>
                 <div class="container">
                     <h1>Upload file-a</h1>
-                    <form id="form-file-trgovina">
+                    <form id="form-file-trgovina" action="/profile" method="post" enctype="multipart/form-data"> 
                         <div class="input-group">
                             <label for="files">Označi file</label>
-                            <input id="files" type="file" multiple>
+                            <input id="files" type="file" name="fileName">
                         </div>
+                        <div style="color: red; text-align: center; font-size: 1.5rem;"><%= error %></div>
                         <button class="submit-btn" type="submit">Upload</button>
                     </form>
                 </div>

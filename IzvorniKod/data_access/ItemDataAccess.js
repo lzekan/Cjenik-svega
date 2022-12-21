@@ -33,40 +33,41 @@ async function getStores(barcode)
     `;
     const sql_parameters = [barcode];
 	
-	let result;
+	let stores;
 	try {
-        result = await db.query(sql, sql_parameters);
+        stores = await db.query(sql, sql_parameters);
         
-        if(result.rows.length <= 0){
+        if(stores.rows.length <= 0){
             return [];
         } else {
-            result = result.rows;
+            stores = stores.rows;
         }
     } catch (err) {
         console.log(err);
         return undefined;
     }
 	
-	for (let store of result)
+	for (let store of stores)
 	{
-		store.prices = [store.Cijena];
+		store.prices = [];
 	}
 	
 	const sql2 = `
     SELECT "TrgovinaID", "DatumVrijeme", "NovaCijena"
     FROM "PromjenaCijeneTrgovina"
 	WHERE "Barkod" = $1::text
-    `;
+    ORDER BY "DatumVrijeme" DESC
+	LIMIT 7`;
 	
 	try {
         let priceChange = await db.query(sql2, sql_parameters);
 		
         if(priceChange.rows.length <= 0){
-            return result;
+            return stores;
         } else {
             for (let change of priceChange.rows)
 			{
-				let store = result.find(store => store.TrgovinaID == change.TrgovinaID);
+				let store = stores.find(store => store.TrgovinaID == change.TrgovinaID);
 				
 				if (store != undefined)
 				{
@@ -76,11 +77,11 @@ async function getStores(barcode)
 					});
 				}
 			}
-			return result;
+			return stores;
         }
     } catch (err) {
         console.log(err);
-        return result;
+        return stores;
     }
 }
 

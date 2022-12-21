@@ -5,8 +5,8 @@
     <title>Profil</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
-    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 
@@ -61,7 +61,7 @@
                         <form action="/addComment" method="post">
                             <label for="comment">Dodaj komentar:</label>
                             <input type="text" id="comment" name="comment"><br><br>
-                            <input type="hidden" name="storeid" value = "<%= displayUser.id %>"><br><br>
+                            <input type="hidden" name="storeid" value = "<%= displayUser.id %>">
                             <input type="submit" value="Dodaj">
                           </form>
                     </div>
@@ -74,7 +74,11 @@
                                 User name
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.nickname %>
+                                <% if (displayUser.nickname !== undefined) {%>
+                                    <%= displayUser.nickname %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
     
@@ -83,7 +87,11 @@
                                 First name
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.first_name %>
+                                <% if (displayUser.first_name !== undefined) {%>
+                                    <%= displayUser.first_name %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
     
@@ -92,7 +100,11 @@
                                 Last name
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.last_name %>
+                                <% if (displayUser.last_name !== undefined) {%>
+                                    <%= displayUser.last_name %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
                         <div class="dataset-entry">
@@ -100,11 +112,16 @@
                                 E-mail
                             </div>
                             <div class="dataset-value">
-                                <%= displayUser.email %>
+                                <% if (displayUser.email !== undefined) {%>
+                                    <%= displayUser.email %>
+                                <%} else { %>
+                                    <i>privatno</i>
+                                <% } %>
                             </div>
                         </div>
                         <div>
                             <form action="/forbidAccess" method="POST">
+                                <input type="hidden" name="userid" value = "<%= displayUser.id %>">
                                 <input type="submit" value="Zabrani pristup">
                             </form>
                         </div>

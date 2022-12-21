@@ -7,26 +7,37 @@ const PasswordHasher = require('./helpers/PasswordHasher')
 
 router.get('/', (req, res) => {
 	
-	res.render('login', {
-		linkActive: 'login',
-		user: req.session.user
-	});
+	if(req.session.user === undefined) {
+		res.render('login', {
+			linkActive: 'login',
+			user: req.session.user,
+			error: ""
+		});
+	} else {
+		res.redirect('/');
+	}
+
 });
 
 
 router.post('/', async (req, res) => {
-		if(req.session.user !== undefined){
-		return res.status(400).send('You have to logout first');
-	}
 	
-	const nickname = req.body.nickname
+	const username = req.body.username
 	const password = req.body.password
 
-	let user = await UserDataAccess.getByNickname(nickname)
+	let user = await UserDataAccess.getByNickname(username)
 	
-	if(user == undefined){
-		return res.status(400).send('User witn nickname ' + nickname + ' does not exist');
+	if(user === undefined){
+		res.render('login', {
+			linkActive: 'login',
+			user: req.session.user,
+			error: "Incorrect username or password."
+		});
+		return;
 	}
+
+	console.log('kurcina')
+
 	let passwordValid = PasswordHasher.compare(password, user.password_hash);
 	if(passwordValid){
 
@@ -37,7 +48,11 @@ router.post('/', async (req, res) => {
         res.redirect('/');
 
 	} else {
-		res.status(400).send('Password doesn\'t match the nickname');
+		res.render('login', {
+			linkActive: 'login',
+			user: req.session.user,
+			error: "Incorrect username or password."
+		})
 	}
 })
 
