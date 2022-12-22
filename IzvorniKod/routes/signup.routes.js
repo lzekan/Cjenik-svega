@@ -73,20 +73,20 @@ router.post('/',
 						throw err
 					}
 					try{
-						if (req.body.kod1.charAt(0) != 'b')
-							req.body.kod1 = 'b' + req.body.kod1;
-						if (req.body.kod2.charAt(0) != 'b')
-							req.body.kod2 = 'b' + req.body.kod2;
-						if (req.body.kod3.charAt(0) != 'b')
-							req.body.kod3 = 'b' + req.body.kod3;
-						
-						if (req.body.kod1.length > 1)
-							await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod1, req.body.ime1, req.body.cijena1);
-						if (req.body.kod2.length > 1)
-							await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod2, req.body.ime2, req.body.cijena2);
-						if (req.body.kod3.length > 1)
-							await TrgovinaDataAccess.putItemsInStore(userId, req.body.kod3, req.body.ime3, req.body.cijena3);
-						console.log("Ubaceni proizvodi u ducan")
+						let listKod = req.body.kod;
+						let listIme = req.body.ime;
+						let listCijena = req.body.cijena;
+
+						for(let i=0; i < listKod.length; i++){
+							if(listKod[i].toString().charAt(0) != 'b') {
+								listKod[i] = 'b' + listKod[i];
+							}
+
+							if(listKod[i].length > 1){
+								await TrgovinaDataAccess.putItemsInStore(userId, listKod[i], listIme[i], listCijena[i]);
+							}
+						}
+
 					}catch(err){
 						console.log(err); 
 						throw err
