@@ -22,9 +22,15 @@
 .home-form-btn{
     padding: 5px;
     font-size: 1.1rem;
-    background-color: #7cdfd6;
+    background-color: #1190cb;
     border: 2px solid #1190cb;
+    color: white;
 }
+
+.home-form-btn:hover{
+    background-color: white;
+    color: #1190cb;
+}    
 
 .home-form-btn:hover{
     cursor: pointer;

@@ -11,7 +11,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
     <script type="text/javascript">
-        showItems = function() {
+        showBasic = function() {
             if(document.getElementById("chkYes").checked){
                 document.getElementById("trgovina").style.display = 'block'
             }
@@ -21,6 +21,63 @@
 
             return;
         }
+
+        addItem = function() {
+            let btns = document.getElementById("btns");
+            btns.remove();
+
+            let unos = document.createElement("div");
+            unos.style.display = "flex";
+            unos.style.justifyContent = "space-between";
+
+            let kod = document.createElement("input");
+            kod.type = "text";
+            kod.name = "kod";
+
+            unos.appendChild(kod);
+            
+            let ime = document.createElement("input");
+            ime.type = "text";
+            ime.name = "ime";
+
+            unos.appendChild(ime);
+            
+            let cijena = document.createElement("input");
+            cijena.type = "text";
+            cijena.name = "cijena";
+
+            unos.appendChild(cijena);
+
+            let trgovina = document.getElementById("trgovina")
+            trgovina.appendChild(unos);
+            
+            btns = document.createElement("div");
+            btns.id = "btns";
+
+            let btnAdd = document.createElement("button");
+            btnAdd.type = "button";
+            btnAdd.addEventListener("click", addItem)
+            btnAdd.textContent = "Dodaj proizvod";
+
+            btns.appendChild(btnAdd);
+
+            // let btnRemove = document.createElement("button");
+            // btnRemove.type = "button";
+            // btnRemove.addEventListener("click", removeItem);
+            // btnRemove.textContent = "Ukloni proizvod";
+
+            // btns.appendChild(btnRemove);
+
+            trgovina.appendChild(btns)
+            return;
+            
+        }
+
+        removeItem = function() {
+
+        }
+
+
     </script>
 </head>
 
@@ -88,15 +145,15 @@
                     <span>Vrsta korisnika</span>
 
                     <label for="chkYes">
-                        <input type="radio" id="chkYes" name="chktrg" value="Trgovina" onclick="showItems()"/>
+                        <input type="radio" id="chkYes" name="chktrg" value="Trgovina" onclick="showBasic()"/>
                         Trgovina
                     </label>
                     <label for="chkNo">
-                        <input type="radio" id="korisnik" name="chktrg" value="Korisnik" onclick="showItems()"/>
+                        <input type="radio" id="korisnik" name="chktrg" value="Korisnik" onclick="showBasic()"/>
                         Korisnik
                     </label>
                     <label for="chkNo">
-                        <input type="radio" id="admin" name="chktrg" value="Admin" onclick="showItems()"/>
+                        <input type="radio" id="admin" name="chktrg" value="Admin" onclick="showBasic()"/>
                         Admin
                     </label>
                     <hr />
@@ -106,29 +163,23 @@
                         <input class="form-component form-input" type="text" id="popis" name="naziv_trgovine"/>
                         <hr>   
 
-                        <div id="unos" style="display: flex; justify-content: space-between;">
+                        <div style="display: flex; justify-content: space-between;">
                             <span>Barkod proizvoda</span>
                             <span>Ime proizvoda</span>
                             <span>Cijena</span>
                         </div>
 
-                        <div id="unos1" style="display: flex; justify-content: space-between;">
-                            <input type="text" name="kod1">
-                            <input type="text" name ="ime1">
-                            <input type="text" name = "cijena1">
+                        <div id="unos" style="display: flex; justify-content: space-between;">
+                            <input type="text" name="kod">
+                            <input type="text" name ="ime">
+                            <input type="text" name = "cijena">
                         </div>
 
-                        <div id="unos2" style="display: flex; justify-content: space-between;">
-                            <input type="text" name="kod2">
-                            <input type="text" name ="ime2">
-                            <input type="text" name = "cijena2">
+                        <div id="btns">
+                            <button type="button" onclick="addItem()" id="btnAdd">Dodaj proizvod</button>
+                            <!-- <button type="button" onclick="removeItem()" id="btnRemove">Ukloni proizvod</button> -->
                         </div>
 
-                        <div id="unos3" style="display: flex; justify-content: space-between;">
-                            <input type="text" name="kod3">
-                            <input type="text" name ="ime3">
-                            <input type="text" name = "cijena3">
-                        </div>
                     </div>
 
                     <input class="btn" type="submit">
