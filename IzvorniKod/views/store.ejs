@@ -32,16 +32,6 @@ module.exports = authHandler;
 
 <body class="content">
 
-    <header class="header primary-color-bg">
-        <nav class="navigation container">
-            <div class="menu">
-                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
-                <a href="/logout" class="link menu-item <%if (linkActive === "logout") {%>  link-active  <%}%>">Logout</a>
-            </div>
-        </nav>
-    </header>
-
-
     <main class="main">
         <section class="section secondary-color-bg">
             <div class="container">
@@ -51,7 +41,7 @@ module.exports = authHandler;
                 <div class="dataset">
 
                     <div class="dataset-entry">
-                        <div class="dataset-property" style:"">
+                        <div class="dataset-property">
                             Ime trgovine
                         </div>
                         <div class="dataset-value">
@@ -60,7 +50,7 @@ module.exports = authHandler;
                         
                     </div>
                     <div class="dataset-entry">
-                        <div class="dataset-property" style:"">
+                        <div class="dataset-property">
                             broj krivo unesenih cijena:
                         </div>
                         <div class="dataset-value">
@@ -69,7 +59,7 @@ module.exports = authHandler;
                         
                     </div>
                     <div class="dataset-entry">
-                        <div class="dataset-property" style:"">
+                        <div class="dataset-property">
                             komentar admina:
                         </div>
                         <div class="dataset-value">
