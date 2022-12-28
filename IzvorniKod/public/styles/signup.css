@@ -15,7 +15,6 @@ body {
     margin: 5rem auto;
     border-radius: 2rem;
     width: 60%;
-
 }
 
 .container-x{
@@ -24,61 +23,50 @@ body {
     flex-direction: row;
 }
 
-.container-left{
+.container-right{
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-.container-left > img {
+.container-right > img {
     margin: 2rem auto;  
 }
 
-.container-right{
+.container-left{
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-size: 1.2rem;
 }
 
-.container-right-btn:hover{
-    cursor: pointer;
+.container-left-form > div{
+    margin: 1rem;
 }
 
-.container-right-reg{
-    color: #1190cb;
-    text-decoration: none;
+.container-left-store{
+    display: none;
 }
 
-.container-right-reg:hover{
-    text-decoration: underline;
-    font-size: 1.05em;
+.container-left-store > div {
+    display: flex; 
+    justify-content: space-between;
+    margin: 0.5rem 1rem; 
 }
 
-.container-right-input{
-    margin: 0.5rem 2rem;
-    font-size: 1.3rem;
-}
-
-.container-right-btn{
-    margin-top: 2rem;
-    padding: 0.25rem 1rem;
-    font-size: 1.1rem;
+.container-left-btn{
+    margin: 2rem 0;
+    padding: 0.25rem 0.5rem;
     background-color: #1190cb;
     border: 2px solid #1190cb;
     color: white;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
 }
 
-.container-right-btn:hover{
+.container-left-btn:hover{
     cursor: pointer;
     background-color: white;
     color: #1190cb;
-}
-
-.error{
-    padding: 1rem 0;
-    color: red
 }
