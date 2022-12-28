@@ -14,35 +14,38 @@
         
     <%- include('partials/navbar.ejs') %>
 
-        <div class="container">
+    <div class="container">
+        <div class="container-x">
             <div class="container-left">
                 <img src="./images/logo.png" alt="">
             </div>
-
+    
             <div class="container-right">
-                <h1>Prijavi se</h1>
-
+                <h1>Prijava</h1>
+    
                 <form action="/login" method="post">
-
-                        <div class="">
+    
+                        <div class="container-right-input">
                             <label for="username">Korisničko ime:</label>
                             <input type="text" name="username" id="username" maxlength="20" minlength="4">
                         </div>
-
-                        <div class="">
-                            <label for="password">Password:</label>
+    
+                        <div class="container-right-input">
+                            <label for="password">Lozinka:</label>
                             <input type="password" name="password" id="password" minlength="8">
                         </div>
-
-                        <input type="submit" class="container-right-btn">
-
+    
+                        <input type="submit" value="Prijavi se" class="container-right-btn">
+    
                     </form>
                 
                 <div class="error"><%= error %></div>
                 <p>Nemaš račun? <a href="/signup" class="container-right-reg">Registriraj se.</a></p>
             </div>
-
         </div>
+
+
+    </div>
 
 
 

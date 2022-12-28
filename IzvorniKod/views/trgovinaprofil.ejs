@@ -13,16 +13,6 @@
 
 <body class="content">
 
-    <header class="header primary-color-bg">
-        <nav class="navigation container">
-            <div class="menu">
-                <a href="/" class="link menu-item <%if (linkActive === "home") {%>  link-active  <%}%>">Home</a>
-                <a href="/logout" class="link menu-item <%if (linkActive === "logout") {%>  link-active  <%}%>">Logout</a>
-            </div>
-        </nav>
-    </header>
-
-
     <main class="main">
         <section class="section secondary-color-bg">
             <div class="container">
@@ -62,7 +52,7 @@
 
                         <div class="dataset-entry">
                             <div class="dataset-property">
-                                User name
+                                Korisničko ime
                             </div>
                             <div class="dataset-value">
                                 <%= user.nickname %>
@@ -81,7 +71,7 @@
     
                         <div class="dataset-entry">
                             <div class="dataset-property">
-                                First name
+                                Ime
                             </div>
                             <div class="dataset-value">
                                 <%= user.first_name %>
@@ -100,7 +90,7 @@
     
                         <div class="dataset-entry">
                             <div class="dataset-property">
-                                Last name
+                                Prezime
                             </div>
                             <div class="dataset-value">
                                 <%= user.last_name %>
@@ -118,7 +108,7 @@
                         </div>
                         <div class="dataset-entry">
                             <div class="dataset-property">
-                                E-mail
+                                E-mail adresa
                             </div>
                             <div class="dataset-value">
                                 <%= user.email %>
