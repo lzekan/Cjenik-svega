@@ -17,7 +17,7 @@ Sustav je organiziran na sljedeći način:
 			\label{fig:arhitektura} %label mora biti drugaciji za svaku sliku
 			\end{figure}
 Korisnik putem odabranog web preglednika šalje HTTP zahtjev za web aplikacijom i njenim komponentama zadanom web poslužitelju. Aplikacija komunicira s bazom podataka u kojoj su sadržani svi podatci i iz nje izvlači sve potrebne podatke za klijentov zahtjev. Poslužitelj, kada aplikacija dohvati sve potrebne podatke, odgovara na klijentov zahtjev sa statusom 200 OK (ako je sve u redu) i šalje mu HTML dokument koji se prikazuje u zadanom web pregledniku.
-Programski jezik koji smo koristili za izradu web aplikacije je Java za backend te Javascript za frontend dio.
+Programski jezik koji smo koristili za izradu web aplikacije je Javascript.
 Arhitektura sustava se temelji na MVC konceptu, stilističkoj varijaciji arhitekture zasnovanoj na događajima. Odabrali smo taj koncept jer odvaja korisničko sučelje od ostatka sustava, što čini razvoj i nadogradnju komponenata jednostavnijima. Sastoji se od modela, pogleda i upravitelja.
 		
 \begin{itemize}
@@ -372,4 +372,9 @@ Klase iz data access paketa sadržavaju isključivo statičke metode koje služe
 		
 			\textbf{\textit{dio 2. revizije}}\\
 		
-			 \textit{Potrebno je priložiti dijagram komponenti s pripadajućim opisom. Dijagram komponenti treba prikazivati strukturu cijele aplikacije.}
+			 Na prikazanom dijagramu komponenti jasno vidimo MVC model koji se koristio u izradi aplikacije. Klijent komunicira preko web-preglednika (eng. \textit{Browser}) sa aplikacijom. U stvarnosti web-preglednik komunicira preko REST API-ja sa kontrolerom (eng. \textit{Controller}). Kontroler se koristi modelom da dohvati podatke te vraća prikaz putem pogleda (eng. View). Na nižoj razini apstrakcije vidimo da se kontroler, model i pogled sastoji od mnoštva manjih komponenti pa tako u kontrolere spadaju svi usmjerivači (eng. \textit{routers}) od kojih su samo dva prikazana, u modele spadaju razredi i funkcije kojima se pristupa bazi podataka te ostali razredi koji modeliraju podatke. U poglede spadaju sve datoteke nastavka ".ejs", tj. ono što se prikazuje klijentu. Radi izbjegavanja gomilanja komponenti na dijagramu izostavljena je većina komponenti s niže razine apstrakcije.
+			 \begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/dijagramKomponenti.png} %veličina u odnosu na širinu linije
+			\caption{dijagram komponenti}
+			\label{fig:dijagramKomponenti} %label mora biti drugaciji za svaku sliku
+			\end{figure}
