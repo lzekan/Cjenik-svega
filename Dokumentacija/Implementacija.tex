@@ -6,17 +6,19 @@
 			%\textbf{\textit{dio 2. revizije}}
 			
 			% \textit{Detaljno navesti sve tehnologije i alate koji su primijenjeni pri izradi dokumentacije i aplikacije. Ukratko ih opisati, te navesti njihovo značenje i mjesto primjene. Za svaki navedeni alat i tehnologiju je potrebno \textbf{navesti internet poveznicu} gdje se mogu preuzeti ili više saznati o njima}.
-			Za izradu dokumentacije korišten je alat \textbf{Texmaker} koji je razvojna okolina za jezik \textbf{LaTex}. \textit{LaTex} je programski jezik za pisanje strukturiranih tekstova. Najčešće se koristi u oblikovanju znanstvenih radova.
+			Za izradu dokumentacije korišten je alat \textbf{Texmaker}\footnote{\url{https://www.xm1math.net/texmaker/}} koji je razvojna okolina za jezik \textbf{LaTex}\footnote{\url{https://www.latex-project.org/}}. \textit{LaTex} je programski jezik za pisanje strukturiranih tekstova. Najčešće se koristi u oblikovanju znanstvenih radova.
 			
-			Dijagrami unutar dokumentacije izrađeni su pomoću alata \textbf{Astah UML} i \textbf{lucid.app}. \textit{Astah UML} aplikacija je za modeliranje UML-a. \textit{Lucid.app} je web-stranica koja nudi isto to, no pristupačnija jer se ne mora preuzimati. Obje aplikacije se za studente ne naplaćuju.
+			Dijagrami unutar dokumentacije izrađeni su pomoću alata \textbf{Astah UML}\footnote{\url{https://astah.net/}} i \textbf{lucid.app}\footnote{\url{https://lucid.app/}}. \textit{Astah UML} aplikacija je za modeliranje UML-a. \textit{Lucid.app} je web-stranica koja nudi isto to, no pristupačnija jer se ne mora preuzimati. Obje aplikacije se za studente ne naplaćuju.
 			
-			Komunikacija tima odvijala se preko aplikacije \textbf{WhatsApp}. Za potrebe ovog projekta bila je sasvim dovoljna, no za neke ozbiljnije projekte bilo bi potrebno prijeći na bolji alat.
+			Komunikacija tima odvijala se preko aplikacije \textbf{WhatsApp}\footnote{\url{https://www.whatsapp.com/}}. Za potrebe ovog projekta bila je sasvim dovoljna, no za neke ozbiljnije projekte bilo bi potrebno prijeći na bolji alat.
 			
-			Kao sustav za upravljanje izvornim kodom korišten je \textbf{Git}. Udaljeni repozitorij projekta je dostupan na web platformi \textbf{GitLab}.
+			Kao sustav za upravljanje izvornim kodom korišten je \textbf{Git}\footnote{\url{https://git-scm.com/}}. Udaljeni repozitorij projekta je dostupan na web platformi \textbf{GitLab}\footnote{\url{https://gitlab.com/}}.
 			
-			Aplikacija je napisana u \textbf{Express}-u, framework za izgradnju web-aplikacija na platformi \textbf{node.js}. Sve to je ostvareno programskim jezikom \textbf{Javascript}. \textit{Node.js} je back-end JavaScript runtime okruženje, radi na V8 JavaScript Engineu i izvršava JavaScript kod izvan web preglednika. 
+			Aplikacija je napisana u \textbf{Express}-u\footnote{\url{https://expressjs.com/}}, framework za izgradnju web-aplikacija na platformi \textbf{Node.js}\footnote{\url{https://nodejs.org/en/}}. Sve to je ostvareno programskim jezikom \textbf{Javascript}\footnote{\url{https://www.javascript.com/}}. \textit{Node.js} je back-end JavaScript runtime okruženje, radi na V8 JavaScript Engineu i izvršava JavaScript kod izvan web preglednika. 
 			
-			Baza podataka je 
+			Sam kod aplikacije pisan je u proizvoljnom \textit{code editoru}, svi smo odabrali \textbf{Visual Studio Code}\footnote{\url{https://code.visualstudio.com/}}.
+			
+			Baza podataka je \textbf{PostgreSQL}\footnote{\url{https://www.postgresql.org/}} u oblaku na \textbf{Renderu}\footnote{\url{https://render.com/}}. Za lokalno korištenje baze korišten je alat \textbf{pgAdmin}\footnote{\url{https://www.pgadmin.org/}}. 
 			
 			\eject 
 		
@@ -47,11 +49,18 @@
 			\eject 
 		
 		
-		%\section{Dijagram razmještaja}
+		\section{Dijagram razmještaja}
 			
-			\textbf{\textit{dio 2. revizije}}
+			%\textbf{\textit{dio 2. revizije}}
 			
-			 \textit{Potrebno je umetnuti \textbf{specifikacijski} dijagram razmještaja i opisati ga. Moguće je umjesto specifikacijskog dijagrama razmještaja umetnuti dijagram razmještaja instanci, pod uvjetom da taj dijagram bolje opisuje neki važniji dio sustava.}
+			 %\textit{Potrebno je umetnuti \textbf{specifikacijski} dijagram razmještaja i opisati ga. Moguće je umjesto specifikacijskog dijagrama razmještaja umetnuti dijagram razmještaja instanci, pod uvjetom da taj dijagram bolje opisuje neki važniji dio sustava.}
+			 Na oblaku (eng. \textit{cloud}) pokrenuti su poslužitelji (eng. \textit{servers}) web-stranice i baze podataka koji međusobno komuniciraju, odnosno web-aplikacija sprema podatke u bazu. Korisnik sa svog računala preko web-preglednika pomoću HTTP protokola pristupa aplikaciji.
+			 
+			 \begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/dijagramRazmjestaja.png} %veličina u odnosu na širinu linije
+			\caption{dijagram razmještaja}
+			\label{fig:dijagramRazmjestaja} %label mora biti drugaciji za svaku sliku
+			\end{figure}
 			
 			\eject 
 		
