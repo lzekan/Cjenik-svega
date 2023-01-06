@@ -1,11 +1,11 @@
 const enviorment = {
     SessionSecret: "topSecret",
     Database: {
-        host: "dpg-cdq27lha6gdl61h4ku90-a",
-        port: 5432,
-        dbName: "cjeniksvega_948w",
-        user: "webservice",
-        password: "DhtFUSEZxpPZOhaMASNROgSgtq3koPgU"
+        host: process.env.dbHost,
+        port: parseInt(process.env.dbPort),
+        dbName: process.env.dbName,
+        user: process.env.dbUser,
+        password: process.env.dbPassword
     }
 
 }
