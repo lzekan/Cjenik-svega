@@ -15,12 +15,12 @@ router.get('/:barcode', async (req, res) => {
 	}
 	
 	res.render('item', {
-		linkActive: 'home',
+		linkActive: 'item',
 		user: req.session.user,
-		name: item.name,
-		stores: item.stores,
-		tags: item.tags
+		item: item
 	});
+
+
 });
 
 module.exports = router;
