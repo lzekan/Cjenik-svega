@@ -18,7 +18,6 @@ const itemRouter = require('./routes/item.routes.js');
 const loginRouter = require('./routes/login.routes.js');
 const logoutRouter = require('./routes/logout.routes.js');
 const notificationsRouter = require('./routes/notifications.routes.js');
-const pricesRouter = require('./routes/prices.routes.js');
 const searchRouter = require('./routes/search.routes.js');
 const signupRouter = require('./routes/signup.routes.js');
 const profileRouter = require('./routes/profile.routes')
@@ -71,7 +70,6 @@ app.use('/item', itemRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/notifications', notificationsRouter);
-app.use('/prices', pricesRouter);
 app.use('/search', searchRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
