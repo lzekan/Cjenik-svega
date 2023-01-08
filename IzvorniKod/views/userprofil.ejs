@@ -6,8 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
-    <link rel="stylesheet" type="text/css" href="./styles/main.css">
-    <link rel = "icon" href = "/images/logo.png" type = "image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./styles/profil.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 
@@ -34,15 +33,15 @@
     <%- include('partials/navbar.ejs')%>
 
     <div class="container">
-        <h1 class="decorated-title font-secondary main-color">
-            <span class="main-color-emphasized">Profil</span>
+        <h1>
+            <span class="profil">PROFIL</span>
         </h1>
         
         <div class="dataset">
 
             <div class="dataset-entry">
                 <div class="dataset-property">
-                    Korisničko ime
+                    Korisničko ime:
                 </div>
                 <div class="dataset-value">
                     <%= user.nickname %>
@@ -61,7 +60,7 @@
 
             <div class="dataset-entry">
                 <div class="dataset-property">
-                    Ime
+                    Ime:
                 </div>
                 <div class="dataset-value">
                     <%= user.first_name %>
@@ -80,7 +79,7 @@
 
             <div class="dataset-entry">
                 <div class="dataset-property">
-                    Prezime
+                    Prezime:
                 </div>
                 <div class="dataset-value">
                     <%= user.last_name %>
@@ -98,7 +97,7 @@
             </div>
             <div class="dataset-entry">
                 <div class="dataset-property">
-                    E-mail adresa
+                    E-mail adresa:
                 </div>
                 <div class="dataset-value">
                     <%= user.email %>
