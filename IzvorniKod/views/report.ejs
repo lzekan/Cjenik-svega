@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cjenik svega</title>
+</head>
+<body>
+	<h2>Prijavi krivu cijenu za: <%=storeName%></h2>
+	<h3>Proizvod: <%=itemName%><h3>
+	<form action="/report/<%=storeId%>?item=<%=barcode%>" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="storeId" value="<%=storeId%>">
+		<input type="hidden" name="barcode" value="<%=barcode%>">
+		<div>
+			<label for="newprice">Prava cijena: </label>
+			<input type="text" name="newprice">
+		</div>
+		<div>
+			<label for="filename">Izaberi sliku: </label>
+			<input type="file" name="filename">
+		</div>
+		<input type="submit" value="Send">
+	</form>
+</body>
+</html>

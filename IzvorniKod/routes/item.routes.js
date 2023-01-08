@@ -7,6 +7,7 @@ router.get('/:barcode', async (req, res) => {
 	let barcode = req.params.barcode
 	let item = new Item();
 	await item.loadItem(barcode);
+	item.barcode = barcode;
 	
 	if (item == undefined)
 	{

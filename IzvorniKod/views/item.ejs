@@ -13,7 +13,7 @@
 
 <body>
 
-    <%- include('partials/navbar.ejs'); %>
+    <%- include("partials/navbar.ejs"); %>
 
     <% if (item.stores.length == 0) { %>
 
@@ -38,20 +38,21 @@
             </div>
             
             <% if (trgovina.prices.length === 0) { %>
-
+			
             <% } else { %>
                     <% for (let cijenaVrijeme of trgovina.prices) { %>
-                        <div class="photo-box-title font-secondary main-color-emphasized"><%= cijenaVrijeme.price %>kn - - - - - (<%= cijenaVrijeme.datetime %>)</div>
+                        <div class="photo-box-title font-secondary main-color-emphasized">
+							<%= cijenaVrijeme.price %>kn &emsp;&emsp; (<%= cijenaVrijeme.datetime %>) &emsp;&emsp;
+							<%if (cijenaVrijeme === trgovina.prices[0] && user !== undefined) {%>
+								<a href="/report/<%=trgovina.TrgovinaID%>?item=<%=item.barcode%>">Prijavi krivu cijenu</a>
+							<%}%>
+						</div>
                     <% } %>
             <% } %>
 
         <% } %>    
     <% } %>
-
-    
-
-
-
+	
 </body>
 
 </html>
