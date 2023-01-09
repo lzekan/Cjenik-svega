@@ -13,10 +13,9 @@
 
 
 <body class="content">
-
+	<%- include("partials/navbar.ejs")%>
     <main class="main">
         <section class="section secondary-color-bg">
-            <a href="/logout" class="link menu-item <%if (linkActive === "logout") {%>  link-active  <%}%>">Odjava</a>
             <div class="container">
                 
                 <h1 class="decorated-title font-secondary main-color">
@@ -149,7 +148,6 @@
                         <button class="submit-btn" type="submit">Upload</button>
                     </form>
                 </div>
-                <script src="./script.js"></script>
             </div>
         </section>
     </main>

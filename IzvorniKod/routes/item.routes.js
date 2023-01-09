@@ -16,11 +16,16 @@ router.get('/:barcode', async (req, res) => {
 		return;
 	}
 
-	let sql = 'SELECT "Oznaka" AS oznaka FROM "Oznake" WHERE "Barkod" = $1::text AND "KorisnikID" = $2::int';
-	let sql_parameters = [barcode, req.session.user.id];
+	let userTags = {rows: []};
+	let leftTags = undefined;
+	if (req.session.user != undefined)
+	{
+		let sql = 'SELECT "Oznaka" AS oznaka FROM "Oznake" WHERE "Barkod" = $1::text AND "KorisnikID" = $2::int';
+		let sql_parameters = [barcode, req.session.user.id];
 
-	let userTags = await db.query(sql, sql_parameters);
-	let leftTags = 5 - userTags.rows.length;
+		userTags = await db.query(sql, sql_parameters);
+		leftTags = 5 - userTags.rows.length;
+	}
 	
 	res.render('item', {
 		linkActive: 'item',
@@ -35,7 +40,10 @@ router.get('/:barcode', async (req, res) => {
 });
 
 router.post('/:barcode', async (req, res) => {
-
+	
+	if (req.session.user == undefined)
+		return res.redirect('/login');
+	
 	let barcode = req.params.barcode;
 	
 	try{
