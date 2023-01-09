@@ -3,8 +3,8 @@
         <div>
             <a href="/" class="link <%if (linkActive === "home") {%>  link-active  <%}%>">Naslovnica</a>
             <% if( user !== undefined ) {%> 
-                <a href="/profile" class="link <%if (linkActive === "user") {%>  link-active  <%}%>">Profil</a>
-                <a href="/notifications" class="link <%if (linkActive === "notifications") {%>  link-active  <%}%>">Obavijesti()</a>
+                <a href="/profile" class="link <%if (linkActive === "user") {%>  link-active  <% } %>"> Profil </a>
+                <a href="/notifications" class="link <%if (linkActive === "notifications") { %>  link-active  <% } %>"> Obavijesti </a>
             <% } %>               
         </div>
 

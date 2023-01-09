@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS public."PromjenaCijeneKorisnik"
     "TrgovinaID" integer NOT NULL,
     "DatumVrijeme" timestamp without time zone NOT NULL,
     "NovaCijena" double precision NOT NULL,
-    "Slika" bit varying NOT NULL,
+    "SlikaPath" text COLLATE pg_catalog."default" NOT NULL,
     "Status" text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "PromjenaCijeneKorisnik_pkey" PRIMARY KEY ("KorisnikID", "Barkod", "TrgovinaID", "DatumVrijeme")
 );

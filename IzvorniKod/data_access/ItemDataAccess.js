@@ -91,6 +91,9 @@ async function getTags(barcode)
     SELECT "Oznaka"
     FROM "Oznake"
 	WHERE "Barkod" = $1::text
+	GROUP BY "Oznaka"
+	ORDER BY COUNT("KorisnikID")
+	LIMIT 5
     `;
     const sql_parameters = [barcode];
 	

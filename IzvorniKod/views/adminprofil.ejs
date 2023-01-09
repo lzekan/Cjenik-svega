@@ -5,8 +5,8 @@
     <title>Admin Profil</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
-    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./styles/profil.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 
@@ -44,16 +44,14 @@ module.exports = authHandler;
 
 
     <main class="main">
-        <section class="section secondary-color-bg">
             <div class="container">
-                <h1 class="decorated-title font-secondary main-color">
-                    <span class="main-color-emphasized">admin Profil</span>
+                    <span class="profil"> ADMIN PROFIL</span>
                 </h1>
                 <div class="dataset">
 
                     <div class="dataset-entry">
                         <div class="dataset-property" style:"">
-                            Admin name
+                            Adminovo korisničko ime:
                         </div>
                         <div class="dataset-value">
                             <%= admin.user_name %>
@@ -66,7 +64,7 @@ module.exports = authHandler;
 
                     <div class="dataset-entry">
                         <div class="dataset-property">
-                            First name
+                            Ime:
                         </div>
                         <div class="dataset-value">
                             <%= admin.first_name %>
@@ -79,7 +77,7 @@ module.exports = authHandler;
 
                     <div class="dataset-entry">
                         <div class="dataset-property">
-                            Last name
+                            Prezime:
                         </div>
                         <div class="dataset-value">
                             <%= admin.last_name %>
@@ -91,7 +89,7 @@ module.exports = authHandler;
                     </div>
                     <div class="dataset-entry">
                         <div class="dataset-property">
-                            E-mail
+                            E-mail adresa:
                         </div>
                         <div class="dataset-value">
                             <%= admin.email %>
