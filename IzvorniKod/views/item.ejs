@@ -25,7 +25,7 @@
                     <h3>Oznake proizvoda:</h3>
                     <% for (let tag of item.tags) { %>
                         <p>
-                            &rarr; <%= tag %>	
+                            <a href="/search/<%=tag%>">&rarr; <%= tag %></a>
                         </p>	
                     <% } %>
                 <% } %>
