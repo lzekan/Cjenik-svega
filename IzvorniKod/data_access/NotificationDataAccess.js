@@ -9,15 +9,11 @@ getNotificationsForUser = async(user_id) => {
 
     try {
         let result = await db.query(sql, sql_parameters);
-        if(result.rows.length == 0){
-            return undefined
-        } else {
-            let notifications = [];
+        let notifications = [];
             for (let i = 0; i < result.rows.length; i++){
                 notifications.push(await getNotification(result.rows[i].ObavijestID))
             }
             return notifications
-        }
     } catch (err) {
         console.log(err);
         throw err

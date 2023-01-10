@@ -1,0 +1,10 @@
+.slika{
+    height: 300px;
+}
+
+.notification-box{
+    border: 1px solid black;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: rgb(187, 183, 183);
+}

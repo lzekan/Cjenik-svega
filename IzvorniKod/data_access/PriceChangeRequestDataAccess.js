@@ -13,36 +13,31 @@ getPendingPriceChangeRequests = async() => {
     try {
         let result = await db.query(sql, sql_parameters);
 
-        if(result.rows.length <= 0){
-            return undefined
-        } else {
-            let output = []
+        let output = []
 
-            for (let i = 0; i < result.rows.length; i++) {
+        for (let i = 0; i < result.rows.length; i++) {
 
-                user_nickname = (await UserDataAccess.getById(result.rows[i].KorisnikID)).nickname;
+            user_nickname = (await UserDataAccess.getById(result.rows[i].KorisnikID)).nickname;
 
-                store_name = (await TrgovinaDataAccess.getTrgovina(result.rows[i].TrgovinaID)).naziv;
-                                
-                let pcr = new PriceChangeRequestModel(
-                    result.rows[i].ID,
-                    result.rows[i].KorisnikID,
-                    user_nickname,
-                    result.rows[i].TrgovinaID,
-                    store_name,
-                    result.rows[i].SlikaPath,
-                    result.rows[i].Barkod,
-                    result.rows[i].DatumVrijeme,
-                    result.rows[i].NovaCijena,
-                    result.rows[i].Status
-                    );
-                
-                output.push(pcr);                
-            }
-
-            return output;
+            store_name = (await TrgovinaDataAccess.getTrgovina(result.rows[i].TrgovinaID)).naziv;
+                            
+            let pcr = new PriceChangeRequestModel(
+                result.rows[i].ID,
+                result.rows[i].KorisnikID,
+                user_nickname,
+                result.rows[i].TrgovinaID,
+                store_name,
+                result.rows[i].SlikaPath,
+                result.rows[i].Barkod,
+                result.rows[i].DatumVrijeme,
+                result.rows[i].NovaCijena,
+                result.rows[i].Status
+                );
+            
+            output.push(pcr);                
         }
-        
+
+        return output;
         
     } catch (err) {
         console.log(err);
