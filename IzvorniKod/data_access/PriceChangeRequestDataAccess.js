@@ -45,6 +45,41 @@ getPendingPriceChangeRequests = async() => {
     }
 }
 
+getById = async(id) => {
+    const sql = `
+    select * from "PromjenaCijeneKorisnik"
+    where "ID" = $1::int
+    `
+    const sql_parameters = [id]
+
+    try {
+        let result = await db.query(sql, sql_parameters);
+
+        user_nickname = (await UserDataAccess.getById(result.rows[0].KorisnikID)).nickname;
+
+        store_name = (await TrgovinaDataAccess.getTrgovina(result.rows[0].TrgovinaID)).naziv;
+                            
+            let pcr = new PriceChangeRequestModel(
+                result.rows[0].ID,
+                result.rows[0].KorisnikID,
+                user_nickname,
+                result.rows[0].TrgovinaID,
+                store_name,
+                result.rows[0].SlikaPath,
+                result.rows[0].Barkod,
+                result.rows[0].DatumVrijeme,
+                result.rows[0].NovaCijena,
+                result.rows[0].Status
+                );
+            
+        return pcr;
+
+    } catch (err) {
+        console.log(err);
+        throw err
+    }
+}
+
 rejectPriceChangeRequest = async(id) => {
     const sql = `
     update "PromjenaCijeneKorisnik"
@@ -80,5 +115,6 @@ acceptPriceChangeRequest = async(id) => {
 module.exports = {
     getPendingPriceChangeRequests,
     rejectPriceChangeRequest,
-    acceptPriceChangeRequest
+    acceptPriceChangeRequest,
+    getById
 }

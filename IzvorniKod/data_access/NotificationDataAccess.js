@@ -42,13 +42,13 @@ getNotification = async(notification_id) => {
 addNotification = async(text) => {
     const sql = `
     insert into "Obavijest" ("DatumVrijeme", "Opis", "Procitano")
-    values ($1, $2::text, $3::bool)
+    values ($1, $2::text, $3::bool) returning "ID"
     `
     const sql_parameters = [new Date(), text, false]
 
     try {
         let result = await db.query(sql, sql_parameters);
-        
+        return result.rows[0].ID;
     } catch (err) {
         console.log(err);
         throw err
