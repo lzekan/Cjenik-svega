@@ -21,6 +21,8 @@ router.get('/:trgId', async (req, res) => {
 	if (!await TrgovinaAccess.existsTrgovinaWithId(trgId) || itemName == undefined)
 		return res.status(404).send('404 not found');
 	
+	itemName = itemName.charAt(0).toUpperCase() + itemName.slice(1);
+	
 	let trg = await TrgovinaAccess.getTrgovina(trgId);
 	
 	res.render('report', {
@@ -47,7 +49,7 @@ router.post('/:trgId', async (req, res) => {
 	}
 	
 	let newPrice = parseFloat(req.body.newprice);
-	if (newPrice == NaN)
+	if (isNaN(newPrice))
 		return res.status(400).send('Nova cijena nije ispravna');
 	
 	let trgId = req.params.trgId;

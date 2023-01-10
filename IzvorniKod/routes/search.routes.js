@@ -11,6 +11,8 @@ router.get('/:term', async (req, res) => {
 	let sql_parameters = [req.params.term + '%'];
 
 	let products = await db.query(sql, sql_parameters);
+	for (let item of products.rows)
+		item.naziv = item.naziv.charAt(0).toUpperCase() + item.naziv.slice(1);
 
 	sql = 'SELECT "Naziv" AS naziv, "ID" AS id FROM "Trgovina" WHERE LOWER("Naziv") LIKE LOWER($1::text)';
 	let trgovine = await db.query(sql, sql_parameters);
