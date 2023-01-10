@@ -44,11 +44,16 @@ router.post('/:barcode', async (req, res) => {
 	if (req.session.user == undefined)
 		return res.redirect('/login');
 	
+	if (req.body.tag == undefined || req.body.tag.length < 3)
+		return res.status(400).send('Oznaka mora imati barem 3 znaka');
+	
 	let barcode = req.params.barcode;
+	let tag = req.body.tag.toLowerCase();
+	tag = tag.charAt(0).toUpperCase() + tag.slice(1);
 	
 	try{
 		let sql = 'INSERT INTO "Oznake" VALUES ($1::text, $2::int, $3::text)';
-		let sql_parameters = [barcode, req.session.user.id, req.body.tag];
+		let sql_parameters = [barcode, req.session.user.id, tag];
 	
 		await db.query(sql, sql_parameters);
 	} catch(e) {
