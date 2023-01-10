@@ -68,7 +68,7 @@ getTrgovina = async(user_id) =>{
 getWrongPricesForStore = async (store_id) => {
    const sql = `
    SELECT COUNT(*) AS "KriveCijene" FROM "PromjenaCijeneKorisnik"
-   WHERE ("TrgovinaID" = $1::int AND "Status" = 'SUCCESS')
+   WHERE ("TrgovinaID" = $1::int AND "Status" = 'accepted')
    `;
 
    const sql_parameters = [store_id];
