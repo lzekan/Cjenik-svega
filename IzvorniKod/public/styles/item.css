@@ -47,8 +47,13 @@
     font-size: 1.2rem;
 }
 
-.container-li > a {
-    color: #1190cb
+.li-link {
+    color: #1190cb;
+    text-decoration: none;
+}
+
+.li-link:hover{
+    text-decoration: underline;
 }
 
 .container-tag-text{
