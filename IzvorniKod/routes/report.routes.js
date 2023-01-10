@@ -21,6 +21,8 @@ router.get('/:trgId', async (req, res) => {
 	if (!await TrgovinaAccess.existsTrgovinaWithId(trgId) || itemName == undefined)
 		return res.status(404).send('404 not found');
 	
+	itemName = itemName.charAt(0).toUpperCase() + itemName.slice(1);
+	
 	let trg = await TrgovinaAccess.getTrgovina(trgId);
 	
 	res.render('report', {
@@ -47,7 +49,7 @@ router.post('/:trgId', async (req, res) => {
 	}
 	
 	let newPrice = parseFloat(req.body.newprice);
-	if (newPrice == NaN)
+	if (isNaN(newPrice))
 		return res.status(400).send('Nova cijena nije ispravna');
 	
 	let trgId = req.params.trgId;
@@ -59,7 +61,8 @@ router.post('/:trgId', async (req, res) => {
 	const file = req.files.filename;
 	const extensionName = path.extname(file.name);
 	const allowedExtension = ['.png','.jpg','.jpeg'];
-	const targetPath = './public/userImages/' + Date.now() + extensionName;
+	const fileName = Date.now() + extensionName;
+	const targetPath = './public/userImages/' + fileName;
 	
 	if(!allowedExtension.includes(extensionName)){
 		return res.status(422).send('Format slike nije podržan');
@@ -79,13 +82,13 @@ router.post('/:trgId', async (req, res) => {
    ($1::int, $2::text, $3::int, $4::timestamp, $5::float, $6::text, $7::text);
 `;
 
-	const sql_parameters = [req.session.user.id, barcode, trgId, moment().format("YYYY-MM-DD HH:mm:ss"), newPrice, 'undefined', targetPath];
+	const sql_parameters = [req.session.user.id, barcode, trgId, moment().format("YYYY-MM-DD HH:mm:ss"), newPrice, 'in progress', 'userImages/' + fileName];
 	
 	try {
       const result = await db.query(sql, sql_parameters);
 	} catch (err) {
       console.log(err);
-      return res.status(500).send('Nešto je pošlo krivo');
+      return res.status(500).send('Greška pri dodavanju u bazu');
    }
 	
 	res.redirect('/');

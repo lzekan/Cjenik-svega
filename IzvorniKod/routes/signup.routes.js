@@ -83,7 +83,7 @@ router.post('/',
 							}
 
 							if(listKod[i].length > 1){
-								await TrgovinaDataAccess.putItemsInStore(userId, listKod[i], listIme[i], listCijena[i]);
+								await TrgovinaDataAccess.putItemsInStore(userId, listKod[i].trim(), listIme[i].trim(), listCijena[i]);
 							}
 						}
 

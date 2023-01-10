@@ -25,7 +25,7 @@
                     <h3>Oznake proizvoda:</h3>
                     <% for (let tag of item.tags) { %>
                         <p>
-                            <a href="/search/<%=tag%>">&rarr; <%= tag %></a>
+                            &rarr; <a href="/search/<%=tag%>" class="li-link"><%= tag %></a>
                         </p>	
                     <% } %>
                 <% } %>
@@ -42,15 +42,16 @@
                             <% for (let trgovina of item.stores) { %>
                 
                                 <li class="container-li">
-                                    <a href="/profile/<%=trgovina.TrgovinaID%>"><span class="container-li-name"><%= trgovina.name %></span></a>
+                                    <a href="/profile/<%=trgovina.TrgovinaID%>" class="li-link"><span><%= trgovina.name %></span></a>
+                                    <br>
 									<% for (let cijenaVrijeme of trgovina.prices) { %>
-										<span class="photo-box-title font-secondary main-color-emphasized">
-										<%= cijenaVrijeme.price %>kn &emsp;&emsp; (<%= cijenaVrijeme.datetime %>)
-											<%if (cijenaVrijeme === trgovina.prices[0] && user !== undefined) {%>
-												&emsp;&emsp;<a href="/report/<%=trgovina.TrgovinaID%>?item=<%=item.barcode%>">Prijavi krivu cijenu</a>
-											<%}%>
-										</span>
-										<br>
+                                    <div>
+                                        &emsp;- <%= cijenaVrijeme.price %>kn &emsp;&emsp; (<%= cijenaVrijeme.datetime %>)
+                                        <%if (cijenaVrijeme === trgovina.prices[0] && user !== undefined) {%>
+                                            &emsp;&emsp;<a href="/report/<%=trgovina.TrgovinaID%>?item=<%=item.barcode%>" 
+                                                class="li-link">Prijavi krivu cijenu</a>
+                                        <%}%>
+                                    </div>
 									<% } %>
                                 </li>
                     

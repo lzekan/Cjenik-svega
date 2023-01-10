@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./styles/notifications.css">
+    <link rel = "icon" href = "/images/logo.png" type = "image/x-icon">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Cjenik svega</title>
+</head>
+
+<body>
+
+    <%- include('partials/navbar.ejs') %>
+
+    <h2>Obavijesti: </h2>
+    <% for(let notification of notifications) { %>
+        <div class="notification-box">
+            <p>(<%= notification.dateTime.toLocaleString('de-AT') %>)</p>
+            <p><%= notification.text %></p>
+        </div>
+    <% } %>
+    
+    <% if(user.access_level == 2){%>
+    <hr>
+    <h2>Zahtjevi za promjenom cijene: </h2>
+    
+    <% for(let request of priceChangeRequests) { %>
+        <div class="notification-box">
+            <p>(<%= request.date_time.toLocaleString('de-AT') %>)</p>
+            <p>Korisnik koji je predložio izmjenu: <a href="/profile/<%= request.user_id %>"><%= request.user_nickname %></a></p>
+            <p>Trgovina: <a href="/profile/<%= request.store_id %>"><%= request.store_name %></a></p>
+            <p>Proizvod: <a href="/item/<%= request.product_barcode %>"><%= request.product_barcode %></a></p>
+            <p>Predložena cijena: <%= request.new_price %></p>
+            <img src="<%= request.image_url %>" class="slika">
+            <form action="/priceChange" method="post">
+
+                <input type="hidden" name="request_id" value="<%= request.id %>">
+               <input type="radio" id="accepted" name="status" value="accepted">
+               <label for="accepted">Accept</label><br>
+               <input type="radio" id="reject" name="status" value="reject">
+               <label for="reject">Reject</label><br>
+
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+    <% } %>
+    <% } %>
+</body>
+
+</html>

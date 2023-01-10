@@ -226,6 +226,15 @@ ALTER TABLE IF EXISTS public."Trgovina"
 CREATE INDEX IF NOT EXISTS "Trgovina_pkey"
     ON public."Trgovina"("ID");
 
+    alter table "Oznake"
+drop constraint "Oznake_pkey";
+
+alter table "Oznake" 
+add constraint "Oznake_pkey" primary key ("Barkod", "KorisnikID", "Oznaka");
+
+alter table "PromjenaCijeneKorisnik"
+add column "ID" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 )
+
 COMMIT;
 `;
 

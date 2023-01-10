@@ -25,6 +25,7 @@ const addCommentRouter = require('./routes/addComment.routes');
 const changePrivacyRouter = require('./routes/changePrivacy.routes');
 const forbidAccessRouter = require('./routes/forbidAccess.routes');
 const reportRouter = require('./routes/report.routes.js')
+const priceChangeRouter = require('./routes/priceChange.routes')
 
 //ejs middleware
 app.set('views', path.join(__dirname, 'views'));
@@ -70,6 +71,7 @@ app.use(async (req, res, next) => {
 
 //defining routes
 app.use('/', homeRouter);
+app.use('/priceChange', priceChangeRouter)
 app.use('/addComment', addCommentRouter);
 app.use('/changePrivacy', changePrivacyRouter);
 app.use('/forbidAccess', forbidAccessRouter);

@@ -4,6 +4,9 @@ module.exports = class Item {
 	
 	async loadItem(barcode) {
 		this.name = await ItemDataAccess.getItemName(barcode);
+		if (this.name != undefined)
+			this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
+		
 		this.stores = await ItemDataAccess.getStores(barcode);
 		this.tags = await ItemDataAccess.getTags(barcode);
 		
