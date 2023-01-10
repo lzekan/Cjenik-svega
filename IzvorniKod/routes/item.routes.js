@@ -10,7 +10,7 @@ router.get('/:barcode', async (req, res) => {
 	await item.loadItem(barcode);
 	item.barcode = barcode;
 	
-	if (item == undefined)
+	if (item.name == undefined)
 	{
 		res.status(404).send('Item not found');
 		return;

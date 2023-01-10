@@ -43,15 +43,15 @@
                 
                                 <li class="container-li">
                                     <a href="/profile/<%=trgovina.TrgovinaID%>" class="li-link"><span><%= trgovina.name %></span></a>
+                                    <br>
 									<% for (let cijenaVrijeme of trgovina.prices) { %>
-										<span>
-										<%= cijenaVrijeme.price %>kn &emsp;&emsp; (<%= cijenaVrijeme.datetime %>)
-											<%if (cijenaVrijeme === trgovina.prices[0] && user !== undefined) {%>
-												&emsp;&emsp;<a href="/report/<%=trgovina.TrgovinaID%>?item=<%=item.barcode%>" 
-                                                    class="li-link">Prijavi krivu cijenu</a>
-											<%}%>
-										</span>
-										<br>
+                                    <div>
+                                        &emsp;- <%= cijenaVrijeme.price %>kn &emsp;&emsp; (<%= cijenaVrijeme.datetime %>)
+                                        <%if (cijenaVrijeme === trgovina.prices[0] && user !== undefined) {%>
+                                            &emsp;&emsp;<a href="/report/<%=trgovina.TrgovinaID%>?item=<%=item.barcode%>" 
+                                                class="li-link">Prijavi krivu cijenu</a>
+                                        <%}%>
+                                    </div>
 									<% } %>
                                 </li>
                     
