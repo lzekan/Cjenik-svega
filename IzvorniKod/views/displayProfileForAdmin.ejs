@@ -46,6 +46,7 @@
                             <%= displayTrgovina.comment %>
                         </div> 
                     </div>
+                    <% if(user !== undefined && user.access_level == 2) { %>
                     <div>
                         <form action="/addComment" method="post">
                             <label for="comment">Dodaj komentar:</label>
@@ -56,6 +57,8 @@
                     </div>
                     <hr>
                     <% } %>
+                    <% } %>
+                    <% if(user !== undefined && user.access_level == 2) { %>
                     <div class="dataset">
 
                         <div class="dataset-entry">
@@ -117,7 +120,7 @@
     
     
                     </div>
-
+                    <% } %>
                     
 
                 </div>
