@@ -1,10 +1,35 @@
-.slika{
-    height: 300px;
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 2rem auto;
+    justify-content: space-evenly;
 }
 
-.notification-box{
-    border: 1px solid black;
-    margin: 5px 5px 5px 5px;
-    padding: 5px 5px 5px 5px;
-    background-color: rgb(187, 183, 183);
+.container-items{
+    border: 1px solid #1190cb;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 40%;
+}
+
+.slika{
+    height: 200px;
+}
+
+.container-link{
+    text-decoration: none;
+    color: #1190cb; 
+}
+
+.container-link:hover{
+    text-decoration: underline;
+    font-size: 1.05rem;
+}
+
+.container-form{
+    padding: 1rem;
+}
+
+.container-form-input{
+    margin: 0.5rem
 }

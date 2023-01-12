@@ -15,39 +15,66 @@
 
     <%- include('partials/navbar.ejs') %>
 
-    <h2>Obavijesti: </h2>
-    <% for(let notification of notifications) { %>
-        <div class="notification-box">
-            <p>(<%= notification.dateTime.toLocaleString('de-AT') %>)</p>
-            <p><%= notification.text %></p>
+    <div class="container">
+        <div class="container-items">
+            <h2>Obavijesti: </h2>
+            <% if(notifications.length == 0) { %>
+                <div>
+                    Nemate nijednu novu obavijest.
+                </div>
+            <% } else { %>
+                <% for(let notification of notifications) { %>
+                    <div>
+                        <p>(<%= notification.dateTime.toLocaleString('de-AT') %>)</p>
+                        <p><%= notification.text %></p>
+                    </div>
+                <% } %>
+            <% } %>
         </div>
-    <% } %>
-    
-    <% if(user.access_level == 2){%>
-    <hr>
-    <h2>Zahtjevi za promjenom cijene: </h2>
-    
-    <% for(let request of priceChangeRequests) { %>
-        <div class="notification-box">
-            <p>(<%= request.date_time.toLocaleString('de-AT') %>)</p>
-            <p>Korisnik koji je predložio izmjenu: <a href="/profile/<%= request.user_id %>"><%= request.user_nickname %></a></p>
-            <p>Trgovina: <a href="/profile/<%= request.store_id %>"><%= request.store_name %></a></p>
-            <p>Proizvod: <a href="/item/<%= request.product_barcode %>"><%= request.product_barcode %></a></p>
-            <p>Predložena cijena: <%= request.new_price %></p>
-            <img src="<%= request.image_url %>" class="slika">
-            <form action="/priceChange" method="post">
 
-                <input type="hidden" name="request_id" value="<%= request.id %>">
-               <input type="radio" id="accepted" name="status" value="accepted">
-               <label for="accepted">Accept</label><br>
-               <input type="radio" id="reject" name="status" value="reject">
-               <label for="reject">Reject</label><br>
+        <div class="container-items">
 
-                <input type="submit" value="Submit">
-              </form>
+            <% if(user.access_level == 2){%>
+                <h2>Zahtjevi za promjenom cijene: </h2>
+                <% if(priceChangeRequests.length == 0) { %>
+                    <div>
+                        Nemate nijedan nepregledan zahtjev za promjenom cijene.
+                    </div>
+                <% } else { %>
+                
+                    <% for(let request of priceChangeRequests) { %>
+                        <div class="container-request">
+                            <p>(<%= request.date_time.toLocaleString('de-AT') %>)</p>
+                            <p>Korisnik koji je predložio izmjenu: <a href="/profile/<%= request.user_id %>" class="container-link"><%= request.user_nickname %></a></p>
+                            <p>Trgovina: <a href="/profile/<%= request.store_id %>" class="container-link"><%= request.store_name %></a></p>
+                            <p>Proizvod: <a href="/item/<%= request.product_barcode %>" class="container-link"><%= request.product_barcode %></a></p>
+                            <p>Predložena cijena: <%= request.new_price %> kn</p>
+                            <img src="<%= request.image_url %>" class="slika">
+            
+                            <form action="/priceChange" method="post" class="container-form">
+            
+                                <input type="hidden" name="request_id" value="<%= request.id %>">
+                                <div class="container-form-input">
+                                    <input type="radio" id="accepted" name="status" value="accepted">
+                                    <label for="accepted">Prihvati zahtjev</label><br>
+                                </div>
+                                <div class="container-form-input">
+                                    <input type="radio" id="reject" name="status" value="reject">
+                                    <label for="reject">Odbij zahtjev</label><br>
+                                    
+                                    <input type="submit" value="Submit" class="container-form-input">
+                                </div>
+
+                            </form>
+                            <hr>
+                        </div>
+                    <% } %>
+                <% } %>
+            <% } %>
         </div>
-    <% } %>
-    <% } %>
+    </div>
+
+
 </body>
 
 </html>
