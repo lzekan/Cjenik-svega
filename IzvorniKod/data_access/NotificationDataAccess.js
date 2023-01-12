@@ -3,7 +3,10 @@ const NotificationModel = require('../models/NotificationModel')
 
 getNotificationsForUser = async(user_id) => {
     const sql = `
-    select * from "Pretinac" where "KorisnikID" = $1::int
+    select "ObavijestID" 
+    from "Pretinac" join "Obavijest" on "Pretinac"."ObavijestID" = "Obavijest"."ID"
+    where "KorisnikID" = $1::int
+    order by "DatumVrijeme" desc
     `
     const sql_parameters = [user_id]
 

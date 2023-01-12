@@ -98,8 +98,20 @@ router.get('/:id', async (req, res) => {
 	{
 		return res.redirect('/item/' + req.params.id);
 	}
+
+    let user = undefined;
+    try {
+        user = await UserDataAccess.getById(req.params.id);
+        
+        if(req.session.user !== undefined && user.id == req.session.user.id){
+            res.redirect('/profile')
+            return;
+        }
+    } catch (error) {
+        return res.status(404).send('Not found');
+    }
 	
-    if(req.session.user == undefined){
+    if(user.access_level !== 1 && req.session.user == undefined){
         //ako nije registriran redirectaj na login
         res.redirect('/login')
         return
@@ -107,22 +119,12 @@ router.get('/:id', async (req, res) => {
 
     console.log(JSON.stringify(req.session.user))
 
-    if(req.session.user.access_level !== 2 && req.session.user.id != req.params.id){
+    if(user.access_level !== 1 && req.session.user.access_level !== 2 && req.session.user.id != req.params.id){
         //ako nije admin nema pristup tudem profilu
         return res.status(403).send('403 forbidden');
     }
 
-    let user = undefined;
-    try {
-        user = await UserDataAccess.getById(req.params.id);
-        
-        if(user.id == req.session.user.id){
-            res.redirect('/profile')
-            return;
-        }
-    } catch (error) {
-        return res.status(404).send('Not found');
-    }
+    
     
     if(user !== undefined){
         let trgovina = undefined;
