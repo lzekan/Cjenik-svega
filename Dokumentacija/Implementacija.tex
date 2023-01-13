@@ -25,26 +25,109 @@
 	
 		\section{Ispitivanje programskog rješenja}
 			
-			\textbf{\textit{dio 2. revizije}}\\
+			%\textbf{\textit{dio 2. revizije}}\\
 			
-			 \textit{U ovom poglavlju je potrebno opisati provedbu ispitivanja implementiranih funkcionalnosti na razini komponenti i na razini cijelog sustava s prikazom odabranih ispitnih slučajeva. Studenti trebaju ispitati temeljnu funkcionalnost i rubne uvjete.}
+			% \textit{U ovom poglavlju je potrebno opisati provedbu ispitivanja implementiranih funkcionalnosti na razini komponenti i na razini cijelog sustava s prikazom odabranih ispitnih slučajeva. Studenti trebaju ispitati temeljnu funkcionalnost i rubne uvjete.}
 	
 			
 			\subsection{Ispitivanje komponenti}
-			\textit{Potrebno je provesti ispitivanje jedinica (engl. unit testing) nad razredima koji implementiraju temeljne funkcionalnosti. Razraditi \textbf{minimalno 6 ispitnih slučajeva} u kojima će se ispitati redovni slučajevi, rubni uvjeti te izazivanje pogreške (engl. exception throwing). Poželjno je stvoriti i ispitni slučaj koji koristi funkcionalnosti koje nisu implementirane. Potrebno je priložiti izvorni kôd svih ispitnih slučajeva te prikaz rezultata izvođenja ispita u razvojnom okruženju (prolaz/pad ispita). }
+			%\textit{Potrebno je provesti ispitivanje jedinica (engl. unit testing) nad razredima koji implementiraju temeljne funkcionalnosti. Razraditi \textbf{minimalno 6 ispitnih slučajeva} u kojima će se ispitati redovni slučajevi, rubni uvjeti te izazivanje pogreške (engl. exception throwing). Poželjno je stvoriti i ispitni slučaj koji koristi funkcionalnosti koje nisu implementirane. Potrebno je priložiti izvorni kôd svih ispitnih slučajeva te prikaz rezultata izvođenja ispita u razvojnom okruženju (prolaz/pad ispita). }
+			
+			Ispitivanje komponenti proveli smo unutar Node.js tehnologije. U prva tri testa ispitivali smo funkcionalnosti trgovine. Testira se dohvaćanje imena trgovine preko ID-a, postojanje komentara za neku trgovinu i samo postojanje trgovine s nekim ID-jem.
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/test123.jpeg} %veličina u odnosu na širinu linije
+			\caption{testovi 1, 2 i 3}
+			\label{fig:test123} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			U druga tri testa ispitivale su se funkcionalnosti korisnika. Testiralo se postojanje korisnika s nekim ID-jem, dohvaćanje korisnika preko \textit{username}-a i nepostojanje korisnika s nevalidnim ID-jem.
+			
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/test456.jpeg} %veličina u odnosu na širinu linije
+			\caption{testovi 4, 5 i 6}
+			\label{fig:test456} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			Svi testovi su prolazni i očekivano ponašanje aplikacije je postignuto.
+			
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/reztest16.jpeg} %veličina u odnosu na širinu linije
+			\caption{Rezultati testova}
+			\label{fig:reztest16} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			
+			
 			
 			
 			
 			\subsection{Ispitivanje sustava}
 			
-			 \textit{Potrebno je provesti i opisati ispitivanje sustava koristeći radni okvir Selenium\footnote{\url{https://www.seleniumhq.org/}}. Razraditi \textbf{minimalno 4 ispitna slučaja} u kojima će se ispitati redovni slučajevi, rubni uvjeti te poziv funkcionalnosti koja nije implementirana/izaziva pogrešku kako bi se vidjelo na koji način sustav reagira kada nešto nije u potpunosti ostvareno. Ispitni slučaj se treba sastojati od ulaza (npr. korisničko ime i lozinka), očekivanog izlaza ili rezultata, koraka ispitivanja i dobivenog izlaza ili rezultata.\\ }
+			 %\textit{Potrebno je provesti i opisati ispitivanje sustava koristeći radni okvir Selenium\footnote{\url{https://www.seleniumhq.org/}}. Razraditi \textbf{minimalno 4 ispitna slučaja} u kojima će se ispitati redovni slučajevi, rubni uvjeti te poziv funkcionalnosti koja nije implementirana/izaziva pogrešku kako bi se vidjelo na koji način sustav reagira kada nešto nije u potpunosti ostvareno. Ispitni slučaj se treba sastojati od ulaza (npr. korisničko ime i lozinka), očekivanog izlaza ili rezultata, koraka ispitivanja i dobivenog izlaza ili rezultata.\\ }
 			 
-			 \textit{Izradu ispitnih slučajeva pomoću radnog okvira Selenium moguće je provesti pomoću jednog od sljedeća dva alata:}
-			 \begin{itemize}
-			 	\item \textit{dodatak za preglednik \textbf{Selenium IDE} - snimanje korisnikovih akcija radi automatskog ponavljanja ispita	}
-			 	\item \textit{\textbf{Selenium WebDriver} - podrška za pisanje ispita u jezicima Java, C\#, PHP koristeći posebno programsko sučelje.}
-			 \end{itemize}
-		 	\textit{Detalji o korištenju alata Selenium bit će prikazani na posebnom predavanju tijekom semestra.}
+			 %\textit{Izradu ispitnih slučajeva pomoću radnog okvira Selenium moguće je provesti pomoću jednog od sljedeća dva alata:}
+			 %\begin{itemize}
+			 %	\item \textit{dodatak za preglednik \textbf{Selenium IDE} - snimanje korisnikovih akcija radi automatskog ponavljanja ispita	}
+			 	%\item \textit{\textbf{Selenium WebDriver} - podrška za pisanje ispita u jezicima Java, C\#, PHP koristeći posebno programsko sučelje.}
+			% \end{itemize}
+		 	%\textit{Detalji o korištenju alata Selenium bit će prikazani na posebnom predavanju tijekom semestra.}
+		 	
+		 	Prvi \textit{Selenium} test provodio se za funkcionalnosti \textbf{login}.
+		 	
+		 	\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel1a.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 1, izgled sučelja}
+			\label{fig:sel1a} %label mora biti drugaciji za svaku sliku
+			Test je uspješan.
+			\end{figure}
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel1b.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 1, popis koraka}
+			\label{fig:sel1b} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			Drugi \textit{Selenium} test provodio se za funkcionalnosti logina s krivom lozinkom. 
+			
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel2a.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 2, izgled sučelja}
+			\label{fig:sel2a} %label mora biti drugaciji za svaku sliku
+			Dobili smo očekivani rezultat.
+			\end{figure}
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel2b.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 2, popis koraka}
+			\label{fig:sel2b} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			Treći \textit{Selenium} test provodio se za funkcionalnosti pretraživanja proizvoda. Konkretno u testu pretraživali smo proizvod "banana". 
+			
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel3a.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 3, izgled sučelja}
+			\label{fig:sel3a} %label mora biti drugaciji za svaku sliku
+			Test je uspješan.
+			
+			\end{figure}
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel3b.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 3, popis koraka}
+			\label{fig:sel3b} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			Četvrti \textit{Selenium} test provodio se za funkcionalnosti pretrage trgovina. Konkretno testirali smo pretraživanje trgovina koje prodaju banane.
+			
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel4a.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 4, izgled sučelja}
+			\label{fig:sel4a} %label mora biti drugaciji za svaku sliku
+			Također, i ovaj test je uspješan.
+			\end{figure}
+			\begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/sel4b.jpeg} %veličina u odnosu na širinu linije
+			\caption{Selenium test 4, popis koraka}
+			\label{fig:sel4b} %label mora biti drugaciji za svaku sliku
+			\end{figure}
 			
 			\eject 
 		
