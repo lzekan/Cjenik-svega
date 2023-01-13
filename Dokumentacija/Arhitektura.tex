@@ -17,7 +17,7 @@ Sustav je organiziran na sljedeći način:
 			\label{fig:arhitektura} %label mora biti drugaciji za svaku sliku
 			\end{figure}
 Korisnik putem odabranog web preglednika šalje HTTP zahtjev za web aplikacijom i njenim komponentama zadanom web poslužitelju. Aplikacija komunicira s bazom podataka u kojoj su sadržani svi podatci i iz nje izvlači sve potrebne podatke za klijentov zahtjev. Poslužitelj, kada aplikacija dohvati sve potrebne podatke, odgovara na klijentov zahtjev sa statusom 200 OK (ako je sve u redu) i šalje mu HTML dokument koji se prikazuje u zadanom web pregledniku.
-Programski jezik koji smo koristili za izradu web aplikacije je Java za backend te Javascript za frontend dio.
+Programski jezik koji smo koristili za izradu web aplikacije je Javascript.
 Arhitektura sustava se temelji na MVC konceptu, stilističkoj varijaciji arhitekture zasnovanoj na događajima. Odabrali smo taj koncept jer odvaja korisničko sučelje od ostatka sustava, što čini razvoj i nadogradnju komponenata jednostavnijima. Sastoji se od modela, pogleda i upravitelja.
 		
 \begin{itemize}
@@ -343,33 +343,53 @@ Klase iz data access paketa sadržavaju isključivo statičke metode koje služe
 			
 			%\textit{Prilikom prve predaje projekta, potrebno je priložiti potpuno razrađen dijagram razreda vezan uz \textbf{generičku funkcionalnost} sustava. Ostale funkcionalnosti trebaju biti idejno razrađene u dijagramu sa sljedećim komponentama: nazivi razreda, nazivi metoda i vrste pristupa metodama (npr. javni, zaštićeni), nazivi atributa razreda, veze i odnosi između razreda.}\\
 			
-			%\textbf{\textit{dio 2. revizije}}\\			
+			\textbf{\textit{dio 2. revizije}}\\			
 			
-			%\textit{Prilikom druge predaje projekta dijagram razreda i opisi moraju odgovarati stvarnom stanju implementacije}
+			\textit{Prilikom druge predaje projekta dijagram razreda i opisi moraju odgovarati stvarnom stanju implementacije}
 			
 			
 			
 			\eject
 		
-		%\section{Dijagram stanja}
+		\section{Dijagram stanja}
 			
 			
 			%\textbf{\textit{dio 2. revizije}}\\
 			
 			%\textit{Potrebno je priložiti dijagram stanja i opisati ga. Dovoljan je jedan dijagram stanja koji prikazuje \textbf{značajan dio funkcionalnosti} sustava. Na primjer, stanja korisničkog sučelja i tijek korištenja neke ključne funkcionalnosti jesu značajan dio sustava, a registracija i prijava nisu. }
 			
+			Dijagram stanja prikazuje stanje objekta te prijelaze iz jednog stanja u drugo temeljeno na događajima. Na slici 4.4 prikazan je dijagram stanja za registriranog korisnika. Nakon prijave, korisniku se prikazuje početna stranica na kojoj se mogu pretraživati željene proizvode. Za odabrani proizvod korisnik ima opciju predložiti do pet oznaka. Korisnik također za svaki proizvod može unijeti novu cijenu ako je uočio da se cijena u aplikaciji razlikuje od stvarne cijene. Prilikom unosa nove cijene prilaže se slika na kojoj je vidljiva cijena u navedenoj trgovini. Zatim se slika šalje administratoru na odobrenje. Ako administrator potvrdi promjenu cijene, obavijest o promjeni cijene dobivaju i korisnik i trgovina koju možete vidjeti klikom na "Obavijesti". Klikom na "Profil" korisniku se prikazuju njegovi podaci koje je moguće mijenjati. Klikom na "Odjava" korisnik se odjavljuje iz sustava."
 			
-			%\eject 
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{slike/DijagramStanja.png} %veličina u odnosu na širinu linije
+				\caption{dijagram stanja}
+				\label{fig:dijagramStanja} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+			
+			
+			\eject 
 		
-		%\section{Dijagram aktivnosti}
+		\section{Dijagram aktivnosti}
 			
 			%\textbf{\textit{dio 2. revizije}}\\
 			
-			% \textit{Potrebno je priložiti dijagram aktivnosti s pripadajućim opisom. Dijagram aktivnosti treba prikazivati značajan dio sustava.}
+			 %\textit{Potrebno je priložiti dijagram aktivnosti s pripadajućim opisom. Dijagram aktivnosti treba prikazivati značajan dio sustava.}
+			 Dijagram aktivnosti primjenjuje se za opis modela toka upravljanja ili toka podataka. Ne upotrebljava se za modeliranje događajima poticanog ponašanja. U modeliranju toka upravljanja svaki novi korak poduzima se nakon završenog prethodnog, a naglasak je na jednostavnosti. Na dijagramu aktivnosti 4.5 prikazan je proces unosa nove cijene proizvoda. Korisnik se prijavi u sustav, pretraži željeni proizvod. Ukoliko se cijena proizvoda u aplikaciji razlikuje od stvarne cijene u trgovini unosi novu cijenu proizvoda te prilaže sliku na kojoj se vidi cijena u navedenoj trgovini. Slika se šalje administratoru na odobrenje te ukoliko administrator potvrdi promjenu cijene cijena se mijenja, a korisnik i trgovina dobivaju obavijest o promjeni cijene.
+			 
+			 \begin{figure}[H]
+			 	\includegraphics[width=\textwidth]{slike/DijagramAktivnosti.png} %veličina u odnosu na širinu linije
+			 	\caption{dijagram aktivnosti}
+			 	\label{fig:dijagramAktivnosti} %label mora biti drugaciji za svaku sliku
+			 \end{figure}
 			
-		%	\eject
-		%\section{Dijagram komponenti}
+			\eject
+		\section{Dijagram komponenti}
 		
-			%\textbf{\textit{dio 2. revizije}}\\
+			\textbf{\textit{dio 2. revizije}}\\
 		
-			% \textit{Potrebno je priložiti dijagram komponenti s pripadajućim opisom. Dijagram komponenti treba prikazivati strukturu cijele aplikacije.}
+			 Na prikazanom dijagramu komponenti jasno vidimo MVC model koji se koristio u izradi aplikacije. Klijent komunicira preko web-preglednika (eng. \textit{Browser}) sa aplikacijom. U stvarnosti web-preglednik komunicira preko REST API-ja sa kontrolerom (eng. \textit{Controller}). Kontroler se koristi modelom da dohvati podatke te vraća prikaz putem pogleda (eng. View). Na nižoj razini apstrakcije vidimo da se kontroler, model i pogled sastoji od mnoštva manjih komponenti pa tako u kontrolere spadaju svi usmjerivači (eng. \textit{routers}) od kojih su samo dva prikazana, u modele spadaju razredi i funkcije kojima se pristupa bazi podataka te ostali razredi koji modeliraju podatke. U poglede spadaju sve datoteke nastavka ".ejs", tj. ono što se prikazuje klijentu. Radi izbjegavanja gomilanja komponenti na dijagramu izostavljena je većina komponenti s niže razine apstrakcije.
+			 \begin{figure}[H]
+			\includegraphics[width=\textwidth]{slike/dijagramKomponenti.png} %veličina u odnosu na širinu linije
+			\caption{dijagram komponenti}
+			\label{fig:dijagramKomponenti} %label mora biti drugaciji za svaku sliku
+			\end{figure}

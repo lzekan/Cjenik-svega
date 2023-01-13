@@ -16,7 +16,10 @@
 				\item Neregistrirani korisnik
 				\item Registrirani korisnik				
 				\item Administrator
-                \item Trgovina\\
+                \item Trgovina
+                \item Razvojni tim
+                \item Vlasnik aplikacije
+                \item Asistent\\
 				
 			\end{packed_enum}
    
@@ -121,7 +124,7 @@
 					%	\end{packed_item}
 					%\end{packed_item}
 
-                        \noindent \underbar{\textbf{UC1 - Pregled sadržaja}}
+                        \noindent \underbar{\textbf{UC1 - Pretraživanje sadržaja}}
 					\begin{itemize}
 	
 						\item \textbf{Glavni sudionik: }Korisnik
@@ -131,8 +134,24 @@
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{enumerate}
-							\item Prilikom učitavanja aplikacije prikazuje se ponuda\\
+							\item Prilikom učitavanja aplikacije prikazuje se tražilica
+							\item Korisnik upisuje željeni proizvod
+							\item Aplikacija prikazuje dostupnost željenog proizvoda\\
 						\end{enumerate}
+					\item  \textbf{Opis mogućih odstupanja:}
+					
+					\item[] \begin{enumerate}
+						
+						\item[2.a] Pretraživanje nepostojećeg proizvoda
+						\item[] \begin{enumerate}
+							
+							\item Sustav obavještava korisnika kako u sustavu nema traženog proizvoda
+							\item Korisnik mijenja potrebne podatke te završava unos ili odustaje od pretraživanja\\
+							
+						\end{enumerate}
+						
+						
+					\end{enumerate}
 						
 					\end{itemize}
 
@@ -498,7 +517,7 @@
 					
 					%\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
 					\begin{figure}[H]
-			\includegraphics[width=\textwidth]{slike/Korisnik.PNG} %veličina u odnosu na širinu linije
+			\includegraphics[width=\textwidth]{slike/Korisnik-izmjena.png} %veličina u odnosu na širinu linije
 			\caption{Use case dijagram - Korisnik}
 			\label{fig:Korisnik} %label mora biti drugaciji za svaku sliku
 			\end{figure}
